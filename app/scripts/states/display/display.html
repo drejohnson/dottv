@@ -1,0 +1,6 @@
+<article>
+  <h1>{{title}}</h1>
+  <span am-time-ago="date" am-preprocess="utc"></span>
+  <div class="embed-container" ng-bind-html="videoembed | sanitize"></div>
+  <section class="content" ng-bind-html="content"></section>
+</article>

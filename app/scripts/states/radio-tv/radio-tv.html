@@ -1,0 +1,12 @@
+Home
+<h2>{{documents.total_results_size}} Videos in Radio-TV</h2>
+<ul id="list">
+  <li ng-repeat="document in documents.results">
+    <span class="channel">{{document.getText('video.channel')}}</span>
+    <div class="title">{{document.getText('video.title')}}</div>
+    <img src="{{document.getImageView('video.poster', 'column').url}}" alt="">
+    <a href="#/{{document.getText('video.channel')}}/{{document.id}}/{{document.slug}}">
+      View
+    </a>
+  </li>
+</ul>
