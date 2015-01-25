@@ -1,0 +1,34 @@
+<article class="videoFrame" layout="column">
+  <header layout="row" layout-align="space-between center" class="videoTitle">
+    <h1>{{viewVideo.title}}</h1>
+  </header>
+  <div class="videoEmbed">
+    <div class="flex-video">
+      <video id="video" class="sublime" poster="{{viewVideo.poster}}" width="640" height="360" title="{{viewVideo.title}}" data-sharing-url="http://beta.tomorrowpictures.com" data-sharing-title="{{viewVideo.title}}" data-sharing-text="Watch {{viewVideo.title}}" data-sharing-twitter-text="Watch {{viewVideo.title}}" data-embed-type="auto" data-uid="{{viewVideo.youtubeID}}" data-youtube-id="{{viewVideo.youtubeID}}" data-autoresize="fill" preload="none">
+      </video>
+    </div>
+  </div>
+  <div class="bottomPanel">
+    <section class="bottomContent">
+      <div class="posted">This Video Was Posted: <time am-time-ago="viewVideo.date" am-preprocess="utc"></time></div>
+      <div class="title">{{viewVideo.intro}}</div>
+      <div class="description" ng-bind-html="viewVideo.content"></div>
+      <!-- <div class="tags">
+        <span>Tags: </span>
+        <a href="#/{{tag}}" ng-repeat="tag in viewVideo.tags">{{tag}}, </a>
+      </div> -->
+    </section>
+    <section class="related" flex>
+      <h2 class="title">View Related Videos</h2>
+      <div class="item" horizontal start-justified layout ng-repeat="related in viewVideo.relatedResults">
+        <img class="related-thumb" src="{{related.getImageView('video.poster', 'icon').url}}" alt=""/>
+        <div class="caption" flex style="margin-left:10px;">
+          <h2>{{related.getText('video.title')}}</h2>
+          <p>{{related.getText('video.shortlede')}}</p>
+          <a style="display:block;" href="#/{{related.getText('video.channel')}}/{{related.id}}/{{related.slug}}">View Video</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</article>

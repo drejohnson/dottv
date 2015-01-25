@@ -1,0 +1,10 @@
+<div class="search-overlay">
+  <div class="search-results">
+    <span class="glyphicon glyphicon-remove close">X</span>
+    <div>
+      <input type="text" name="q" ng-model="searchq">
+      <a class="search-btn close" href="#/search/{{searchq}}"><span class="close">Search</span></a>
+    </div>
+    <nav ng-include="'scripts/states/search/search.tpl.html'"></nav>
+  </div>
+</div>

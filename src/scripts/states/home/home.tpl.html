@@ -1,0 +1,34 @@
+<section class="featured" vertical layout ng-cloak>
+  <header class="featuredBanner" horizontal start-justified layout>
+    <h2 self-center>Featured Video: <span>{{home.featuredTitle}}</span></h2>
+  </header>
+  <div class="videoEmbed" horizontal start-justified layout>
+    <div class="flex-video animate-repeat" ng-repeat="featured in home.featuredResults">
+      <video id="video" class="sublime" poster="{{home.featuredPoster}}" width="1600" height="900" title="Boxing Chick Eposide 1" data-sharing-url="http://beta.tomorrowpictures.com/#/{{featured.getText('video.channel')}}/{{featured.id}}/{{featured.slug}}" data-sharing-title="{{home.featuredTitle}}" data-sharing-text="Watch and Share {{home.featuredTitle}}" data-sharing-twitter-text="Watch and Share {{home.featuredTitle}}" data-embed-type="auto" data-autoplay='true' data-uid="{{home.youtubeID}}" data-youtube-id="{{home.youtubeID}}" data-autoresize="fill" preload="none">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section items horizontal layout wrap>
+  <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in home.results | limitTo:21" channel="{{video.getText('video.channel')}}">
+    <div content>
+      <div meta horizontal start-justified layout>
+        <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
+        <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div>
+      </div>
+      <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size:cover;background-position: 50% 50%;background-repeat:no-repeat;"></div>
+      <div caption absolute>
+        <h2 title>
+          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
+            <span flex self-center>{{video.getText('video.title')}} </span>
+            <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
+          </a>
+        </h2>
+        <div intro>
+          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

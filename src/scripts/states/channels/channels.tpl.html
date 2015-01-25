@@ -1,0 +1,28 @@
+<header class="channelBanner {{ channels.channel | lowercase }}" horizontal layout center>
+  <h2>{{channels.channel}}</h2>
+  <p></p>
+</header>
+
+<div items horizontal layout wrap>
+  <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in channels.results | limitTo:21" channel="{{video.getText('video.channel')}}">
+    <div content>
+      <div meta horizontal start-justified layout>
+        <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
+        <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div>
+      </div>
+      <!-- <core-image poster sizing="cover" preload fade src="http://lorempixel.com/600/400"></core-image> -->
+      <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
+      <div caption absolute>
+        <h2 title>
+          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
+            <span flex self-center>{{video.getText('video.title')}} </span>
+            <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
+          </a>
+        </h2>
+        <div intro>
+          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

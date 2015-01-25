@@ -1,11 +1,4 @@
-.DS_Store
-.idea
-.sass-cache
-.tmp
-templates
-build
-dist
-bower_components
-!scripts/components
 node_modules
-*.bak
+bower_components
+src/bower_components
+.tmp
