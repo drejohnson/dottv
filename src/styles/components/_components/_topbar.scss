@@ -9,7 +9,10 @@ core-scaffold {
 [brand-name] {
   color: #ecf0f1;
   font-family: 'Lato', sans-serif;
-  font-size: 26px;
+  font-size: 18px;
+  @include medium {
+    font-size: 26px;
+  }
   font-weight: 300;
   padding-top: 0;
   padding-bottom: 0;
