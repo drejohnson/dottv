@@ -39,6 +39,43 @@ core-menu {
       font-weight: 400;
       text-align: center;
       color: white;
+      transition: font-weight 0.5s ease;
+    }
+
+    &.movies {
+      &.active, &:hover {
+        background-color: rgba(66, 176, 120, 0.7);
+      }
+    }
+    &.music {
+      &.active, &:hover {
+        background-color: rgba(243, 89, 88, 0.7);
+      }
+    }
+    &.docu-series {
+      &.active, &:hover {
+        background-color: rgba(0, 144, 217, 0.7);
+      }
+
+    }
+    &.comedy {
+      &.active, &:hover {
+        background-color: rgba(241, 196, 15, 0.7);
+      }
+
+    }
+    &.radio-tv {
+      &.active, &:hover {
+        background-color: rgba(115, 96, 134, 0.7);
+      }
+    }
+
+    &.active, &:hover {
+      transition: background-color 0.5s ease;
+      &::shadow #label {
+        // color: #111;
+        font-weight: 700;
+      }
     }
 
     a {

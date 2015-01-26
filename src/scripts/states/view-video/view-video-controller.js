@@ -20,8 +20,10 @@
     function activate() {
       GetVideoView.videoId(id).then(function(video){
         vm.video = video;
+        vm.id = video.id;
+        vm.slug = video.slug;
         vm.title = video.getText('video.title');
-        vm.channel = video.tags[0];
+        vm.channel = video.getText('video.channel');
         vm.intro = video.getText('video.shortlede');
         vm.content = video.getStructuredText('video.content').asHtml();
         vm.date = video.getDate('video.date');
@@ -37,6 +39,12 @@
         // }).join(', ');
         // vm.taglist = tags;
 
+        var shareUrl = function (channel, id, slug) {
+          return 'http://beta.tomorrowpictures.com/#/' + channel + '/' + id + '/' + slug
+        };
+
+        vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
+
         var videoid = function () {
           var embedId = $filter('getEmbedId')(vm.videourl);
           return embedId;
@@ -45,6 +53,9 @@
 
         $scope.$watch(function() { return vm.youtubeID; },
           function() {
+
+            vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
+            $log.log(vm.shareHref);
 
             vm.playerLoaded = false;
 
@@ -56,6 +67,7 @@
               _.defer(function(){$scope.$apply();});
 
               $scope.$on('$destroy', function () {
+                vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
                 // vm.playerLoaded = false;
                 // sublimevideo.prepareAndPlay('video');
                 sublimevideo.unprepare('video');

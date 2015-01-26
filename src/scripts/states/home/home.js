@@ -10,8 +10,7 @@
    */
   angular
     .module('home', [
-      'ui.router',
-      'ngMorph'
+      'ui.router'
     ])
     .config(config);
 

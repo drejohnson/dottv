@@ -17,13 +17,6 @@
     var type= 'videos';
     var channel =  'Featured';
 
-    vm.searchOverlay = {
-      closeEl: '.close',
-      overlay: {
-        templateUrl: 'scripts/states/search/search.tpl.html'
-      }
-    };
-
     vm.playerLoaded = false;
 
     activate();
@@ -37,18 +30,6 @@
         // $log.log(vm.paginationRange);
 
         vm.playerLoaded = false;
-
-        // var player = SublimeVideoLoad.load(function() {
-        //   vm.playerLoaded = true;
-        //   // sublimevideo.unprepare('video');
-        //   sublimevideo.prepareAndPlay('featured');
-        //   _.defer(function(){$scope.$apply();});
-        //
-        //   $scope.$on('$destroy', function () {
-        //     sublimevideo.unprepare('featured');
-        //     // player.dispose();
-        //   });
-        // });
 
       }).then(function () {
         return $timeout(function () {

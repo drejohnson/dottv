@@ -19,9 +19,9 @@ gulp.task('serve', ['styles'], function () {
     server: ['.tmp', 'src']
   });
 
-  gulp.watch(['src/**/*.html'], reload);
+  gulp.watch(['src/**/*.html'], ['html:partials', reload]);
   gulp.watch(['src/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['src/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['src/scripts/**/*.js'], ['html:partials','jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
 
@@ -37,8 +37,8 @@ gulp.task('serve:dist', ['default'], function () {
     server: 'build'
   });
 
-  gulp.watch(['src/**/*.html'], reload);
+  gulp.watch(['src/**/*.html'], ['html:partials', reload]);
   gulp.watch(['src/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['src/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['src/scripts/**/*.js'], ['html:partials','jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
