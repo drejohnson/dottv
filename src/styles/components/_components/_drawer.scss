@@ -1,16 +1,31 @@
 [navigation] {
   background-color: #1c1c1c;
+
+  core-toolbar {
+    height: 100px;
+  }
 }
-core-toolbar {
-  background: #1c1c1c;
+.branding {
+  background-color: #1c1c1c;
   color: black;
+  width: 100px;
   height: 100px;
 
-  // > [logo] {
-  //   width:100%;
-  //   height: 100px;
-  //   margin: 0;
-  // }
+  .toolbar-tools {
+    height: 100px;
+    padding: 0;
+    > a.logo {
+      width: 100%;
+      height: 100px;
+      margin: 0;
+    }
+
+    core-image {
+      width: 100%;
+      height: 100px;
+      margin: 0;
+    }
+  }
 
   &::shadow .toolbar-tools {
     height: 100px;
@@ -25,6 +40,7 @@ core-toolbar {
   [logo] {
     width: 100%;
     height: 100%;
+    margin: 0;
   }
 }
 core-menu {
@@ -32,6 +48,11 @@ core-menu {
 
   core-item {
     height: 100px;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    text-align: center;
     border-bottom: 1px solid #313539;
 
     &::shadow #label {
@@ -40,6 +61,10 @@ core-menu {
       text-align: center;
       color: white;
       transition: font-weight 0.5s ease;
+    }
+
+    #label {
+      margin: 0 auto;
     }
 
     &.movies {

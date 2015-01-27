@@ -26,5 +26,8 @@
     "angular-morph": "~0.1.0",
     "ngprogress": "~1.0.7",
     "outdated-browser": "~1.1.0"
+  },
+  "devDependencies": {
+    "time-elements": "~0.4.0"
   }
 }

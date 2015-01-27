@@ -1,9 +1,17 @@
 core-scaffold {
   &::shadow core-header-panel {
     > core-toolbar {
-      background: #1c1c1c;
+      background-color: #1c1c1c;
     }
   }
+  core-toolbar {
+    background-color: #1c1c1c;
+  }
+}
+
+header.header {
+  height: inherit;
+  width: 100%;
 }
 
 [brand-name] {

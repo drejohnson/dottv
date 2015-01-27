@@ -31,6 +31,14 @@ body {
   min-height: 100%;
 }
 
+main.content {
+  background-color: #111;
+}
+
+[ui-view] {
+  position: relative!important;
+}
+
 core-scaffold::shadow core-header-panel {
   background: #111;
   color: white;
@@ -189,6 +197,7 @@ core-item.active {
 }
 
 [item] > [content] > [caption] {
+  color: #fff;
   padding: 0 6px;
   margin-top: 30px;
 }
@@ -300,7 +309,7 @@ core-scaffold[mode=cover] .content {
 .channelBanner {
   height: 40px;
   @include medium {
-    height: 100px;
+    height: 60px;
   }
   h2 {
     color: #fff;
@@ -605,8 +614,8 @@ input[type="text"]:focus {
 }
 .animate-repeat.ng-enter-stagger {
   /* this will have a 100ms delay between each successive leave animation */
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 
   /* in case the stagger doesn't work then these two values
   must be set to 0 to avoid an accidental CSS inheritance */

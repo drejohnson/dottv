@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="Channel Oriented Infotainment">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <meta name="og:url" content="https://beta.tomorrowpictures.tv">
     <meta name="og:type" content="website">
     <meta name="og:description" content="Channel Oriented Infotainment">
     <meta name="og:title" content="Tomorrow Pictures TV">
-    <link rel="shortlink" href="/node/95">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Channel Oriented Infotainment">
     <meta name="og:site_name" content="Tomorrow Pictures TV">
@@ -86,7 +85,7 @@
           </core-item>
         </core-menu>
       </core-header-panel>
-      <header class="header" tool horizontal layout style="height: inherit;width: 100%;">
+      <header class="header" tool horizontal layout>
         <h1 class="pulse" brand-name flex self-center>tomorrow<span>pictures.tv</span></h1>
         <div class="search" flex self-end>
           <div id="sb-search" class="sb-search" horizontal end-justified layout>
@@ -100,7 +99,7 @@
       </header>
       <main class="content">
         <core-animated-pages style="height:100%;" ng-cloak transitions="slide-from-right">
-          <div ui-view></div>
+          <div ui-view flex></div>
         </core-animated-pages>
       </main>
     </core-scaffold>

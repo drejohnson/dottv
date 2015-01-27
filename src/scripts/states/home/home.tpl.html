@@ -1,4 +1,4 @@
-<section class="featured" vertical layout ng-cloak>
+<section class="featured" vertical layout>
   <header class="featuredBanner" horizontal start-justified layout>
     <h2 self-center>Featured Video: <span>{{home.featuredTitle}}</span></h2>
   </header>
@@ -17,7 +17,8 @@
         <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
         <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div>
       </div>
-      <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size:cover;background-position: 50% 50%;background-repeat:no-repeat;"></div>
+      <!-- <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size:cover;background-position: 50% 50%;background-repeat:no-repeat;"></div> -->
+      <div poster ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
       <div caption absolute>
         <h2 title>
           <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
