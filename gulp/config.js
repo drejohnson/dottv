@@ -3,6 +3,11 @@ var tmp = '.tmp';
 var dest = 'build';
 
 module.exports = {
+  base: {
+    src: src,
+    tmp: tmp,
+    dest: dest
+  },
   browserSync: {
     server: {
       // Serve up our build folder
