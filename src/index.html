@@ -104,6 +104,13 @@
       </main>
     </core-scaffold>
 
+    <!-- ============= Outdated Browser ============= -->
+    <div id="outdated">
+      <h6>Your browser is out-of-date!</h6>
+      <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+      <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    </div>
+
     <!-- build:js scripts/vendor.min.js -->
     <script src="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.js"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
@@ -168,7 +175,7 @@
       //call function after DOM ready
       addLoadEvent(
         outdatedBrowser({
-          bgColor: '#f25648',
+          bgColor: '#c0392b',
           color: '#ffffff',
           lowerThan: 'transform',
           languagePath: ''
