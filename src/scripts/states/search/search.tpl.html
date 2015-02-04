@@ -7,7 +7,7 @@
 <section ng-if="search.q.length < 1" items horizontal center-justified layout>
   <div class="animate-repeat">
     <div content>
-      <h2 self-center>Sorry but you don't search for anything! Try you search again!</h2>
+      <h2 self-center>Sorry but you didn't search for anything! Try your search again!</h2>
     </div>
   </div>
 </section>
@@ -18,7 +18,6 @@
       <div meta horizontal start-justified layout>
         <div class="channelName" self-center>{{video.getText('video.channel')}}</div>
       </div>
-      <!-- <core-image poster sizing="cover" preload fade src="http://lorempixel.com/600/400"></core-image> -->
       <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size:cover;background-position: 50% 50%;background-repeat:no-repeat;"></div>
       <div caption absolute>
         <h2 title>
