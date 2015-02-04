@@ -1,6 +1,7 @@
 <div>{{searchBar.name}}</div>
-<form class="searchbox">
+<form class="searchbox" ng-submit="submit()">
   <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-  <input type="submit" class="searchbox-submit" value="">
-  <span class="searchbox-icon">GO</span>
+  <!-- <input type="submit" class="searchbox-submit" value=""> -->
+  <button type="submit" class="searchbox-submit">Click Me!</button>
+  <!-- <span class="searchbox-icon">GO</span> -->
 </form>

@@ -12,9 +12,11 @@
     .module('viewVideo')
     .controller('ViewVideoCtrl', ViewVideoCtrl);
 
-  function ViewVideoCtrl($scope, $rootScope, GetVideoView, GetRelatedVideos, SublimeVideoLoad, $stateParams, $filter, $log) {
+  function ViewVideoCtrl($scope, $rootScope, GetVideoView, GetRelatedVideos, SublimeVideoLoad, $stateParams, $filter, $timeout, $log) {
     var vm = this;
     var id = $stateParams.id;
+
+    vm.playerLoaded = false;
 
     activate();
     function activate() {
@@ -34,10 +36,6 @@
         vm.poster = video.getImageView('video.poster', 'main').url;
         vm.tags = video.tags;
         vm.imgSM = video.getImageView('video.poster', 'icon').url;
-        // var tags = _(vm.tags).forEach(function(tags) {
-        //   return tags;
-        // }).join(', ');
-        // vm.taglist = tags;
 
         var shareUrl = function (channel, id, slug) {
           return 'http://beta.tomorrowpictures.com/#/' + channel + '/' + id + '/' + slug
@@ -51,34 +49,48 @@
         };
         vm.youtubeID = videoid();
 
-        $scope.$watch(function() { return vm.youtubeID; },
-          function() {
+        // $scope.$watch(function() { return vm.youtubeID; },
+        //   function() {
+        //
+        //     vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
+        //     $log.log(vm.shareHref);
+        //
+        //     vm.playerLoaded = false;
+        //
+        //     var player = SublimeVideoLoad.load(function() {
+        //       vm.playerLoaded = true;
+        //
+        //       sublimevideo.prepare('video');
+        //       // sublimevideo.prepareAndPlay('video');
+        //       _.defer(function(){$scope.$apply();});
+        //
+        //       $scope.$on('$destroy', function () {
+        //         vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
+        //         // vm.playerLoaded = false;
+        //         // sublimevideo.prepareAndPlay('video');
+        //         sublimevideo.unprepare('video');
+        //         // videoid();
+        //         // player.dispose();
+        //       });
+        //     });
+        //
+        //   }
+        // );
 
-            vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
-            $log.log(vm.shareHref);
+      }).then(function () {
+        return $timeout(function () {
+          var player = SublimeVideoLoad.load(function() {
+            vm.playerLoaded = true;
+            // sublimevideo.unprepare('video');
+            sublimevideo.prepare('video');
+            _.defer(function(){$scope.$apply();});
 
-            vm.playerLoaded = false;
-
-            var player = SublimeVideoLoad.load(function() {
-              vm.playerLoaded = true;
-
-              sublimevideo.prepare('video');
-              // sublimevideo.prepareAndPlay('video');
-              _.defer(function(){$scope.$apply();});
-
-              $scope.$on('$destroy', function () {
-                vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
-                // vm.playerLoaded = false;
-                // sublimevideo.prepareAndPlay('video');
-                sublimevideo.unprepare('video');
-                // videoid();
-                // player.dispose();
-              });
+            $scope.$on('$destroy', function () {
+              sublimevideo.unprepare('video');
+              // player.dispose();
             });
-
-          }
-        );
-
+          });
+        }, 100);
       });
 
       GetRelatedVideos.related(id).then(function(related){

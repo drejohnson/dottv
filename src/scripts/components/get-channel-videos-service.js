@@ -18,7 +18,7 @@
         var deferred = $q.defer();
         $log.debug('initializing channel: ' + channel);
         Prismic.ctx().then(function(ctx) {
-          ctx.api.form(type).query('[[:d = at(document.tags, ["'+ channel +'"])]]').page().ref(ctx.ref).submit(function(err, data){
+          ctx.api.form(type).query('[[:d = at(document.tags, ["'+ channel +'"])]]').pageSize(100).page().ref(ctx.ref).submit(function(err, data){
             deferred.resolve(data);
           });
         });

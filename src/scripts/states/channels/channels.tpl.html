@@ -4,7 +4,7 @@
 </header>
 
 <div items horizontal layout wrap>
-  <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in channels.results | limitTo:21" channel="{{video.getText('video.channel')}}">
+  <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in channels.results | limitTo:100" channel="{{video.getText('video.channel')}}">
     <div content>
       <div meta horizontal start-justified layout>
         <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
