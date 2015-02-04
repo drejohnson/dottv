@@ -56,7 +56,7 @@
       ngProgress.color('#c0392b');
       ngProgress.height('4px');
 
-      flash('This site is built for modern browsers. Best viewed in Chrome 35+');
+      flash('BETA! Best viewed in Chrome 35+, Safari 7+, Firefox 30+, IE 10+');
 
     });
   })
