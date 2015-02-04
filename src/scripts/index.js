@@ -16,6 +16,7 @@
     'prismic.io',
     'angularMoment',
     'ngProgress',
+    'flash',
     'angulartics',
     'angulartics.google.analytics',
     'templates',
@@ -32,7 +33,7 @@
 
   angular
   .module('app')
-  .run(function ($rootScope, Prismic, AppSettings, SublimeVideoLoad, ngProgress, $log) {
+  .run(function ($rootScope, Prismic, AppSettings, SublimeVideoLoad, ngProgress, flash, $log) {
     // log location change
     // Remove from production!
     $rootScope.$on('$locationChangeSuccess', function () {
@@ -55,7 +56,7 @@
       ngProgress.color('#c0392b');
       ngProgress.height('4px');
 
-      // flash('This site is in Beta testing. Best viewed in Chrome 35+');
+      flash('This site is built for modern browsers. Best viewed in Chrome 35+');
 
     });
   })

@@ -1,0 +1,22 @@
+#flash-messages {
+  z-index: 1000;
+  position: relative;
+  background-color: rgba(241, 196, 15,1.0);
+  padding: 5px 15px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 0px;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  @include medium {
+    font-size: 20px;
+    // font-weight: bold; 
+  }
+  // font-weight: 700;
+  list-style-type: none;
+}

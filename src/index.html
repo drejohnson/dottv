@@ -98,6 +98,7 @@
         </div>
       </header>
       <main class="content">
+        <flash-messages ng-show="messages" tool horizontal layout></flash-messages>
         <core-animated-pages style="height:100%;" ng-cloak transitions="slide-from-right">
           <div ui-view flex></div>
         </core-animated-pages>
@@ -125,6 +126,7 @@
     <script src="bower_components/angular-prismicio/dist/angular-prismicio.js"></script>
     <script src="bower_components/prismic.io/dist/prismic.io.js"></script>
     <script src="bower_components/ngprogress/build/ngProgress.js"></script>
+    <script src="bower_components/angular-flash-messages/angular-flash.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/app.bundle.js -->
