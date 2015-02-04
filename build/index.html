@@ -92,6 +92,7 @@
         </div>
       </header>
       <main class="content">
+        <flash-messages ng-show="messages" tool horizontal layout></flash-messages>
         <core-animated-pages style="height:100%;" ng-cloak transitions="slide-from-right">
           <div ui-view flex></div>
         </core-animated-pages>
