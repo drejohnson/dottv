@@ -10,7 +10,7 @@
   </div>
   <div class="bottomPanel">
     <section class="bottomContent">
-      <div class="posted">This Video Was Posted: <time am-time-ago="viewVideo.date" am-preprocess="utc"></time></div>
+      <div class="posted">This Video Was Posted: <span>  <time am-time-ago="viewVideo.date" am-preprocess="utc"></time></span></div>
       <div class="title">{{viewVideo.intro}}</div>
       <div class="description" ng-bind-html="viewVideo.content"></div>
       <!-- <div class="tags">
@@ -18,10 +18,12 @@
         <a href="#/{{tag}}" ng-repeat="tag in viewVideo.tags">{{tag}}, </a>
       </div> -->
     </section>
-    <section class="related" flex>
+    <section class="related">
       <h2 class="title">View Related Videos</h2>
       <div class="item" horizontal start-justified layout ng-repeat="related in viewVideo.relatedResults">
-        <img class="related-thumb" src="{{related.getImageView('video.poster', 'icon').url}}" alt=""/>
+        <div class="related-thumb">
+          <img src="{{related.getImageView('video.poster', 'icon').url}}" alt=""/>
+        </div>
         <div class="caption" flex style="margin-left:10px;">
           <h2>{{related.getText('video.title')}}</h2>
           <p>{{related.getText('video.shortlede')}}</p>

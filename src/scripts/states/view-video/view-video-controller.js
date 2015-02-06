@@ -93,6 +93,8 @@
         }, 100);
       });
 
+      // $log.log(GetVideoView.videoId(id));
+
       GetRelatedVideos.related(id).then(function(related){
         vm.related = related;
         vm.relatedResults = related.results;

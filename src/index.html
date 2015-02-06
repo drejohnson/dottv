@@ -98,7 +98,9 @@
         </div>
       </header>
       <main class="content">
-        <flash-messages ng-show="messages" tool horizontal layout></flash-messages>
+        <div id="flash-messages" tool horizontal layout>
+          <span>{{msg}}</span>
+        </div>
         <core-animated-pages style="height:100%;" ng-cloak transitions="slide-from-right">
           <div ui-view flex></div>
         </core-animated-pages>
@@ -126,13 +128,13 @@
     <script src="bower_components/angular-prismicio/dist/angular-prismicio.js"></script>
     <script src="bower_components/prismic.io/dist/prismic.io.js"></script>
     <script src="bower_components/ngprogress/build/ngProgress.js"></script>
-    <script src="bower_components/angular-flash-messages/angular-flash.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/app.bundle.js -->
     <script src="scripts/index.js"></script>
     <script src="scripts/components/app-settings-constant.js"></script>
     <script src="scripts/components/get-embed-id-filter.js"></script>
+    <script src="scripts/components/flash-message-service.js"></script>
     <script src="scripts/components/get-search-results-service.js"></script>
     <script src="scripts/components/get-related-videos-service.js"></script>
     <script src="scripts/components/get-all-videos-service.js"></script>
