@@ -676,14 +676,17 @@ core-scaffold::shadow core-header-panel {
 
 [item] {
   -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
           flex: 0 0 100%; }
   @media only screen and (min-width: 620px) {
     [item] {
       -webkit-flex: 0 0 50%;
+          -ms-flex: 0 0 50%;
               flex: 0 0 50%; } }
   @media only screen and (min-width: 800px) {
     [item] {
       -webkit-flex: 0 0 33.333%;
+          -ms-flex: 0 0 33.333%;
               flex: 0 0 33.333%; } }
 
 [channel="movies"] > [content] > [meta] {
@@ -965,6 +968,7 @@ header.radio-tv {
     background-color: #1c1c1c; }
   .related .item .related-thumb {
     -webkit-flex: 1;
+        -ms-flex: 1;
             flex: 1; }
     .related .item .related-thumb img {
       width: 100%;
@@ -972,14 +976,17 @@ header.radio-tv {
       margin: 10px 0; }
   .related .item .caption {
     -webkit-flex: 1;
+        -ms-flex: 1;
             flex: 1; }
     @media only screen and (min-width: 620px) {
       .related .item .caption {
         -webkit-flex: 2;
+            -ms-flex: 2;
                 flex: 2; } }
     @media only screen and (min-width: 800px) {
       .related .item .caption {
         -webkit-flex: 3;
+            -ms-flex: 3;
                 flex: 3; } }
     .related .item .caption h2 {
       color: #ecf0f1;

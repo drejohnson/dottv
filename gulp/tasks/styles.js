@@ -10,18 +10,18 @@ var config       = require('../config').styles;
 
 gulp.task('styles', function () {
   var processors = [
-    autoprefixer({browsers: ['last 1 version']})
+    autoprefixer({browsers: ['last 3 version']})
   ];
   return gulp.src(config.src)
-  .pipe($.changed('.tmp/styles', {extension: '.scss'}))
+  .pipe($.changed('build/styles', {extension: '.scss'}))
   .pipe($.sourcemaps.init())
   .pipe($.sass(config.options))
   .on('error', handleErrors)
   .pipe($.sourcemaps.write())
+  .pipe($.postcss(processors))
   .pipe(gulp.dest(config.tmp))
   // Concatenate And Minify Styles
   // .pipe$.if('*.css', $.csso()))
-  .pipe($.postcss(processors))
   .pipe(gulp.dest(config.dest))
   .pipe($.size({title: 'styles'}));
 });
