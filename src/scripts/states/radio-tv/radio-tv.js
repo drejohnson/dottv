@@ -16,11 +16,11 @@
 
   function config($stateProvider) {
     $stateProvider
-      .state('radioTv', {
-        url: '/radio-tv',
+      .state('radioTvFilm', {
+        url: '/radio-tv-film',
         templateUrl: 'scripts/states/channels/channels.tpl.html',
         controller: 'ChannelsCtrl as channels',
-        title: 'Radio-TV'
+        title: 'Radio-TV-Film'
       });
   }
 

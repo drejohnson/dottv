@@ -12,7 +12,7 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($scope, GetAllVideos, GetChannelVideos, SublimeVideoLoad, $filter, $state, $timeout, $log) {
+  function HomeCtrl($scope, GetAllVideos, GetFeaturedVideo, SublimeVideoLoad, $filter, $state, $timeout, $log) {
     var vm = this;
     var type= 'videos';
     var channel =  'Featured';
@@ -46,21 +46,18 @@
           });
         }, 100);
       });
-      // Use GetChannelVideos service to retrieve video with Featured tag
-      // Should create a separate service???
-      GetChannelVideos.getvideos(type, channel).then(function(featured){
-        vm.featured= featured;
+      GetFeaturedVideo.getvideos().then(function(featured){
+        vm.featured = featured;
         vm.featuredResults = featured.results;
-        vm.featuredTitle = vm.featuredResults[0].getText('video.title');
-        vm.featuredUrl = vm.featuredResults[0].getText('video.videourl');
-        vm.featuredPoster = vm.featuredResults[0].getImageView('video.poster', 'main').url;
+        vm.featuredTitle = vm.featuredResults[0].getText('featured.title');
+        vm.featuredUrl = vm.featuredResults[0].getText('featured.videourl');
+        vm.featuredPoster = vm.featuredResults[0].getImageView('featured.poster', 'main').url;
 
         var videoid = function () {
           var embedId = $filter('getEmbedId')(vm.featuredUrl);
           return embedId;
         };
         vm.youtubeID = videoid();
-        $log.log(vm.featuredPoster);
 
       });
     }

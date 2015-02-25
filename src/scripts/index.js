@@ -22,6 +22,7 @@
     'home',
     'channels',
     'viewVideo',
+    'lifestyle',
     'movies',
     'music',
     'docuSeries',

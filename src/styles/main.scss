@@ -68,6 +68,7 @@ core-item.active {
   }
 }
 
+[channel="lifestyle"] > [content] > [meta] ,
 [channel="movies"] > [content] > [meta] {
   background-color: #42b078;
 }
@@ -80,6 +81,7 @@ core-item.active {
 [channel="comedy"] > [content] > [meta] {
   background-color: #f1c40f;
 }
+[channel="radio-tv-film"] > [content] > [meta],
 [channel="radio-tv"] > [content] > [meta] {
   background-color: #736086;
 }
@@ -128,10 +130,12 @@ core-item.active {
   height:50vw;
   background-color: #111;
 }
+[channel="lifestyle"]
 [channel="movies"],
 [channel="music"],
 [channel="docu-series"],
 [channel="comedy"],
+[channel="radio-tv-film"],
 [channel="radio-tv"] {
   > [content] > [poster]:before {
     top: 30px!important;
@@ -141,6 +145,7 @@ core-item.active {
   transition: opacity 0.5s linear;
   opacity: 0;
 }
+[channel="lifestyle"] > [content] > [poster]:before,
 [channel="movies"] > [content] > [poster]:before {
   content: '';
   position: absolute;
@@ -185,6 +190,7 @@ core-item.active {
   opacity: .6;
 }
 
+[channel="radio-tv-film"] > [content] > [poster]:before,
 [channel="radio-tv"] > [content] > [poster]:before {
   content: '';
   position: absolute;

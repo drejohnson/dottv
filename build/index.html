@@ -54,7 +54,7 @@
   </head>
   <body fullbleed layout vertical ng-cloak>
     <div id="outdated"></div>
-    <core-scaffold drawerWidth="100px" responsiveWidth="980px">
+    <core-scaffold drawerWidth="120px" responsiveWidth="980px">
       <core-header-panel navigation flex mode="seamed">
         <core-toolbar class="branding">
           <a class="logo" ui-sref="home">
@@ -62,8 +62,8 @@
           </a>
         </core-toolbar>
         <core-menu vertical layout theme="core-light-theme">
-          <core-item ui-sref-active="active" class="movies" label="Movies">
-            <a ui-sref="movies" target="_self"></a>
+          <core-item ui-sref-active="active" class="lifestyle" label="Lifestyle">
+            <a ui-sref="lifestyle" target="_self"></a>
           </core-item>
           <core-item ui-sref-active="active" class="music" label="Music">
             <a ui-sref="music" target="_self"></a>
@@ -74,8 +74,8 @@
           <core-item ui-sref-active="active" class="comedy" label="Comedy">
             <a ui-sref="comedy" target="_self"></a>
           </core-item>
-          <core-item ui-sref-active="active" class="radio-tv" label="Radio-TV">
-            <a ui-sref="radioTv" target="_self"></a>
+          <core-item ui-sref-active="active" class="radio-tv" label="Radio-TV-Film">
+            <a ui-sref="radioTvFilm" target="_self"></a>
           </core-item>
         </core-menu>
       </core-header-panel>
@@ -101,41 +101,9 @@
       </main>
     </core-scaffold>
 
-    <!-- ============= Outdated Browser ============= -->
-    <div id="outdated">
-      <h6>Your browser is out-of-date!</h6>
-      <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-      <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-    </div>
-
     <script src="scripts/vendor.min.js"></script>
 
     <script src="scripts/app.bundle.js"></script>
-
-    <script>
-      'use strict';
-      //event listener form DOM ready
-      function addLoadEvent(func) {
-        var oldonload = window.onload;
-        if (typeof window.onload != 'function') {
-          window.onload = func;
-        } else {
-          window.onload = function() {
-            oldonload();
-            func();
-          };
-        }
-      }
-      //call function after DOM ready
-      addLoadEvent(
-        outdatedBrowser({
-          bgColor: '#c0392b',
-          color: '#ffffff',
-          lowerThan: 'transform',
-          languagePath: ''
-        })
-      );
-    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
