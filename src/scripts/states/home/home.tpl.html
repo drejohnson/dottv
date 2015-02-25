@@ -15,7 +15,7 @@
     <div content>
       <div meta horizontal start-justified layout>
         <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
-        <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div>
+        <!-- <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div> -->
       </div>
       <div poster ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
       <div caption absolute>
