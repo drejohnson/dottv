@@ -101,6 +101,13 @@ iron-icon:not(:last-child) {
   border: none;
 }
 
+.drawer-footer {
+  background-color: #1a1a1a;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+}
+
 .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-active, home .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-focus {
   color: #ecf0f1;
   font-size: 22px;
