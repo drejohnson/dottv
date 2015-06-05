@@ -691,7 +691,7 @@ md-item,
 }
 
 .meta {
-      font-size: 20px;
+      font-size: 18px;
     font-size: 22px;
       font-size: 32px;
   position: absolute;
@@ -710,6 +710,12 @@ md-item,
   /*opacity: 0.3;*/
 }
 
+.meta .title a ng-md-icon {
+  margin-top: -5px;
+  margin-left: 5px;
+  vertical-align: text-top;
+}
+
 .meta .title a, .meta .intro a {
   display: block;
 }
@@ -725,11 +731,20 @@ md-item,
 }
 
 .meta .intro {
-  font-size: 20px;
+  font-size: 18px;
   font-size: 22px;
   font-size: 2.2rem;
+  font-weight: 400;
   line-height: 1;
-  visibility: hidden;
+  visibility: visible;
+}
+
+.meta .intro a {
+  color: #ecf0f1;
+}
+
+.meta .intro a:hover {
+  text-decoration: underline;
 }
 /**
  * @license videogular v1.2.1 http://videogular.com
@@ -2064,11 +2079,8 @@ videogular vg-poster img, [videogular] vg-poster img {
 .poster{
     height: 20vw;
   }
-  .meta .title{
-    font-size: 3.2rem;
-  }
   .meta .intro{
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     visibility: visible;
   }
   .related .item{
@@ -2076,15 +2088,10 @@ videogular vg-poster img, [videogular] vg-poster img {
   }
 }
 
-@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
-  videogular vg-volume-bar,[videogular] vg-volume-bar{
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: .5;
-  }
-}
-
 @media (min-width: 1200px){
+  .meta .title{
+    font-size: 3.2rem;
+  }
   videogular .iconButton, [videogular] .iconButton{
     font-size: 2.8rem;
   }
@@ -2097,6 +2104,14 @@ videogular vg-poster img, [videogular] vg-poster img {
   .videogular-container{
     width: 100%;
     height: calc(100vh - 176px);
+  }
+}
+
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+  videogular vg-volume-bar,[videogular] vg-volume-bar{
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: .5;
   }
 }
 

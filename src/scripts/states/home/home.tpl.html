@@ -40,7 +40,7 @@
         <md-card-content class="tab-content">
           <h2 class="label" layout-padding-sm>Latest Videos</h2>
           <md-list layout="row" layout-sm="column" layout-fill layout-wrap>
-            <md-item ng-repeat="video in home.results | filter:search | orderBy:'-index'" class="velocity-transition-slideUpIn {{::video.getText('video.channel') | lowercase}}" data-velocity-opts="{ stagger: 350 }" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex="100" flex-gt-md="50" flex-gt-lg="33">
+            <md-item ng-repeat="video in ::home.results track by video.id | filter:search | orderBy:'-index'" class="velocity-transition-slideUpIn {{::video.getText('video.channel') | lowercase}}" data-velocity-opts="{ stagger: 350 }" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex="100" flex-gt-md="50" flex-gt-lg="33">
               <md-item-content class="item">
                 <div class="channelHeader" layout="row">
                   <h3 class="channelTitle">{{::video.getText('video.channel')}}</h3>
@@ -48,12 +48,15 @@
                 <div class="poster" ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
                 <div class="md-tile-content meta">
                   <h2 class="title">
-                    <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" layout="row">
+                    <a href="#/{{::video.getText('video.channel')}}/{{::video.id}}/{{::video.slug}}" layout="row">
                       <span>{{::video.getText('video.title')}}</span>
-                      <ng-md-icon icon="play_circle_outline" size="36" style="fill:#fff;"></ng-md-icon>
+                      <ng-md-icon icon="play_circle_outline" size="48" style="fill:#fff;"></ng-md-icon>
                     </a>
                   </h2>
-                  <p class="intro">{{::video.getText('video.shortlede')}}</p>
+                  <p class="intro">
+                    <a href="#/{{::video.getText('video.channel')}}/{{::video.id}}/{{::video.slug}}" layout="row">
+                      {{::video.getText('video.shortlede')}}</p>
+                    </a>
                 </div>
               </md-item-content>
               <md-divider md-inset hide-sm ng-if="!$last"></md-divider>

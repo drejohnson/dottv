@@ -14,6 +14,7 @@
     'ngAnimate',
     'ngSanitize',
     'ngMaterial',
+    'ngMdIcons',
     'prismic.io',
     'angular-velocity',
     'com.2fdevs.videogular',
@@ -72,10 +73,15 @@
   .config(mdConfig)
   .config(prismicConfig);
 
-  function urlConfig($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
-    // use the HTML5 History API
-    // $locationProvider.html5Mode(true);
+  function urlConfig($urlRouterProvider, $locationProvider, $httpProvider, $compileProvider, $rootScopeProvider) {
+    $locationProvider.html5Mode({
+  		enabled: false,
+  		requireBase: false
+  	});
+  	$httpProvider.useApplyAsync(true);
+    $compileProvider.debugInfoEnabled(false);
+    $rootScopeProvider.digestTtl(8);
+  	return $urlRouterProvider.otherwise('/');
   }
 
   function prismicConfig(PrismicProvider) {
@@ -90,24 +96,24 @@
 
   function mdConfig($mdThemingProvider) {
     // $locationProvider.html5Mode(true);
-  // Theme Config
-  var brandBlack = $mdThemingProvider.extendPalette('grey', {
-    '500': '212121',
-    'A100': '1a1a1a'
-  });
-  var brandRed = $mdThemingProvider.extendPalette('red', {
-    '500': 'c0392b'
-  });
-  $mdThemingProvider.definePalette('brandBlack', brandBlack);
-  $mdThemingProvider.definePalette('brandRed', brandRed);
-  $mdThemingProvider.theme('default')
-    .primaryPalette('brandBlack')
-    .accentPalette('brandRed', {
-      'default': '500'
-    })
-    .backgroundPalette('brandBlack', {
-      'default': 'A100'
+    // Theme Config
+    var brandBlack = $mdThemingProvider.extendPalette('grey', {
+      '500': '212121',
+      'A100': '1a1a1a'
     });
+    var brandRed = $mdThemingProvider.extendPalette('red', {
+      '500': 'c0392b'
+    });
+    $mdThemingProvider.definePalette('brandBlack', brandBlack);
+    $mdThemingProvider.definePalette('brandRed', brandRed);
+    $mdThemingProvider.theme('default')
+      .primaryPalette('brandBlack')
+      .accentPalette('brandRed', {
+        'default': '500'
+      })
+      .backgroundPalette('brandBlack', {
+        'default': 'A100'
+      });
   }
 
 })();

@@ -39,7 +39,9 @@
     "videogular-youtube": "~2.0.3",
     "ngInfiniteScroll": "~1.2.1",
     "velocity": "~1.2.2",
-    "angular-velocity": "~0.3.1"
+    "angular-velocity": "~0.3.1",
+    "angular-material-icons": "~0.4.0",
+    "oclazyload": "~1.0.1"
   },
   "devDependencies": {
     "web-component-tester": "*",

@@ -17,8 +17,6 @@
     var type= 'videos';
     var channel =  'Featured';
 
-    vm.playerLoaded = false;
-
     activate();
     function activate () {
       // Index of videos on Home Page
@@ -27,7 +25,7 @@
         vm.results = video.results;
         vm.totalPages = video.total_pages;
         if (vm.totalPages > 1) vm.paginationRange = _.range(1, vm.totalPages+1);
-        // $log.log(vm.paginationRange);
+        $log.log(vm.videos);
       });
       GetFeaturedVideo.getvideos().then(function(featured){
         vm.featured = featured;

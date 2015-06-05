@@ -46,6 +46,12 @@ md-item,
     a {
       color: var(--brandWhite);
       /*opacity: 0.3;*/
+
+      ng-md-icon {
+        margin-top: -5px;
+        margin-left: 5px;
+        vertical-align: text-top;
+      }
     }
   }
 
@@ -62,17 +68,24 @@ md-item,
     font-weight: 800;
     margin: 16px 0;
 
-    @media (--medium) {
+    @media (--large) {
       font-size: 3.2rem;
     }
   }
   .intro {
     font-size: 2.2rem;
+    font-weight: 400;
     line-height: 1;
-    visibility: hidden;
+    visibility: visible;
     @media (--medium) {
-      font-size: 2.0rem;
+      font-size: 1.8rem;
       visibility: visible;
+    }
+    a {
+      color: var(--brandWhite);
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
