@@ -12,7 +12,7 @@
     .module('channels')
     .controller('ChannelsCtrl', ChannelsCtrl);
 
-  function ChannelsCtrl($scope, GetChannelVideos, SublimeVideoLoad, $location, $state, $stateParams, $log) {
+  function ChannelsCtrl($scope, GetChannelVideos, $location, $state, $stateParams, $log) {
     var vm = this;
     var type = 'videos';
     var channel = $state.current.title;

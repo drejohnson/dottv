@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="styles/main.css">
 
   </head>
-  <body fullbleed layout vertical ng-cloak>
+  <body ng-cloak>
     <template is="dom-bind" id="app">
 
       <paper-drawer-panel class="app" drawer-width="150px">
@@ -96,7 +96,7 @@
             <div class="splash" ng-if="router.isNavigating">
               <div class="loader">Loading...</div>
             </div>
-            <div ui-view class=""></div>
+            <div ui-view class="velocity-opposites-transition-slideUpIn" data-velocity-opts="{ stagger: 350 }"></div>
           </main>
         </paper-header-panel>
       </paper-drawer-panel>
@@ -112,8 +112,9 @@
     </template>
 
     <!-- build:js scripts/vendor.min.js -->
-    <script src="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/velocity/velocity.js"></script>
+    <script src="bower_components/velocity/velocity.ui.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -133,6 +134,8 @@
     <script src="bower_components/angular-prismicio/dist/angular-prismicio.js"></script>
     <script src="bower_components/prismic.io/dist/prismic.io.js"></script>
     <script src="bower_components/ngprogress/build/ngProgress.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/angular-velocity/angular-velocity.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/app.bundle.js -->
@@ -146,7 +149,6 @@
     <script src="scripts/components/get-featured-video-service.js"></script>
     <script src="scripts/components/get-channel-videos-service.js"></script>
     <script src="scripts/components/get-video-view-service.js"></script>
-    <script src="scripts/components/sublime-video-load-factory.js"></script>
     <script src="scripts/templates/templates.js"></script>
     <script src="scripts/states/search/search.js"></script>
     <script src="scripts/states/search/search-controller.js"></script>

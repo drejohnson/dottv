@@ -12,7 +12,7 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($scope, GetAllVideos, GetFeaturedVideo, SublimeVideoLoad, $filter, $state, $timeout, $log) {
+  function HomeCtrl($scope, GetAllVideos, GetFeaturedVideo, $filter, $state, $timeout, $log) {
     var vm = this;
     var type= 'videos';
     var channel =  'Featured';
@@ -43,7 +43,7 @@
         vm.youtubeID = videoid();
 
         // Videogular
-        vm.video = 'https://www.youtube.com/watch?v=' + vm.youtubeID;
+        vm.video = vm.featuredUrl;
         vm.currentTime = 0;
         vm.totalTime = 0;
         vm.state = null;
@@ -79,7 +79,7 @@
             {src: vm.video },
           ],
           plugins: {
-            poster: 'https://download.unsplash.com/photo-1420819453217-57b6badd9e19'
+            poster: vm.featuredPoster
           }
         };
       });

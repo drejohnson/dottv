@@ -12,7 +12,7 @@
     .module('viewVideo')
     .controller('ViewVideoCtrl', ViewVideoCtrl);
 
-  function ViewVideoCtrl($scope, $rootScope, GetVideoView, GetRelatedVideos, SublimeVideoLoad, $stateParams, $filter, $timeout, $log) {
+  function ViewVideoCtrl($scope, $rootScope, GetVideoView, GetRelatedVideos, $stateParams, $filter, $timeout, $log) {
     var vm = this;
     var id = $stateParams.id;
     var videoid = '';

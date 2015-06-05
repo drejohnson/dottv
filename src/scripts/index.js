@@ -15,6 +15,7 @@
     'ngSanitize',
     'ngMaterial',
     'prismic.io',
+    'angular-velocity',
     'com.2fdevs.videogular',
     'com.2fdevs.videogular.plugins.controls',
     'com.2fdevs.videogular.plugins.overlayplay',
@@ -25,6 +26,7 @@
     'ngProgress',
     'angulartics',
     'angulartics.google.analytics',
+    'infinite-scroll',
     'templates',
     'home',
     'channels',
@@ -40,7 +42,7 @@
 
   angular
   .module('app')
-  .run(function ($rootScope, Prismic, AppSettings, SublimeVideoLoad, ngProgress, flashMessageService, $log) {
+  .run(function ($rootScope, Prismic, AppSettings, ngProgress, flashMessageService, $log) {
     $rootScope.msg = flashMessageService.msg;
     // log location change
     // Remove from production!

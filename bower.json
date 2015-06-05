@@ -36,7 +36,10 @@
     "videogular-overlay-play": "~1.2.2",
     "videogular-angulartics": "~1.2.2",
     "videogular-poster": "~1.2.2",
-    "videogular-youtube": "~2.0.3"
+    "videogular-youtube": "~2.0.3",
+    "ngInfiniteScroll": "~1.2.1",
+    "velocity": "~1.2.2",
+    "angular-velocity": "~0.3.1"
   },
   "devDependencies": {
     "web-component-tester": "*",

@@ -4,7 +4,7 @@
   font-family: var(--root-font-family);
   line-height: var(--root-line-height);
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   text-rendering: var(--root-text-rendering);
   text-size-adjust: 100%;
 }

@@ -7,7 +7,7 @@
   </paper-toolbar>
   <section class="featured-video">
     <div class="videogular-container">
-      <videogular vg-player-ready="home.onPlayerReady($API)" vg-auto-play="true" vg-autoplay="home.config.autoPlay">
+      <videogular vg-player-ready="home.onPlayerReady($API)">
         <vg-media vg-src="home.config.sources" vg-youtube="rel=0;showinfo=0"></vg-media>
 
         <vg-controls vg-autohide="home.config.autoHide" vg-autohide-time="home.config.autoHideTime">
@@ -40,7 +40,7 @@
         <md-card-content class="tab-content">
           <h2 class="label" layout-padding-sm>Latest Videos</h2>
           <md-list layout="row" layout-sm="column" layout-fill layout-wrap>
-            <md-item ng-repeat="video in home.results | filter:search | orderBy:'-index'" class="{{::video.getText('video.channel') | lowercase}}" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex="100" flex-gt-md="50" flex-gt-lg="33">
+            <md-item ng-repeat="video in home.results | filter:search | orderBy:'-index'" class="velocity-transition-slideUpIn {{::video.getText('video.channel') | lowercase}}" data-velocity-opts="{ stagger: 350 }" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex="100" flex-gt-md="50" flex-gt-lg="33">
               <md-item-content class="item">
                 <div class="channelHeader" layout="row">
                   <h3 class="channelTitle">{{::video.getText('video.channel')}}</h3>
@@ -61,60 +61,10 @@
             </md-item>
             <md-divider></md-divider>
           </md-list>
+          <!-- <button class="loadmore" href="#" ng-class="nextPageDisabledClass()"
+          ng-click="loadMore()">Load More</button> -->
         </md-card-content>
       </md-card>
     </md-tab>
-    <!-- Favorites -->
-    <!-- <md-tab label="Favorites">
-      <md-card class="tab-card" flex>
-        <md-card-content class="tab-content">
-          <h2 class="label" layout-padding-sm>Most Liked Videos</h2>
-          <md-list layout="row" layout-sm="column" layout-fill layout-wrap>
-            <md-item ng-repeat="video in home.results | limitTo:21 | filter:search | orderBy:'-likes'" class="{{::video.getText('video.channel') | lowercase}}" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex flex-gt-sm="50" flex-gt-md="33">
-              <md-item-content class="item">
-                <div class="channelHeader" layout="row">
-                  <div class="channelTitle">{{::video.getText('video.channel')}}</div>
-                </div>
-                <div class="poster" ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
-                <div class="md-tile-content meta">
-                  <h5>Likes: {{::video.likes}}</h5>
-                  <h2 class="title">
-                    <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}" layout="row">
-                      <span>{{::video.getText('video.title')}}</span>
-                      <ng-md-icon icon="play_circle_outline" size="36" style="fill:#fff;"></ng-md-icon>
-                    </a>
-                  </h2>
-                  <p class="intro">{{::video.intro}}</p>
-                </div>
-              </md-item-content>
-            </md-item>
-            <md-divider></md-divider>
-          </md-list>
-          <tabs-more></tabs-more>
-        </md-card-content>
-      </md-card>
-    </md-tab> -->
   </md-tabs>
-
-  <!-- <section items horizontal layout wrap>
-    <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in home.results | limitTo:21" channel="{{video.getText('video.channel')}}">
-      <div content>
-        <div meta horizontal start-justified layout>
-          <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
-        </div>
-        <div poster ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
-        <div caption absolute>
-          <h2 title>
-            <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
-              <span flex self-center>{{video.getText('video.title')}} </span>
-              <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
-            </a>
-          </h2>
-          <div intro>
-            <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 </section>
