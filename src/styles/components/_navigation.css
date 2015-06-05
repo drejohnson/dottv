@@ -1,0 +1,27 @@
+nav {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--md-pad);
+    text-align: center;
+
+    li {
+      display: inline;
+    }
+  }
+
+  a {
+    color: var(--black);
+    padding: var(--sm-pad) var(--md-pad);
+    text-decoration: none;
+    transition: var(--transition);
+
+    &:hover {
+    }
+
+    &:active {
+    }
+  }
+}

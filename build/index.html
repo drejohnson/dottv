@@ -42,9 +42,8 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
-    <script src="//cdn.sublimevideo.net/js/cbt0ojw3.js"></script>
-    <script src="scripts/webcomponents.min.js"></script>
-    <link rel="import" href="elements.html">
+    <script src="scripts/webcomponents-lite.min.js"></script>
+    <link rel="import" href="elements/elements.build.html">
 
     <link rel="stylesheet" href="styles/components/components.min.css">
 
@@ -53,53 +52,58 @@
 
   </head>
   <body fullbleed layout vertical ng-cloak>
-    <div id="outdated"></div>
-    <core-scaffold drawerWidth="120px" responsiveWidth="980px">
-      <core-header-panel navigation flex mode="seamed">
-        <core-toolbar class="branding">
-          <a class="logo" ui-sref="home">
-            <core-image logo sizing="cover" preload fade src="assets/images/logos/logo-red.svg"></core-image>
-          </a>
-        </core-toolbar>
-        <core-menu vertical layout theme="core-light-theme">
-          <core-item ui-sref-active="active" class="lifestyle" label="Lifestyle">
-            <a ui-sref="lifestyle" target="_self"></a>
-          </core-item>
-          <core-item ui-sref-active="active" class="music" label="Music">
-            <a ui-sref="music" target="_self"></a>
-          </core-item>
-          <core-item ui-sref-active="active" class="docu-series" label="Docu-Series">
-            <a ui-sref="docuSeries" target="_self"></a>
-          </core-item>
-          <core-item ui-sref-active="active" class="comedy" label="Comedy">
-            <a ui-sref="comedy" target="_self"></a>
-          </core-item>
-          <core-item ui-sref-active="active" class="radio-tv" label="Radio-TV-Film">
-            <a ui-sref="radioTvFilm" target="_self"></a>
-          </core-item>
-        </core-menu>
-      </core-header-panel>
-      <header class="header" tool horizontal layout>
-        <h1 class="pulse" brand-name flex self-center>tomorrow<span>pictures.tv</span></h1>
-        <div class="search" flex self-end>
-          <div id="sb-search" class="sb-search" horizontal end-justified layout>
-            <form>
-              <input name="q" ng-model="searchq" type="text" placeholder="Search... ">
-              <a class="sb-icon-search" href="#/search/{{searchq}}">
-              </a>
-            </form>
-          </div>
-        </div>
-      </header>
-      <main class="content">
-        <div id="flash-messages" tool horizontal layout>
-          <span>{{msg}}</span>
-        </div>
-        <core-animated-pages style="height:100%;" ng-cloak transitions="slide-from-right">
-          <div ui-view flex></div>
-        </core-animated-pages>
-      </main>
-    </core-scaffold>
+    <template is="dom-bind" id="app">
+
+      <paper-drawer-panel class="app" drawer-width="150px">
+        <paper-header-panel drawer>
+          <paper-toolbar id="drawer-toolbar">
+            <a class="logo" ui-sref="home" href="/">
+              <img src="assets/images/logos/logo-red.svg" alt="Logo" />
+            </a>
+          </paper-toolbar>
+          <nav role="navigation">
+            <ul class="menu">
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="docuSeries" href="/docu-series">Docu-Series</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="radioTvFilm" href="/radio-tv-film">Radio-TV-Film</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="music" href="/music">Music</a>
+              </l ui-sref-active="active"i>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="comedy" href="/comedy">Comedy</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="lifestyle" href="/lifestyle">Lifestyle</a>
+              </li>
+            </ul>
+          </nav>
+        </paper-header-panel>
+        <paper-header-panel main>
+          <paper-toolbar id="header-toolbar">
+            <paper-icon-button icon="menu" style="color:white;position:absolute;right:0;" paper-drawer-toggle></paper-icon-button>
+            <h1 class="brand-name">tomorrow<span>pictures.tv</span></h1>
+          </paper-toolbar>
+          <main class="content">
+            <div class="splash" ng-if="router.isNavigating">
+              <div class="loader">Loading...</div>
+            </div>
+            <div ui-view class=""></div>
+          </main>
+        </paper-header-panel>
+      </paper-drawer-panel>
+
+      <platinum-sw-register auto-register
+                              clients-claim
+                              skip-waiting
+                              on-service-worker-installed="displayInstalledToast">
+        <platinum-sw-cache default-cache-strategy="networkFirst"
+                           precache-file="precache.json">
+        </platinum-sw-cache>
+      </platinum-sw-register>
+    </template>
 
     <script src="scripts/vendor.min.js"></script>
 

@@ -1,34 +1,120 @@
-<section class="featured" vertical layout>
-  <header class="featuredBanner" horizontal start-justified layout>
-    <h2 self-center>Featured Video: <span>{{home.featuredTitle}}</span></h2>
-  </header>
-  <div class="videoEmbed" horizontal start-justified layout>
-    <div class="flex-video animate-repeat" ng-repeat="featured in home.featuredResults">
-      <video id="video" class="sublime" poster="{{home.featuredPoster}}" width="1600" height="900" title="Boxing Chick Eposide 1" data-sharing-url="http://beta.tomorrowpictures.com/#/{{featured.getText('video.channel')}}/{{featured.id}}/{{featured.slug}}" data-sharing-title="{{home.featuredTitle}}" data-sharing-text="Watch and Share {{home.featuredTitle}}" data-sharing-twitter-text="Watch and Share {{home.featuredTitle}}" data-embed-type="auto" data-autoplay='true' data-uid="{{home.youtubeID}}" data-youtube-id="{{home.youtubeID}}" data-autoresize="fill" preload="none">
-      </video>
-    </div>
-  </div>
-</section>
+<section class="home">
+  <paper-toolbar id="featured-header" class="dark-background">
+    <h2>
+      <span>Featured Video</span>
+      <span></span>
+    </h2>
+  </paper-toolbar>
+  <section class="featured-video">
+    <div class="videogular-container">
+      <videogular vg-player-ready="home.onPlayerReady($API)" vg-auto-play="true" vg-autoplay="home.config.autoPlay">
+        <vg-media vg-src="home.config.sources" vg-youtube="rel=0;showinfo=0"></vg-media>
 
-<section items horizontal layout wrap>
-  <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in home.results | limitTo:21" channel="{{video.getText('video.channel')}}">
-    <div content>
-      <div meta horizontal start-justified layout>
-        <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
-        <!-- <div class="posted" self-center>Posted: <span class="postedTime" am-time-ago="{{video.getDate('video.date')}}" am-preprocess="utc"></span></div> -->
-      </div>
-      <div poster ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
-      <div caption absolute>
-        <h2 title>
-          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
-            <span flex self-center>{{video.getText('video.title')}} </span>
-            <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
-          </a>
-        </h2>
-        <div intro>
-          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
+        <vg-controls vg-autohide="home.config.autoHide" vg-autohide-time="home.config.autoHideTime">
+          <vg-play-pause-button></vg-play-pause-button>
+          <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+          </vg-scrub-bar>
+          <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+          <vg-volume>
+            <vg-mute-button></vg-mute-button>
+            <vg-volume-bar></vg-volume-bar>
+          </vg-volume>
+          <vg-fullscreen-button></vg-fullscreen-button>
+        </vg-controls>
+
+        <vg-overlay-play></vg-overlay-play>
+        <vg-poster vg-url='home.config.plugins.poster'></vg-poster>
+        <div class="logo-layer" ng-show="home.API.currentState != 'play'">
+          <img src="assets/images/logos/logo-red.svg">
+        </div>
+      </videogular>
+    </div>
+  </section>
+  <!-- New Tabs -->
+  <md-tabs class="tabs-header md-primary" md-dynamic-height md-border-bottom>
+    <!-- Latest Tab -->
+    <md-tab label="Latest">
+      <md-card class="tab-card" flex>
+        <md-card-content class="tab-content">
+          <h2 class="label" layout-padding-sm>Latest Videos</h2>
+          <md-list layout="row" layout-sm="column" layout-fill layout-wrap>
+            <md-item ng-repeat="video in home.results | filter:search | orderBy:'-index'" class="{{::video.getText('video.channel') | lowercase}}" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex="100" flex-gt-md="50" flex-gt-lg="33">
+              <md-item-content class="item">
+                <div class="channelHeader" layout="row">
+                  <h3 class="channelTitle">{{::video.getText('video.channel')}}</h3>
+                </div>
+                <div class="poster" ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
+                <div class="md-tile-content meta">
+                  <h2 class="title">
+                    <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" layout="row">
+                      <span>{{::video.getText('video.title')}}</span>
+                      <ng-md-icon icon="play_circle_outline" size="36" style="fill:#fff;"></ng-md-icon>
+                    </a>
+                  </h2>
+                  <p class="intro">{{::video.getText('video.shortlede')}}</p>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+            <md-divider></md-divider>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </md-tab>
+    <!-- Favorites -->
+    <!-- <md-tab label="Favorites">
+      <md-card class="tab-card" flex>
+        <md-card-content class="tab-content">
+          <h2 class="label" layout-padding-sm>Most Liked Videos</h2>
+          <md-list layout="row" layout-sm="column" layout-fill layout-wrap>
+            <md-item ng-repeat="video in home.results | limitTo:21 | filter:search | orderBy:'-likes'" class="{{::video.getText('video.channel') | lowercase}}" channel="{{::video.getText('video.channel') | lowercase}}" layout-padding-sm flex flex-gt-sm="50" flex-gt-md="33">
+              <md-item-content class="item">
+                <div class="channelHeader" layout="row">
+                  <div class="channelTitle">{{::video.getText('video.channel')}}</div>
+                </div>
+                <div class="poster" ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
+                <div class="md-tile-content meta">
+                  <h5>Likes: {{::video.likes}}</h5>
+                  <h2 class="title">
+                    <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}" layout="row">
+                      <span>{{::video.getText('video.title')}}</span>
+                      <ng-md-icon icon="play_circle_outline" size="36" style="fill:#fff;"></ng-md-icon>
+                    </a>
+                  </h2>
+                  <p class="intro">{{::video.intro}}</p>
+                </div>
+              </md-item-content>
+            </md-item>
+            <md-divider></md-divider>
+          </md-list>
+          <tabs-more></tabs-more>
+        </md-card-content>
+      </md-card>
+    </md-tab> -->
+  </md-tabs>
+
+  <!-- <section items horizontal layout wrap>
+    <div class="animate-repeat {{video.getText('video.channel')}}" item ng-repeat="video in home.results | limitTo:21" channel="{{video.getText('video.channel')}}">
+      <div content>
+        <div meta horizontal start-justified layout>
+          <div class="channelName" flex self-center>{{video.getText('video.channel')}}</div>
+        </div>
+        <div poster ng-style="{ 'background-image': 'url(' + video.getImageView('video.poster', 'column').url +')' }"></div>
+        <div caption absolute>
+          <h2 title>
+            <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
+              <span flex self-center>{{video.getText('video.title')}} </span>
+              <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
+            </a>
+          </h2>
+          <div intro>
+            <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section> -->
 </section>

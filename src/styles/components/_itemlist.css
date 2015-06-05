@@ -1,0 +1,78 @@
+// Item in Grid
+md-item,
+.item {
+  display: block;
+  position: relative;
+}
+.channelHeader {
+  background-color: rgba(var(--brandRed), 1);
+  height: 30px;
+  padding: 0 20px;
+  .channelTitle {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+[poster],
+.poster {
+  background-color: inherit;
+  opacity: 1;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+[poster],
+.poster {
+  display: block;
+  width: 100%;
+  height: 50vw;
+  background-color: #111;
+  @media (--medium) {
+    height: 20vw;
+  };
+}
+
+.meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  color: #fff;
+  padding: 0 6px;
+  margin-top: 30px;
+
+  .title {
+    a {
+      color: var(--brandWhite);
+      /*opacity: 0.3;*/
+    }
+  }
+
+  .title,
+  .intro {
+    a {
+      display: block;
+    }
+  }
+  .title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.6rem;
+    line-height: 1;
+    font-weight: 800;
+    margin: 16px 0;
+
+    @media (--medium) {
+      font-size: 3.2rem;
+    }
+  }
+  .intro {
+    font-size: 2.2rem;
+    line-height: 1;
+    visibility: hidden;
+    @media (--medium) {
+      font-size: 2.0rem;
+      visibility: visible;
+    }
+  }
+}

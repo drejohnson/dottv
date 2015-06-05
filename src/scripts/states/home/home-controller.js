@@ -28,23 +28,6 @@
         vm.totalPages = video.total_pages;
         if (vm.totalPages > 1) vm.paginationRange = _.range(1, vm.totalPages+1);
         // $log.log(vm.paginationRange);
-
-        vm.playerLoaded = false;
-
-      }).then(function () {
-        return $timeout(function () {
-          var player = SublimeVideoLoad.load(function() {
-            vm.playerLoaded = true;
-            // sublimevideo.unprepare('video');
-            sublimevideo.prepare('video');
-            _.defer(function(){$scope.$apply();});
-
-            $scope.$on('$destroy', function () {
-              sublimevideo.unprepare('video');
-              // player.dispose();
-            });
-          });
-        }, 100);
       });
       GetFeaturedVideo.getvideos().then(function(featured){
         vm.featured = featured;
@@ -59,6 +42,46 @@
         };
         vm.youtubeID = videoid();
 
+        // Videogular
+        vm.video = 'https://www.youtube.com/watch?v=' + vm.youtubeID;
+        vm.currentTime = 0;
+        vm.totalTime = 0;
+        vm.state = null;
+        vm.volume = 1;
+        vm.isCompleted = false;
+        vm.API = null;
+        vm.onPlayerReady = function(API) {
+            vm.API = API;
+        };
+        vm.onCompleteVideo = function () {
+          vm.isCompleted = true;
+        };
+
+        vm.onUpdateState = function (state) {
+          vm.state = state;
+        };
+
+        vm.onUpdateTime = function (currentTime, totalTime) {
+          vm.currentTime = currentTime;
+          vm.totalTime = totalTime;
+        };
+
+        vm.onUpdateVolume = function (newVol) {
+          vm.volume = newVol;
+        };
+
+        vm.config = {
+          autoHide: true,
+          autoHideTime: 3000,
+          autoPlay: true,
+          preload: 'auto',
+          sources: [
+            {src: vm.video },
+          ],
+          plugins: {
+            poster: 'https://download.unsplash.com/photo-1420819453217-57b6badd9e19'
+          }
+        };
       });
     }
   }

@@ -22,7 +22,7 @@ module.exports = {
     bundleName: 'index.bundle.js'
   },
   styles: {
-    src: [src + '/styles/main.scss', src + '/styles/components/components.scss'],
+    src: [src + '/styles/main.css'],
     tmp: tmp + '/styles',
     dest: dest + '/styles',
     options: {
@@ -45,7 +45,7 @@ module.exports = {
   },
   polymer: {
     src: src + '/elements.html',
-    tmp: tmp + '/webcomponents',
+    tmp: tmp + '/elements',
     dest: dest
   },
   templates: {

@@ -1,0 +1,9 @@
+@media (--large) {
+  .featured-video{
+    height: calc(100% - 176px);
+  }
+  .videogular-container {
+    width: 100%;
+    height: calc(100vh - 176px);
+  }
+}

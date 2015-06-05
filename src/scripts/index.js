@@ -13,7 +13,14 @@
     'ui.router',
     'ngAnimate',
     'ngSanitize',
+    'ngMaterial',
     'prismic.io',
+    'com.2fdevs.videogular',
+    'com.2fdevs.videogular.plugins.controls',
+    'com.2fdevs.videogular.plugins.overlayplay',
+    'com.2fdevs.videogular.plugins.buffering',
+    'com.2fdevs.videogular.plugins.poster',
+    'info.vietnamcode.nampnq.videogular.plugins.youtube',
     'angularMoment',
     'ngProgress',
     'angulartics',
@@ -60,6 +67,7 @@
     });
   })
   .config(urlConfig)
+  .config(mdConfig)
   .config(prismicConfig);
 
   function urlConfig($urlRouterProvider, $locationProvider) {
@@ -75,6 +83,28 @@
     PrismicProvider.setClientSecret('');
     PrismicProvider.setLinkResolver(function(ctx, doc) {
       return '#/' + doc.id + '/' + doc.slug + ctx.maybeRefParam;
+    });
+  }
+
+  function mdConfig($mdThemingProvider) {
+    // $locationProvider.html5Mode(true);
+  // Theme Config
+  var brandBlack = $mdThemingProvider.extendPalette('grey', {
+    '500': '212121',
+    'A100': '1a1a1a'
+  });
+  var brandRed = $mdThemingProvider.extendPalette('red', {
+    '500': 'c0392b'
+  });
+  $mdThemingProvider.definePalette('brandBlack', brandBlack);
+  $mdThemingProvider.definePalette('brandRed', brandRed);
+  $mdThemingProvider.theme('default')
+    .primaryPalette('brandBlack')
+    .accentPalette('brandRed', {
+      'default': '500'
+    })
+    .backgroundPalette('brandBlack', {
+      'default': 'A100'
     });
   }
 

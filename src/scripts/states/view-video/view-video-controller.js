@@ -15,6 +15,7 @@
   function ViewVideoCtrl($scope, $rootScope, GetVideoView, GetRelatedVideos, SublimeVideoLoad, $stateParams, $filter, $timeout, $log) {
     var vm = this;
     var id = $stateParams.id;
+    var videoid = '';
 
     vm.playerLoaded = false;
 
@@ -48,49 +49,49 @@
           return embedId;
         };
         vm.youtubeID = videoid();
+        $log.log(vm.poster);
 
-        // $scope.$watch(function() { return vm.youtubeID; },
-        //   function() {
-        //
-        //     vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
-        //     $log.log(vm.shareHref);
-        //
-        //     vm.playerLoaded = false;
-        //
-        //     var player = SublimeVideoLoad.load(function() {
-        //       vm.playerLoaded = true;
-        //
-        //       sublimevideo.prepare('video');
-        //       // sublimevideo.prepareAndPlay('video');
-        //       _.defer(function(){$scope.$apply();});
-        //
-        //       $scope.$on('$destroy', function () {
-        //         vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);
-        //         // vm.playerLoaded = false;
-        //         // sublimevideo.prepareAndPlay('video');
-        //         sublimevideo.unprepare('video');
-        //         // videoid();
-        //         // player.dispose();
-        //       });
-        //     });
-        //
-        //   }
-        // );
+        // Videogular
+        vm.currentVideo = vm.videourl;
+        vm.currentTime = 0;
+        vm.totalTime = 0;
+        vm.state = null;
+        vm.volume = 1;
+        vm.isCompleted = false;
+        vm.API = null;
+        vm.onPlayerReady = function(API) {
+            vm.API = API;
+        };
+        vm.onCompleteVideo = function () {
+          vm.isCompleted = true;
+        };
 
-      }).then(function () {
-        return $timeout(function () {
-          var player = SublimeVideoLoad.load(function() {
-            vm.playerLoaded = true;
-            // sublimevideo.unprepare('video');
-            sublimevideo.prepare('video');
-            _.defer(function(){$scope.$apply();});
+        vm.onUpdateState = function (state) {
+          vm.state = state;
+        };
 
-            $scope.$on('$destroy', function () {
-              sublimevideo.unprepare('video');
-              // player.dispose();
-            });
-          });
-        }, 100);
+        vm.onUpdateTime = function (currentTime, totalTime) {
+          vm.currentTime = currentTime;
+          vm.totalTime = totalTime;
+        };
+
+        vm.onUpdateVolume = function (newVol) {
+          vm.volume = newVol;
+        };
+
+        vm.config = {
+          autoHide: true,
+          autoHideTime: 3000,
+          autoPlay: true,
+          preload: 'auto',
+          sources: [
+            {src: vm.currentVideo },
+          ],
+          plugins: {
+            poster: vm.poster
+          }
+        };
+
       });
 
       // $log.log(GetVideoView.videoId(id));
