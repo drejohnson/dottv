@@ -75,8 +75,8 @@
 
   function urlConfig($urlRouterProvider, $locationProvider, $httpProvider, $compileProvider, $rootScopeProvider) {
     $locationProvider.html5Mode({
-  		enabled: true,
-  		requireBase: true
+  		enabled: false,
+  		requireBase: false
   	});
   	$httpProvider.useApplyAsync(true);
     $compileProvider.debugInfoEnabled(false);
