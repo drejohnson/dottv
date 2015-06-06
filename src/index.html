@@ -42,12 +42,17 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
+
+    <base href="/">
+
+    <script src="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.js"></script>
     <!-- build:js scripts/webcomponents-lite.min.js -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <!-- endbuild -->
     <link rel="import" href="elements/elements.build.html">
 
     <!-- build:css styles/components/components.min.css -->
+    <link rel="stylesheet" href="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
@@ -178,6 +183,7 @@
     <script src="scripts/states/lifestyle/lifestyle-controller.js"></script>
     <script src="scripts/states/home/home.js"></script>
     <script src="scripts/states/home/home-controller.js"></script>
+    <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

@@ -22,4 +22,28 @@
   var querySelector = document.querySelector.bind(document);
   var body = document.body;
 
+  //event listener form DOM ready
+  function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+      window.onload = func;
+    } else {
+      window.onload = function() {
+        if (oldonload) {
+          oldonload();
+        }
+        func();
+      };
+    }
+  }
+  //call function after DOM ready
+  addLoadEvent(function(){
+    outdatedBrowser({
+      bgColor: '#f25648',
+      color: '#ffffff',
+      lowerThan: 'transform',
+      languagePath: '../outdatedbrowser/lang/en.html'
+    });
+  });
+
 })();
