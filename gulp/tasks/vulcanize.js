@@ -19,10 +19,10 @@ gulp.task('vulcanize', function () {
 });
 
 gulp.task('polybuild', function() {
-  return gulp.src('src/elements/elements.html')
+  return gulp.src('./src/elements/elements.html')
   .pipe(polybuild({
     maximumCrush: true
   }))
-  .pipe(gulp.dest(config.dest))
+  .pipe(gulp.dest('./src/elements'))
   .pipe(browserSync.reload({stream:true}));
 });

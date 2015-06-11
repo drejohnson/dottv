@@ -67,7 +67,7 @@ iron-icon:not(:last-child) {
 }
 
 #drawer-toolbar,
-#header-toolbar {
+#mainToolbar {
   background-color: #212121;
 }
 

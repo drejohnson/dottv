@@ -1501,9 +1501,9 @@ tfoot td {
   display: block;
 }
 
-.content {
+/*.content {
   background-color: #eee;
-}
+}*/
 
 .tabs #selectionBar.paper-tabs {
   background-color: #c0392b;
@@ -1770,7 +1770,7 @@ iron-icon:not(:last-child) {
 }
 
 #drawer-toolbar,
-#header-toolbar {
+#mainToolbar {
   background-color: #212121;
 }
 

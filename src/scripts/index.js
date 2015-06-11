@@ -27,7 +27,6 @@
     'ngProgress',
     'angulartics',
     'angulartics.google.analytics',
-    'infinite-scroll',
     'templates',
     'home',
     'channels',
@@ -43,8 +42,7 @@
 
   angular
   .module('app')
-  .run(function ($rootScope, Prismic, AppSettings, ngProgress, flashMessageService, $log) {
-    $rootScope.msg = flashMessageService.msg;
+  .run(function ($rootScope, Prismic, AppSettings, ngProgress, $log) {
     // log location change
     // Remove from production!
     $rootScope.$on('$locationChangeSuccess', function () {
@@ -115,5 +113,12 @@
         'default': 'A100'
       });
   }
+
+  // Bootstrapping Angular
+  angular.element(document).ready(function() {
+    angular.bootstrap(document, [ 'app' ], {
+      // strictDi: true
+    });
+  });
 
 })();

@@ -12,7 +12,7 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($scope, GetAllVideos, GetFeaturedVideo, $filter, $state, $timeout, $log) {
+  function HomeCtrl($scope, $sce, GetAllVideos, GetFeaturedVideo, $filter, $state, $timeout, $log) {
     var vm = this;
     var type= 'videos';
     var channel =  'Featured';
@@ -25,7 +25,7 @@
         vm.results = video.results;
         vm.totalPages = video.total_pages;
         if (vm.totalPages > 1) vm.paginationRange = _.range(1, vm.totalPages+1);
-        $log.log(vm.videos);
+        // $log.log(vm.videos);
       });
       GetFeaturedVideo.getvideos().then(function(featured){
         vm.featured = featured;
@@ -76,6 +76,7 @@
           sources: [
             {src: vm.video },
           ],
+          // sources: vm.videos[0].sources,
           plugins: {
             poster: vm.featuredPoster
           }

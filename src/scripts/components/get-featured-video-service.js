@@ -18,7 +18,7 @@
         var deferred = $q.defer();
         $log.debug('initializing featured video');
         Prismic.ctx().then(function(ctx) {
-          ctx.api.form('featured').pageSize(100).page().ref(ctx.ref).submit(function(err, data){
+          ctx.api.form('featured').pageSize(1).page().ref(ctx.ref).submit(function(err, data){
             deferred.resolve(data);
           });
         });

@@ -5,7 +5,7 @@ var $            = require('gulp-load-plugins')();
 var config       = require('../config').html;
 
 // Scan Your HTML For Assets & Optimize Them
-gulp.task('html', ['vulcanize', 'html:partials'], function () {
+gulp.task('html', ['polybuild', 'html:partials'], function () {
   var assets = $.useref.assets({searchPath: '{.tmp,src}'});
   var opts = {comments:true};
 

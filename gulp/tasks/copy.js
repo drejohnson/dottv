@@ -8,6 +8,7 @@ var config  = require('../config');
 gulp.task('copy', function () {
   return gulp.src([
     'src/*',
+    'src/elements/*.build.{html,js}',
     '!src/*.html',
     '!src/bower_components',
     '!src/webcomponents'

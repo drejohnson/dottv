@@ -1,49 +1,42 @@
-/*!
- *
- *  Web Starter Kit
- *  Copyright 2014 Google Inc. All rights reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *    https://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
- *
- */
-(function () {
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+(function(document) {
   'use strict';
 
-  var querySelector = document.querySelector.bind(document);
-  var body = document.body;
+  // Grab a reference to our auto-binding template
+  // and give it some initial binding values
+  // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
+  // var app = document.querySelector('#app');
 
-  //event listener form DOM ready
-  function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-      window.onload = func;
-    } else {
-      window.onload = function() {
-        if (oldonload) {
-          oldonload();
-        }
-        func();
-      };
-    }
-  }
-  //call function after DOM ready
-  addLoadEvent(function(){
-    outdatedBrowser({
-      bgColor: '#f25648',
-      color: '#ffffff',
-      lowerThan: 'transform',
-      languagePath: '../outdatedbrowser/lang/en.html'
-    });
-  });
+  // app.displayInstalledToast = function() {
+  //   document.querySelector('#caching-complete').show();
+  // };
 
-})();
+  // Listen for template bound event to know when bindings
+  // have resolved and content has been stamped to the page
+  // app.addEventListener('dom-change', function() {
+  //   console.log('Our app is ready to rock!');
+  // });
+
+  // See https://github.com/Polymer/polymer/issues/1381
+  // window.addEventListener('WebComponentsReady', function() {
+  //   // imports are loaded and elements have been registered
+  //   console.log('Elements imported!');
+  // });
+
+  // Close drawer after menu item is selected if drawerPanel is narrow
+  // app.onMenuSelect = function() {
+  //   var drawerPanel = document.querySelector('#paperDrawerPanel');
+  //   if (drawerPanel.narrow) {
+  //     drawerPanel.closeDrawer();
+  //   }
+  // };
+
+})(document);
