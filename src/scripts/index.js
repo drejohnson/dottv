@@ -27,22 +27,31 @@
     'ngProgress',
     'angulartics',
     'angulartics.google.analytics',
+    'djds4rce.angular-socialshare',
+    'plangular',
     'templates',
     'home',
     'channels',
     'viewVideo',
     'lifestyle',
-    'movies',
     'music',
     'docuSeries',
     'comedy',
     'radioTv',
+    'streams',
     'search'
   ]);
 
   angular
   .module('app')
-  .run(function ($rootScope, Prismic, AppSettings, ngProgress, $log) {
+  .config(urlConfig)
+  .config(mdConfig)
+  .config(function(plangularConfigProvider){
+    plangularConfigProvider.clientId = 'eeaefb8dd1da832af310585f56893869';
+  })
+  .config(prismicConfig)
+  .run(function ($rootScope, $state, Prismic, AppSettings, ngProgress, $log) {
+    $rootScope.$state = $state;
     // log location change
     // Remove from production!
     $rootScope.$on('$locationChangeSuccess', function () {
@@ -66,22 +75,26 @@
       ngProgress.height('4px');
 
     });
-  })
-  .config(urlConfig)
-  .config(mdConfig)
-  .config(prismicConfig);
+  });
 
+  // UI-Router, Performance Config
   function urlConfig($urlRouterProvider, $locationProvider, $httpProvider, $compileProvider, $rootScopeProvider) {
     $locationProvider.html5Mode({
-  		enabled: false,
+  		enabled: true,
   		requireBase: false
-  	});
+  	}).hashPrefix('!');
   	$httpProvider.useApplyAsync(true);
     $compileProvider.debugInfoEnabled(false);
     $rootScopeProvider.digestTtl(8);
   	return $urlRouterProvider.otherwise('/');
   }
 
+  // Soundcloud Player Config
+  function plangularConfig(plangularConfigProvider) {
+    plangularConfig.clientId = 'eeaefb8dd1da832af310585f56893869';
+  }
+
+  // Prismic API Config
   function prismicConfig(PrismicProvider) {
     PrismicProvider.setApiEndpoint('https://dottv.prismic.io/api');
     PrismicProvider.setAccessToken('');
@@ -92,8 +105,8 @@
     });
   }
 
+  // Material Angular Theme Config
   function mdConfig($mdThemingProvider) {
-    // $locationProvider.html5Mode(true);
     // Theme Config
     var brandBlack = $mdThemingProvider.extendPalette('grey', {
       '500': '212121',

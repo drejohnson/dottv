@@ -20,7 +20,13 @@
   function config($stateProvider) {
     $stateProvider
       .state('search', {
-        url: '/search/:q',
+        abstract: true,
+        url: '/search',
+        template: '<ui-view/>'
+      });
+    $stateProvider
+      .state('search.q', {
+        url: '/:q',
         templateUrl: 'scripts/states/search/search.tpl.html',
         controller: 'SearchCtrl as search'
       });

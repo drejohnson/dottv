@@ -592,7 +592,7 @@ button:disabled {
   opacity: .40;
 }
 nav {
-    padding: 8px 16px;
+    padding: 8px 0;
     padding-top: 16px;
 }
 nav ul {
@@ -608,8 +608,8 @@ nav ul li {
 }
 nav a {
   color: #444;
-  padding: 8px 16px;
-  padding: .8rem 1.6rem;
+  padding: 8px 0;
+  padding: .8rem 0;
   text-decoration: none;
   transition: .25s ease;
 }
@@ -1537,7 +1537,7 @@ md-item, .item {
 
 .bottomPanel .posted {
   background-color: #212121;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   height: 60px;
@@ -1551,7 +1551,7 @@ md-item, .item {
 .bottomPanel .title {
   width: 90%;
   margin: 0 auto;
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   padding: 20px 0;
@@ -1567,26 +1567,55 @@ md-item, .item {
   line-height: 1.625;
 }
 
-.related {
+.related,
+.search,
+.downloads {
   width: 90%;
   margin: 0 auto;
 }
 
-.related .title {
+.related .title, .search .title, .downloads .title {
   width: 100%;
 }
 
-.related h2 span {
+.related h2 span, .search h2 span, .downloads h2 span {
   color: #c0392b;
 }
 
-.related .items {}
+.related .items, .search .items, .downloads .items {}
 
-.related .item {
+.related .item, .search .item, .downloads .item {
   background-color: #212121;
   width: 100%;
   padding: 8px;
   margin: 5px;
+}
+
+.search {
+  /*margin-top: 60px;*/
+}
+
+.search h2 {
+  font-size: 18px;
+}
+
+.banner-download {
+  background-color: #f35958;
+    font-size: 32px;
+  padding: 10px;
+  margin: 15px 0 0;
+}
+
+.banner-download h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.banner-download h2 a {
+  color: #ecf0f1;
 }
 loading {
   display: block;
@@ -1595,6 +1624,22 @@ loading {
   height: 200px;
   top: 20%;
   left: 0;
+}
+.downloads {
+  width: 90%;
+  margin: 0 auto;
+}
+.downloads .items .item {
+  width: 100%;
+}
+.downloads .items .item .cover .caption a > h2 {
+  color: #ecf0f1;
+}
+.downloads .items .item .cover .coverImg {
+  background-size: cover;
+  background-position: center top;
+  min-height: 265px;
+  margin-bottom: 16px;
 }
 .channelHeader .channelTitle {
   color: #20172C;
@@ -1756,8 +1801,8 @@ paper-drawer-panel #main  { background-color: #1a1a1a }
 paper-drawer-panel::shadow #main { background-color: #1a1a1a; }
 
 button {
-  width: 160px;
-  height: 40px;
+  max-width: 160px;
+  max-height: 40px;
   font-size: 16px;
   margin: 8px;
 }
@@ -1769,22 +1814,27 @@ iron-icon:not(:last-child) {
   margin-right: 8px;
 }
 
-#drawer-toolbar,
+#drawerToolbar,
 #mainToolbar {
   background-color: #212121;
 }
 
-#drawer-toolbar {
+#drawerToolbar {
+  background-color: transparent!important;
   width: 100%;
-  height: 150px
+  height: 150px!important;
 }
 
-#drawer-toolbar .toolbar-tools.paper-toolbar {
+.draw-toolbar {
+  height: 150px;
+}
+
+#drawerToolbar .toolbar-tools.paper-toolbar {
   height: 150px;
   padding: 0;
 }
 
-#drawer-toolbar iron-image {
+#drawerToolbar iron-image {
   height: 150px;
 }
 
@@ -1943,9 +1993,27 @@ nav {
   color: #ecf0f1;
 }
 
+#featured-header h1, #page-header h1 {}
+
 #featured-header h2, #page-header h2 {
   font-weight: 300;
   text-transform: uppercase;
+}
+
+#page-header {
+      font-size: 36px;
+    font-size: 18px;
+  min-height: 100px;
+}
+
+#page-header .paper-toolbar {
+  min-height: 100px;
+}
+
+#page-header h1 {
+  font-size: 36px;
+  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .dark-background {
@@ -2091,8 +2159,56 @@ videogular vg-poster img, [videogular] vg-poster img {
     font-size: 1.8rem;
     visibility: visible;
   }
-  .related .item{
+  .bottomPanel .posted{
+    font-size: 18px;
+  }
+  .bottomPanel .title{
+    font-size: 26px;
+  }
+  .related .item, .search .item, .downloads .item{
     width: calc(50% - 10px);
+  }
+  .downloads .items .item .cover{
+    width: calc(99.99% * 1/4 - (8px - 8px * 1/4));
+    min-width: 359px;
+  }
+  .downloads .items .item .cover:nth-child(n){
+    float: left;
+    margin-right: 8px;
+    clear: none;
+  }
+  .downloads .items .item .cover:last-child{
+    margin-right: 0;
+  }
+  .downloads .items .item .cover:nth-child(0n){
+    margin-right: 0;
+  }
+  .downloads .items .item .cover:nth-child(0n + 1){
+    clear: left;
+  }
+  .downloads .items .item .cover .coverImg{
+    height: 359px;
+    margin-bottom: 0;
+  }
+  .downloads .items .item .playlist{
+    width: calc(99.99% * 2/5 - (8px - 8px * 2/5));
+  }
+  .downloads .items .item .playlist:nth-child(n){
+    float: left;
+    margin-right: 8px;
+    clear: none;
+  }
+  .downloads .items .item .playlist:last-child{
+    margin-right: 0;
+  }
+  .downloads .items .item .playlist:nth-child(0n){
+    margin-right: 0;
+  }
+  .downloads .items .item .playlist:nth-child(0n + 1){
+    clear: left;
+  }
+  #page-header h1{
+    font-size: 3.6rem;
   }
 }
 
@@ -2103,7 +2219,7 @@ videogular vg-poster img, [videogular] vg-poster img {
   videogular .iconButton, [videogular] .iconButton{
     font-size: 2.8rem;
   }
-  .related .item{
+  .related .item, .search .item, .downloads .item{
     width: calc(33% - 10px);
   }
   .featured-video{

@@ -14,7 +14,7 @@ nav {
 
   a {
     color: var(--black);
-    padding: var(--sm-pad) var(--md-pad);
+    padding: var(--sm-pad) 0;
     text-decoration: none;
     transition: var(--transition);
 

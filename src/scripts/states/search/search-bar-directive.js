@@ -27,11 +27,8 @@
       scope: {},
       templateUrl: 'search/search-bar-directive.tpl.html',
       replace: false,
-      controllerAs: 'searchBar',
-      controller: function () {
-        var vm = this;
-        vm.name = 'searchBar';
-      },
+      controllerAs: 'search',
+      controller: 'SearchCtrl',
       link: function (scope, element, attrs) {
         /*jshint unused:false */
       }

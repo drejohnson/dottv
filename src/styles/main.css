@@ -16,6 +16,7 @@
 @import 'components/_tables.css';
 @import 'components/_layout.css';
 @import 'components/_loading.css';
+@import 'components/_download.css';
 @import 'modules/_channels.css';
 @import 'modules/_featured-video-section.css';
 
@@ -53,8 +54,8 @@ paper-drawer-panel #main  { background-color: #1a1a1a }
 paper-drawer-panel::shadow #main { background-color: #1a1a1a; }
 
 button {
-  width: 160px;
-  height: 40px;
+  max-width: 160px;
+  max-height: 40px;
   font-size: 16px;
   margin: 8px;
 }
@@ -66,22 +67,27 @@ iron-icon:not(:last-child) {
   margin-right: 8px;
 }
 
-#drawer-toolbar,
+#drawerToolbar,
 #mainToolbar {
   background-color: #212121;
 }
 
-#drawer-toolbar {
+#drawerToolbar {
+  background-color: transparent!important;
   width: 100%;
-  height: 150px
+  height: 150px!important;
 }
 
-#drawer-toolbar .toolbar-tools.paper-toolbar {
+.draw-toolbar {
+  height: 150px;
+}
+
+#drawerToolbar .toolbar-tools.paper-toolbar {
   height: 150px;
   padding: 0;
 }
 
-#drawer-toolbar iron-image {
+#drawerToolbar iron-image {
   height: 150px;
 }
 
@@ -243,9 +249,27 @@ nav {
   background-color: #1a1a1a;
   color: #ecf0f1;
 
+  h1 {
+
+  }
+
   h2 {
     font-weight: 300;
     text-transform: uppercase;
+  }
+}
+
+#page-header {
+  min-height: 100px;
+  .paper-toolbar {
+    min-height: 100px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    @media (--medium) {
+      font-size: 3.6rem;
+    }
   }
 }
 

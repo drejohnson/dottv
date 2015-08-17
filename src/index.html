@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Channel Oriented Infotainment">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <meta name="og:url" content="https://beta.tomorrowpictures.tv">
+    <meta property="og:image" content="/assets/images/logos/logo-red.jpg" />
+    <meta name="og:url" content="https://tomorrowpictures.tv">
     <meta name="og:type" content="website">
+
     <meta name="og:description" content="Channel Oriented Infotainment">
     <meta name="og:title" content="Tomorrow Pictures TV">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Channel Oriented Infotainment">
     <meta name="og:site_name" content="Tomorrow Pictures TV">
-    <link rel="canonical" href="https://beta.tomorrowpictures.tv">
+    <link rel="canonical" href="https://tomorrowpictures.tv">
     <meta name="twitter:title" content="Tomorrow Pictures TV">
 
     <title ng-bind="pageTitle"></title>
@@ -34,9 +35,9 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+    <meta name="msapplication-TileColor" content="#c0392b">
 
-    <meta name="theme-color" content="#3372DF">
+    <meta name="theme-color" content="#c0392b">
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
@@ -63,82 +64,98 @@
   <body unresolved class="fullbleed layout vertical" ng-cloak>
     <span id="browser-sync-binding"></span>
 
-    <paper-drawer-panel id="paperDrawerPanel" drawer-width="150px">
-      <div drawer>
+    <div id="app">
+      <paper-drawer-panel id="paperDrawerPanel" drawer-width="150px">
+        <div drawer>
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawer-toolbar">
-          <a class="logo" ui-sref="home" href="/">
-            <img src="assets/images/logos/logo-red.svg" alt="Logo" />
-          </a>
-        </paper-toolbar>
+          <!-- Drawer Toolbar -->
+          <paper-toolbar id="drawerToolbar" class="drawer-toolbar">
+            <a class="logo" ui-sref="home" href="/">
+              <img src="assets/images/logos/logo-red.svg" alt="Logo" />
+            </a>
+          </paper-toolbar>
 
-        <!-- Drawer Content -->
-        <nav role="navigation">
-          <ul class="menu">
-            <li ui-sref-active="active" class="layout center-justified">
-              <a ui-sref="docuSeries" href="/docu-series">Docu-Series</a>
-            </li>
-            <li ui-sref-active="active" class="layout center-justified">
-              <a ui-sref="radioTvFilm" href="/radio-tv-film">Radio-TV-Film</a>
-            </li>
-            <li ui-sref-active="active" class="layout center-justified">
-              <a ui-sref="music" href="/music">Music</a>
-            </l ui-sref-active="active"i>
-            <li ui-sref-active="active" class="layout center-justified">
-              <a ui-sref="comedy" href="/comedy">Comedy</a>
-            </li>
-            <li ui-sref-active="active" class="layout center-justified">
-              <a ui-sref="lifestyle" href="/lifestyle">Lifestyle</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="drawer-footer">
-          <a href="http://tomorrowpictures.com">
-            <img src="/assets/images/logos/tpi-logo.svg" alt="Tomorrow Pictures Inc.">
-          </a>
+          <!-- Drawer Content -->
+          <nav role="navigation">
+            <ul class="menu">
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="docuSeries" href="/docu-series">Docu-Series</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="radioTvFilm" href="/radio-tv-film">Radio-TV-Film</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="music" href="/music">Music</a>
+              </l ui-sref-active="active"i>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="comedy" href="/comedy">Comedy</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="lifestyle" href="/lifestyle">Lifestyle</a>
+              </li>
+              <li ui-sref-active="active" class="layout center-justified">
+                <a ui-sref="streams" href="/streams">Streams</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="drawer-footer">
+            <a href="http://tomorrowpictures.com">
+              <img src="/assets/images/logos/tpi-logo.svg" alt="Tomorrow Pictures Inc.">
+            </a>
+          </div>
         </div>
-      </div>
-      <paper-header-panel main>
+        <paper-header-panel main>
 
-        <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-          <span class="flex"></span>
+          <!-- Main Toolbar -->
+          <paper-toolbar id="mainToolbar">
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <span class="flex"></span>
 
-          <!-- Toolbar icons -->
-          <!-- <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button> -->
+            <!-- Toolbar icons -->
+            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+            <!-- <paper-icon-button icon="search"></paper-icon-button> -->
 
-          <!-- Application name -->
-          <h1 class="brand-name middle paper-font-display2 app-name">tomorrow<span>pictures.tv</span></h1>
+            <!-- <div class="search">
+              <div id="sb-search" class="sb-search horizontal end-justified layout">
+                <form>
+                  <input name="q" ng-model="searchq" type="text" placeholder="Search... ">
+                  <a class="sb-icon-search" href="/search/{{searchq}}">
+                    <paper-icon-button icon="search"></paper-button>
+                  </a>
+                </form>
+              </div>
+            </div> -->
 
-          <!-- Application sub title -->
-          <div class="bottom title"></div>
+            <!-- Application name -->
+            <h1 class="brand-name middle paper-font-display2 app-name">tomorrow<span>pictures.tv</span></h1>
 
-        </paper-toolbar>
+            <!-- Application sub title -->
+            <div class="bottom title"></div>
 
-        <!-- Main Content -->
-        <div class="content">
-          <!-- UI View -->
-          <div data-ui-view class="velocity-opposites-transition-slideUpIn" data-velocity-opts="{ stagger: 350 }"></div>
-        </div>
-      </paper-header-panel>
-    </paper-drawer-panel>
+          </paper-toolbar>
 
-      <!-- <paper-toast id="caching-complete"
-      duration="6000"
-      text="Caching complete! This app will work offline.">
-    </paper-toast> -->
+          <!-- Main Content -->
+          <div class="content">
+            <!-- UI View -->
+            <div data-ui-view class="velocity-opposites-transition-slideUpIn" data-velocity-opts="{ stagger: 350 }"></div>
+          </div>
+        </paper-header-panel>
+      </paper-drawer-panel>
 
-    <platinum-sw-register auto-register
-    clients-claim
-    skip-waiting
-    on-service-worker-installed="displayInstalledToast">
-    <platinum-sw-cache default-cache-strategy="networkFirst"
-    precache-file="precache.json">
-    </platinum-sw-cache>
-    </platinum-sw-register>
+        <!-- <paper-toast id="caching-complete"
+        duration="6000"
+        text="Caching complete! This app will work offline.">
+      </paper-toast> -->
+
+      <platinum-sw-register auto-register
+      clients-claim
+      skip-waiting
+      on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+      precache-file="precache.json">
+      </platinum-sw-cache>
+      </platinum-sw-register>
+    </div>
 
 
     <!-- build:js scripts/vendor.min.js -->
@@ -166,6 +183,8 @@
     <script src="bower_components/prismic.io/dist/prismic.io.js"></script>
     <script src="bower_components/ngprogress/build/ngProgress.js"></script>
     <script src="bower_components/angular-velocity/angular-velocity.js"></script>
+    <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
+    <script src="bower_components/plangular/dist/plangular.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/app.bundle.js -->
@@ -193,11 +212,8 @@
     <script src="scripts/states/docu-series/docu-series-controller.js"></script>
     <script src="scripts/states/music/music.js"></script>
     <script src="scripts/states/music/music-controller.js"></script>
-
-    <!-- Replace Movies with Lifestyle -->
-    <script src="scripts/states/movies/movies.js"></script>
-    <script src="scripts/states/movies/movies-controller.js"></script>
-
+    <script src="scripts/states/streams/streams.js"></script>
+    <script src="scripts/states/streams/streams-controller.js"></script>
     <script src="scripts/states/lifestyle/lifestyle.js"></script>
     <script src="scripts/states/lifestyle/lifestyle-controller.js"></script>
     <script src="scripts/states/home/home.js"></script>

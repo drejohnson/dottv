@@ -4,11 +4,13 @@ var browserSync = require('browser-sync');
 var gulp        = require('gulp');
 var config      = require('../config');
 var browserSync = require('browser-sync');
+var modRewrite  = require('connect-modrewrite');
 var reload      = browserSync.reload;
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function () {
   browserSync({
+    port: 3333,
     notify: false,
     // Customize the BrowserSync console logging prefix
     logPrefix: 'FEDS',
@@ -16,7 +18,12 @@ gulp.task('serve', ['styles'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'src']
+    server: ['.tmp', 'src'],
+    middleware: [
+      modRewrite([
+				'^([^.]+)$ /index.html [L]'
+			])
+    ]
   });
 
   gulp.watch(['src/**/*.html'], ['html:partials', reload]);
@@ -34,7 +41,12 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'build'
+    server: 'build',
+    middleware: [
+      modRewrite([
+				'^([^.]+)$ /index.html [L]'
+			])
+    ]
   });
 
   gulp.watch(['src/**/*.html'], ['html:partials', reload]);

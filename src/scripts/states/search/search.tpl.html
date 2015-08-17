@@ -1,35 +1,28 @@
-<header class="channelBanner" horizontal layout center>
-  <h2 ng-if="search.q.length < 1">Oops!!! Something's not right!</h2>
-  <h2 ng-if="search.q.length > 1">Here's {{search.searchResults.length}} videos that match the search results for "{{search.q}}"</h2>
-  <p></p>
-</header>
+<section class="search">
+  <paper-toolbar id="page-header" class="videoTitle dark-background">
+    <h2 ng-if="search.q.length < 1">Oops!!! Something's not right!</h2>
+    <h2 ng-if="search.q.length > 1">Here's {{search.searchResults.length}} videos that match the search results for "{{search.q}}"</h2>
+  </paper-toolbar>
 
-<section ng-if="search.q.length < 1" items horizontal center-justified layout>
-  <div class="animate-repeat">
-    <div content>
-      <h2 self-center>Sorry but you didn't search for anything! Try your search again!</h2>
+  <section ng-if="search.q.length < 1">
+    <div class="animate-repeat">
+      <div content>
+        <h2 self-center>Sorry but you didn't search for anything! Try your search again!</h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section ng-if="search.q.length > 1" items horizontal layout wrap>
-  <div class="animate-repeat" item ng-repeat="video in search.searchResults | limitTo:21" channel="{{video.getText('video.channel')}}">
-    <div content>
-      <div meta horizontal start-justified layout>
-        <div class="channelName" self-center>{{video.getText('video.channel')}}</div>
+  <div class="items horizontal layout wrap" ng-if="search.q.length > 1">
+    <div class="item" ng-repeat="video in search.searchResults | limitTo:21">
+      <div class="search-thumb">
+        <img ng-src="{{video.getImageView('video.poster', 'icon').url}}" alt=""/>
       </div>
-      <div poster style="background-image:url('{{video.getImageView('video.poster', 'column').url}}');background-size:cover;background-position: 50% 50%;background-repeat:no-repeat;"></div>
-      <div caption absolute>
-        <h2 title>
-          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}" horizontal layout>
-            <span flex self-center>{{video.getText('video.title')}} </span>
-            <core-icon class="play-icon" icon="av:play-circle-outline" self-center></core-icon>
-          </a>
-        </h2>
-        <div intro>
-          <a href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">{{video.getText('video.shortlede')}}</a>
-        </div>
+      <div class="caption" flex style="margin-left:10px;">
+        <h2>{{video.getText('video.title')}}</h2>
+        <p>{{video.getText('video.shortlede')}}</p>
+        <a style="display:block;" href="#/{{video.getText('video.channel')}}/{{video.id}}/{{video.slug}}">View Video</a>
       </div>
+    </div>
     </div>
   </div>
 </section>
