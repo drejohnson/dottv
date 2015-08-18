@@ -7,7 +7,7 @@ var cssnext      = require('cssnext');
 var lost         = require('lost');
 var nested       = require('postcss-nested');
 var mixins       = require('postcss-mixins');
-var conditionals = require('postcss-conditionals');
+var importCSS    = require('postcss-import');
 var minmax       = require('postcss-media-minmax');
 var mqpacker     = require('css-mqpacker');
 var handleErrors = require('../util/handleErrors');
@@ -15,14 +15,13 @@ var config       = require('../config').styles;
 
 gulp.task('styles', function () {
   var processors = [
-      cssnext(),
-      minmax,
-      mixins,
-      nested,
-      conditionals,
-      lost(),
-      mqpacker,
-      autoprefixer({browsers: ['last 2 version']}),
+    importCSS({
+      from: 'src/styles/*.css'
+    }),
+    mixins(),
+    nested(),
+    cssnext(),
+    lost()
   ];
   return gulp.src(config.src)
   .pipe($.changed('build/styles', {extension: '.ccss'}))

@@ -19,7 +19,7 @@
     "animate.css": "^3.2.0",
     "angulartics": "^0.18.0",
     "angular-morph": "^0.1.0",
-    "ngprogress": "^1.0.7",
+    "ngprogress": "^1.1.2",
     "angular-flash-messages": "^1.2.0",
     "angular-material": "^0.10.0-rc2-master-781929d",
     "videogular": "^1.2.2",

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Channel Oriented Infotainment">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta property="og:image" content="/assets/images/logos/logo-red.jpg" />
+    <meta property="og:image" content="/assets/images/logos/logo-red.svg" />
     <meta name="og:url" content="https://tomorrowpictures.tv">
     <meta name="og:type" content="website">
 
@@ -46,19 +46,19 @@
 
     <!-- <base href="/"> -->
 
-    <!-- build:js scripts/webcomponents-lite.min.js -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- build:js /scripts/webcomponents-lite.min.js -->
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <!-- endbuild -->
-    <link rel="import" href="elements/elements.build.html">
+    <link rel="import" href="/elements/elements.build.html">
 
     <!-- build:css styles/components/components.min.css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
-    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css">
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/bower_components/ngprogress/ngProgress.css">
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbuild -->
 
     <!-- Page styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
 
   </head>
   <body unresolved class="fullbleed layout vertical" ng-cloak>
@@ -71,7 +71,7 @@
           <!-- Drawer Toolbar -->
           <paper-toolbar id="drawerToolbar" class="drawer-toolbar">
             <a class="logo" ui-sref="home" href="/">
-              <img src="assets/images/logos/logo-red.svg" alt="Logo" />
+              <img src="/assets/images/logos/logo-red.svg" alt="Logo" />
             </a>
           </paper-toolbar>
 
@@ -142,83 +142,85 @@
         </paper-header-panel>
       </paper-drawer-panel>
 
-        <!-- <paper-toast id="caching-complete"
-        duration="6000"
-        text="Caching complete! This app will work offline.">
-      </paper-toast> -->
+      <!-- Uncomment next block to enable Service Worker support (1/2) -->
 
+      <paper-toast id="caching-complete"
+                   duration="6000"
+                   text="Caching complete! This app will work offline.">
+      </paper-toast>
       <platinum-sw-register auto-register
-      clients-claim
-      skip-waiting
-      on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-      precache-file="precache.json">
-      </platinum-sw-cache>
+                            clients-claim
+                            skip-waiting
+                            on-service-worker-installed="displayInstalledToast">
+        <platinum-sw-cache default-cache-strategy="fastest"
+                           cache-config-file="cache-config.json">
+        </platinum-sw-cache>
       </platinum-sw-register>
+
     </div>
 
 
-    <!-- build:js scripts/vendor.min.js -->
-    <script src="bower_components/lodash/lodash.js"></script>
-    <script src="bower_components/velocity/velocity.js"></script>
-    <script src="bower_components/velocity/velocity.ui.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-    <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
-    <script src="bower_components/videogular/videogular.js"></script>
-    <script src="bower_components/videogular-controls/vg-controls.js"></script>
-    <script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
-    <script src="bower_components/videogular-poster/vg-poster.js"></script>
-    <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
-    <script src="bower_components/videogular-youtube/youtube.js"></script>
-    <script src="bower_components/angular-moment/angular-moment.js"></script>
-    <script src="bower_components/angulartics/src/angulartics.js"></script>
-    <script src="bower_components/angulartics/src/angulartics-ga.js"></script>
-    <script src="bower_components/angular-prismicio/dist/angular-prismicio.js"></script>
-    <script src="bower_components/prismic.io/dist/prismic.io.js"></script>
-    <script src="bower_components/ngprogress/build/ngProgress.js"></script>
-    <script src="bower_components/angular-velocity/angular-velocity.js"></script>
-    <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
-    <script src="bower_components/plangular/dist/plangular.js"></script>
+    <!-- build:js /scripts/vendor.min.js -->
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/velocity/velocity.js"></script>
+    <script src="/bower_components/velocity/velocity.ui.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-material-icons/angular-material-icons.js"></script>
+    <script src="/bower_components/videogular/videogular.js"></script>
+    <script src="/bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="/bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="/bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="/bower_components/videogular-buffering/vg-buffering.js"></script>
+    <script src="/bower_components/videogular-youtube/youtube.js"></script>
+    <script src="/bower_components/angular-moment/angular-moment.js"></script>
+    <script src="/bower_components/angulartics/src/angulartics.js"></script>
+    <script src="/bower_components/angulartics/src/angulartics-ga.js"></script>
+    <script src="/bower_components/angular-prismicio/dist/angular-prismicio.js"></script>
+    <script src="/bower_components/prismic.io/dist/prismic.io.js"></script>
+    <script src="/bower_components/ngprogress/build/ngprogress.js"></script>
+    <script src="/bower_components/angular-velocity/angular-velocity.js"></script>
+    <script src="/bower_components/angular-socialshare/angular-socialshare.min.js"></script>
+    <script src="/bower_components/plangular/dist/plangular.js"></script>
     <!-- endbuild -->
 
-    <!-- build:js scripts/app.bundle.js -->
-    <script src="scripts/index.js"></script>
-    <script src="scripts/components/app-settings-constant.js"></script>
-    <script src="scripts/components/get-embed-id-filter.js"></script>
-    <script src="scripts/components/get-search-results-service.js"></script>
-    <script src="scripts/components/get-related-videos-service.js"></script>
-    <script src="scripts/components/get-all-videos-service.js"></script>
-    <script src="scripts/components/get-featured-video-service.js"></script>
-    <script src="scripts/components/get-channel-videos-service.js"></script>
-    <script src="scripts/components/get-video-view-service.js"></script>
-    <script src="scripts/templates/templates.js"></script>
-    <script src="scripts/states/search/search.js"></script>
-    <script src="scripts/states/search/search-controller.js"></script>
-    <script src="scripts/states/view-video/view-video.js"></script>
-    <script src="scripts/states/view-video/view-video-controller.js"></script>
-    <script src="scripts/states/channels/channels.js"></script>
-    <script src="scripts/states/channels/channels-controller.js"></script>
-    <script src="scripts/states/radio-tv/radio-tv.js"></script>
-    <script src="scripts/states/radio-tv/radio-tv-controller.js"></script>
-    <script src="scripts/states/comedy/comedy.js"></script>
-    <script src="scripts/states/comedy/comedy-controller.js"></script>
-    <script src="scripts/states/docu-series/docu-series.js"></script>
-    <script src="scripts/states/docu-series/docu-series-controller.js"></script>
-    <script src="scripts/states/music/music.js"></script>
-    <script src="scripts/states/music/music-controller.js"></script>
-    <script src="scripts/states/streams/streams.js"></script>
-    <script src="scripts/states/streams/streams-controller.js"></script>
-    <script src="scripts/states/lifestyle/lifestyle.js"></script>
-    <script src="scripts/states/lifestyle/lifestyle-controller.js"></script>
-    <script src="scripts/states/home/home.js"></script>
-    <script src="scripts/states/home/home-controller.js"></script>
-    <script src="scripts/main.js"></script>
+    <!-- build:js /scripts/app.bundle.js -->
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/components/app-settings-constant.js"></script>
+    <script src="/scripts/components/get-embed-id-filter.js"></script>
+    <script src="/scripts/components/get-search-results-service.js"></script>
+    <script src="/scripts/components/get-related-videos-service.js"></script>
+    <script src="/scripts/components/get-all-videos-service.js"></script>
+    <script src="/scripts/components/get-featured-video-service.js"></script>
+    <script src="/scripts/components/get-channel-videos-service.js"></script>
+    <script src="/scripts/components/get-video-view-service.js"></script>
+    <script src="/scripts/templates/templates.js"></script>
+    <script src="/scripts/states/search/search.js"></script>
+    <script src="/scripts/states/search/search-controller.js"></script>
+    <script src="/scripts/states/view-video/view-video.js"></script>
+    <script src="/scripts/states/view-video/view-video-controller.js"></script>
+    <script src="/scripts/states/channels/channels.js"></script>
+    <script src="/scripts/states/channels/channels-controller.js"></script>
+    <script src="/scripts/states/radio-tv/radio-tv.js"></script>
+    <script src="/scripts/states/radio-tv/radio-tv-controller.js"></script>
+    <script src="/scripts/states/comedy/comedy.js"></script>
+    <script src="/scripts/states/comedy/comedy-controller.js"></script>
+    <script src="/scripts/states/docu-series/docu-series.js"></script>
+    <script src="/scripts/states/docu-series/docu-series-controller.js"></script>
+    <script src="/scripts/states/music/music.js"></script>
+    <script src="/scripts/states/music/music-controller.js"></script>
+    <script src="/scripts/states/streams/streams.js"></script>
+    <script src="/scripts/states/streams/streams-controller.js"></script>
+    <script src="/scripts/states/lifestyle/lifestyle.js"></script>
+    <script src="/scripts/states/lifestyle/lifestyle-controller.js"></script>
+    <script src="/scripts/states/home/home.js"></script>
+    <script src="/scripts/states/home/home-controller.js"></script>
+    <script src="/scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

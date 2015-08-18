@@ -1,5 +1,6 @@
 node_modules
 bower_components
+jspm_packages
 src/bower_components
 .tmp
 *.zip

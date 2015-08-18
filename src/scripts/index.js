@@ -24,7 +24,6 @@
     'com.2fdevs.videogular.plugins.poster',
     'info.vietnamcode.nampnq.videogular.plugins.youtube',
     'angularMoment',
-    'ngProgress',
     'angulartics',
     'angulartics.google.analytics',
     'djds4rce.angular-socialshare',
@@ -50,7 +49,7 @@
     plangularConfigProvider.clientId = 'eeaefb8dd1da832af310585f56893869';
   })
   .config(prismicConfig)
-  .run(function ($rootScope, $state, Prismic, AppSettings, ngProgress, $log) {
+  .run(function ($rootScope, $state, Prismic, AppSettings, $log) {
     $rootScope.$state = $state;
     // log location change
     // Remove from production!
@@ -68,11 +67,6 @@
       }
 
       $rootScope.pageTitle += AppSettings.appTitle;
-
-      ngProgress.start();
-      ngProgress.complete();
-      ngProgress.color('#c0392b');
-      ngProgress.height('4px');
 
     });
   });
