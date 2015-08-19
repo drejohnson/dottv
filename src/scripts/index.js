@@ -45,9 +45,7 @@
   .module('app')
   .config(urlConfig)
   .config(mdConfig)
-  .config(function(plangularConfigProvider){
-    plangularConfigProvider.clientId = 'eeaefb8dd1da832af310585f56893869';
-  })
+  .config(plangularConfig)
   .config(prismicConfig)
   .run(function ($rootScope, $state, Prismic, AppSettings, $log) {
     $rootScope.$state = $state;
