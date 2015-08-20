@@ -34,7 +34,11 @@
     "angular-material-icons": "~0.5.0",
     "angular-socialshare": "~1.4.1",
     "plangular": "^3.1.0",
-    "angulartics-google-analytics": "~0.1.1"
+    "angulartics-google-analytics": "~0.1.1",
+    "twitter-button": "~0.2.1",
+    "facebook-button": "~0.2.1",
+    "gplus-elements": "~0.3.0",
+    "awesome-button": "*"
   },
   "devDependencies": {
     "web-component-tester": "*",

@@ -1608,23 +1608,19 @@ md-item, .item {
   padding: 4px;
 }
 
-.bottomPanel .posted {
-  background-color: #212121;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  height: 60px;
-  padding: 20px;
+.bottomPanel .bottomContent {
+  *zoom: 1;
 }
 
-@media (min-width: 960px) {
-  .bottomPanel .posted{
-    font-size: 18px;
-  }
+.bottomPanel .bottomContent:before{
+  content: '';
+  display: table;
 }
 
-.bottomPanel .posted span {
-  color: #c0392b;
+.bottomPanel .bottomContent:after{
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .bottomPanel .title {
@@ -1642,9 +1638,15 @@ md-item, .item {
   }
 }
 
-.bottomPanel .description {
+.bottomPanel .socialButtons {
   width: 90%;
   margin: 0 auto;
+  padding: 20px 0;
+}
+
+.bottomPanel .description {
+  width: 60%;
+  margin: 0 auto 0 5%;
 }
 
 .bottomPanel .description p {
@@ -1784,6 +1786,7 @@ loading {
     clear: left;
   }
 }
+/*@import 'components/_social.css';*/
 .channelHeader .channelTitle {
   color: #20172C;
   line-height: 30px;

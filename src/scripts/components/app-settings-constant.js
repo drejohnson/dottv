@@ -11,7 +11,9 @@
   angular
     .module('app')
     .constant('AppSettings', {
-      'appTitle': 'Tomorrow Pictures TV'
+      'appTitle': 'Tomorrow Pictures TV',
+      'appURL': 'http://tomorrowpictures.tv',
+      'appDesc': 'Channel Oriented Infotainment'
     });
 
 })();

@@ -35,6 +35,7 @@ gulp.task('serve', ['styles'], function () {
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function () {
   browserSync({
+    port: 3333,
     notify: false,
     logPrefix: 'FEDS',
     // Run as an https by uncommenting 'https: true'

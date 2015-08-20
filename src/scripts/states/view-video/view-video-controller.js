@@ -39,7 +39,7 @@
         vm.imgSM = video.getImageView('video.poster', 'icon').url;
 
         var shareUrl = function (channel, id, slug) {
-          return 'http://beta.tomorrowpictures.com/#/' + channel + '/' + id + '/' + slug
+          return 'http://tomorrowpictures.tv/' + channel + '/' + id + '/' + slug
         };
 
         vm.shareHref = shareUrl(vm.channel, vm.id, vm.slug);

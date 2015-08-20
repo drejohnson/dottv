@@ -47,7 +47,8 @@
   .config(mdConfig)
   .config(plangularConfig)
   .config(prismicConfig)
-  .run(function ($rootScope, $state, Prismic, AppSettings, $log) {
+  .run(function ($rootScope, $state, Prismic, AppSettings, $FB, $log) {
+    $FB.init('470100963137983');
     $rootScope.$state = $state;
     // log location change
     // Remove from production!
