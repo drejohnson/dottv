@@ -34,6 +34,18 @@
             var getDesc = viewID.fragments['video.shortlede']['value'];
             var desc = _.pluck(getDesc, 'text');
             return _.first(desc);
+          },
+          $metaImg: function(viewID) {
+            var getImg = viewID.fragments['video.poster']['value']['main']['url'];
+            return getImg;
+          },
+          $url: function(viewID) {
+            var base = 'http:/tomorrowpictures.tv/';
+            var channel = viewID.fragments['video.channel']['value']
+            var id = viewID.id;
+            var slug = viewID.slug;
+            var getUrl = base + channel + '/' + id + '/' + slug;
+            return getUrl;
           }
         }
       });
