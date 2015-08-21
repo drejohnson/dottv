@@ -20,7 +20,11 @@
         url: '/',
         templateUrl: 'scripts/states/home/home.tpl.html',
         controller: 'HomeCtrl as home',
-        title: 'Home'
+        resolve: {
+          // Constant Meta
+          $title: function() { return 'Home'; },
+          $description: function() { return 'Channel Oriented Infotainment'; }
+        }
       });
   }
 

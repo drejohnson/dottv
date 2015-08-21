@@ -20,7 +20,12 @@
         url: '/music',
         templateUrl: 'scripts/states/channels/channels.tpl.html',
         controller: 'ChannelsCtrl as channels',
-        title: 'Music'
+        title: 'Music',
+        resolve: {
+          // Constant Meta
+          $title: function() { return 'Music'; },
+          $description: function() { return 'Channel Oriented Infotainment'; }
+        }
       });
   }
 

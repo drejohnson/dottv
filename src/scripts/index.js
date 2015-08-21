@@ -15,6 +15,7 @@
     'ngSanitize',
     'ngMaterial',
     'ngMdIcons',
+    // 'ui.router.title',
     'prismic.io',
     'angular-velocity',
     'com.2fdevs.videogular',
@@ -47,8 +48,7 @@
   .config(mdConfig)
   .config(plangularConfig)
   .config(prismicConfig)
-  .run(function ($rootScope, $state, Prismic, AppSettings, $FB, $log) {
-    $FB.init('470100963137983');
+  .run(function ($rootScope, $state, $timeout, Prismic, AppSettings, $log) {
     $rootScope.$state = $state;
     // log location change
     // Remove from production!
@@ -67,8 +67,22 @@
 
       $rootScope.pageTitle += AppSettings.appTitle;
 
+      var title = getTitleValue($state.$current.locals.globals.$title);
+      var description = getDescriptionValue($state.$current.locals.globals.$description);
+      $timeout(function() {
+        $rootScope.$title = title;
+        $rootScope.$description = description;
+      });
+
     });
   });
+
+  function getTitleValue(title) {
+    return angular.isFunction(title) ? title() : title;
+  }
+  function getDescriptionValue(description) {
+    return angular.isFunction(description) ? description() : description;
+  }
 
   // UI-Router, Performance Config
   function urlConfig($urlRouterProvider, $locationProvider, $httpProvider, $compileProvider, $rootScopeProvider) {

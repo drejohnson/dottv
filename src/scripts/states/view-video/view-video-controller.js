@@ -49,7 +49,6 @@
           return embedId;
         };
         vm.youtubeID = videoid();
-        $log.log(vm.poster);
 
         // Videogular
         vm.currentVideo = vm.videourl;

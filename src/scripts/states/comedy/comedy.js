@@ -20,7 +20,12 @@
         url: '/comedy',
         templateUrl: 'scripts/states/channels/channels.tpl.html',
         controller: 'ChannelsCtrl as channels',
-        title: 'Comedy'
+        title: 'Comedy',
+        resolve: {
+          // Constant Meta
+          $title: function() { return 'Comedy'; },
+          $description: function() { return 'Channel Oriented Infotainment'; }
+        }
       });
   }
 

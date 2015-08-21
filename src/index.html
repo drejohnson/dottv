@@ -3,21 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Channel Oriented Infotainment">
+    <title ng-bind="($title || 'Tomorrow Pictures TV') + ' - Tomorrow Pictures TV'">Tomorrow Pictures TV</title>
+    <meta name="description" content={{::$description}}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta property="og:image" content="/assets/images/logos/logo-red.svg" />
-    <meta name="og:url" content="https://tomorrowpictures.tv">
-    <meta name="og:type" content="website">
 
-    <meta name="og:description" content="Channel Oriented Infotainment">
-    <meta name="og:title" content="Tomorrow Pictures TV">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="Channel Oriented Infotainment">
-    <meta name="og:site_name" content="Tomorrow Pictures TV"
+    <meta property="fb:app_id" content="" />
+    <meta property="og:title" content={{::$description}} />
+    <meta property="og:image" content="/assets/images/main-poster.jpg" />
+    <meta property="og:description" content={{::$description}} />
+    <meta property="og:title" content={{::$title}} />
+    <meta property="og:url" content="https://tomorrowpictures.tv" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tomorrow Pictures TV" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@TpTV_Network" />
+    <meta name="twitter:creator" content="@TpTV_Network" />
+
     <link rel="canonical" href="https://tomorrowpictures.tv">
-    <meta name="twitter:title" content="Tomorrow Pictures TV">
 
-    <title ng-bind="pageTitle"></title>
+    <!-- <title ng-bind="pageTitle"></title> -->
+    <!-- <title>{{ $state.current.title }}</title> -->
 
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
@@ -172,6 +178,7 @@
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
     <script src="/bower_components/angular-material-icons/angular-material-icons.js"></script>
+    <script src="/bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
     <script src="/bower_components/videogular/videogular.js"></script>
     <script src="/bower_components/videogular-controls/vg-controls.js"></script>
     <script src="/bower_components/videogular-overlay-play/vg-overlay-play.js"></script>

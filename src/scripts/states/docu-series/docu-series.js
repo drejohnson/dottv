@@ -20,7 +20,12 @@
         url: '/docu-series',
         templateUrl: 'scripts/states/channels/channels.tpl.html',
         controller: 'ChannelsCtrl as channels',
-        title: 'Docu-Series'
+        title: 'Docu-Series',
+        resolve: {
+          // Constant Meta
+          $title: function() { return 'Docu-Series'; },
+          $description: function() { return 'Channel Oriented Infotainment'; }
+        }
       });
   }
 

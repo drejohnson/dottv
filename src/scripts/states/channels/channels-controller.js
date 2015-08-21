@@ -27,7 +27,7 @@
         } else {
           vm.videos = videos;
           vm.results = videos.results;
-          // $log.log(vm.results);
+          $log.log(vm.results);
           vm.totalVideos = videos.results.length;
           vm.totalPages = videos.total_pages;
           if (vm.totalPages > 1) vm.paginationRange = _.range(1, vm.totalPages+1);

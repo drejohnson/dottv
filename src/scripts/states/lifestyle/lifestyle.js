@@ -20,7 +20,12 @@
         url: '/lifestyle',
         templateUrl: 'scripts/states/channels/channels.tpl.html',
         controller: 'ChannelsCtrl as channels',
-        title: 'Lifestyle'
+        title: 'Lifestyle',
+        resolve: {
+          // Constant Meta
+          $title: function() { return 'Lifestyle'; },
+          $description: function() { return 'Channel Oriented Infotainment'; }
+        }
       });
   }
 
