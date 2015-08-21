@@ -15,7 +15,6 @@
     'ngSanitize',
     'ngMaterial',
     'ngMdIcons',
-    // 'ui.router.title',
     'prismic.io',
     'angular-velocity',
     'com.2fdevs.videogular',
@@ -69,9 +68,13 @@
 
       var title = getTitleValue($state.$current.locals.globals.$title);
       var description = getDescriptionValue($state.$current.locals.globals.$description);
+      var metaImg = getMetaImgValue($state.$current.locals.globals.$metaImg);
+      var url = getUrlValue($state.$current.locals.globals.$url);
       $timeout(function() {
         $rootScope.$title = title;
         $rootScope.$description = description;
+        $rootScope.$metaImg = metaImg;
+        $rootScope.$url = url;
       });
 
     });
@@ -82,6 +85,12 @@
   }
   function getDescriptionValue(description) {
     return angular.isFunction(description) ? description() : description;
+  }
+  function getMetaImgValue(metaImg) {
+    return angular.isFunction(metaImg) ? metaImg() : metaImg;
+  }
+  function getUrlValue(url) {
+    return angular.isFunction(url) ? url() : url;
   }
 
   // UI-Router, Performance Config
