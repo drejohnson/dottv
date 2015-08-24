@@ -8,7 +8,7 @@
 }
 
 [channel="docu-series"] {
-  .item {
+
     .channelHeader {
       background-color: var(--channel-docu-series);
     }
@@ -18,11 +18,11 @@
         background-image: linear-gradient(to bottom right,#111,var(--channel-docu-series));
       }
     }
-  }
+
 }
 
 [channel="radio-tv-film"] {
-  .item {
+
     .channelHeader {
       background-color: var(--channel-radio-tv-film);
     }
@@ -32,11 +32,11 @@
         background-image: linear-gradient(to bottom right,#111,var(--channel-radio-tv-film));
       }
     }
-  }
+
 }
 
 [channel="music"] {
-  .item {
+
     .channelHeader {
       background-color: var(--channel-music);
     }
@@ -46,11 +46,11 @@
         background-image: linear-gradient(to bottom right,#111,var(--channel-music));
       }
     }
-  }
+
 }
 
 [channel="comedy"] {
-  .item {
+
     .channelHeader {
       background-color: var(--channel-comedy);
     }
@@ -60,11 +60,11 @@
         background-image: linear-gradient(to bottom right,#111,var(--channel-comedy));
       }
     }
-  }
+
 }
 
 [channel="lifestyle"] {
-  .item {
+
     .channelHeader {
       background-color: var(--channel-lifestyle);
     }
@@ -74,7 +74,7 @@
         background-image: linear-gradient(to bottom right,#111,var(--channel-lifestyle));
       }
     }
-  }
+
 }
 
 [channel="lifestyle"],
@@ -82,7 +82,7 @@
 [channel="docu-series"],
 [channel="comedy"],
 [channel="radio-tv-film"] {
-  .item {
+
     .poster {
       &:before {
         position: absolute;
@@ -91,9 +91,10 @@
         bottom: 0;
         left: 0;
         opacity: .6;
+        margin: 4px;
       }
     }
-  }
+
 }
 
 [channel="lifestyle"] > [content] > [poster]:before {

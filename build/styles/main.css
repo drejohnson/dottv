@@ -1794,63 +1794,64 @@ loading {
   margin: 0;
 }
 
-[channel="docu-series"] .item .channelHeader {
+[channel="docu-series"] .channelHeader {
   background-color: #0090d9;
 }
 
-[channel="docu-series"] .item .poster:before {
+[channel="docu-series"] .poster:before {
   content: '';
   background-image: -webkit-linear-gradient(top left, #111, #0090d9);
   background-image: linear-gradient(to bottom right,#111,#0090d9);
 }
 
-[channel="radio-tv-film"] .item .channelHeader {
+[channel="radio-tv-film"] .channelHeader {
   background-color: #736086;
 }
 
-[channel="radio-tv-film"] .item .poster:before {
+[channel="radio-tv-film"] .poster:before {
   content: '';
   background-image: -webkit-linear-gradient(top left, #111, #736086);
   background-image: linear-gradient(to bottom right,#111,#736086);
 }
 
-[channel="music"] .item .channelHeader {
+[channel="music"] .channelHeader {
   background-color: #f35958;
 }
 
-[channel="music"] .item .poster:before {
+[channel="music"] .poster:before {
   content: '';
   background-image: -webkit-linear-gradient(top left, #111, #f35958);
   background-image: linear-gradient(to bottom right,#111,#f35958);
 }
 
-[channel="comedy"] .item .channelHeader {
+[channel="comedy"] .channelHeader {
   background-color: #FDE74C;
 }
 
-[channel="comedy"] .item .poster:before {
+[channel="comedy"] .poster:before {
   content: '';
   background-image: -webkit-linear-gradient(top left, #111, #FDE74C);
   background-image: linear-gradient(to bottom right,#111,#FDE74C);
 }
 
-[channel="lifestyle"] .item .channelHeader {
+[channel="lifestyle"] .channelHeader {
   background-color: #42b078;
 }
 
-[channel="lifestyle"] .item .poster:before {
+[channel="lifestyle"] .poster:before {
   content: '';
   background-image: -webkit-linear-gradient(top left, #111, #42b078);
   background-image: linear-gradient(to bottom right,#111,#42b078);
 }
 
-[channel="lifestyle"] .item .poster:before, [channel="music"] .item .poster:before, [channel="docu-series"] .item .poster:before, [channel="comedy"] .item .poster:before, [channel="radio-tv-film"] .item .poster:before {
+[channel="lifestyle"] .poster:before, [channel="music"] .poster:before, [channel="docu-series"] .poster:before, [channel="comedy"] .poster:before, [channel="radio-tv-film"] .poster:before {
   position: absolute;
   top: 30px;
   right: 0;
   bottom: 0;
   left: 0;
   opacity: .6;
+  margin: 4px;
 }
 
 [channel="lifestyle"] > [content] > [poster]:before {
@@ -1935,7 +1936,7 @@ paper-drawer-panel #drawer {
   position: fixed!important;
   background-color: #212121!important;
   z-index: 3;
-  border-right: 1px solid #1a1a1a;
+  /*border-right: 1px solid #1a1a1a;*/
 }
 
 paper-drawer-panel::shadow #drawer {
@@ -2020,6 +2021,23 @@ iron-icon:not(:last-child) {
 .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-active, home .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-focus {
   color: #ecf0f1;
   font-size: 22px;
+}
+
+md-tabs[md-border-bottom] md-tabs-wrapper {
+  background-color: #212121;
+}
+
+md-content {
+  padding: 4px!important;
+}
+
+md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
+  color: #ecf0f1;
+  font-size: 22px;
+}
+
+md-card {
+  margin: 0;
 }
 
 /* Test Styles */
@@ -2286,6 +2304,10 @@ videogular vg-poster img, [videogular] vg-poster img {
 }
 
 .tab-card.md-default-theme .tab-content {
+  padding: 4px;
+}
+
+.channel-content {
   padding: 4px;
 }
 

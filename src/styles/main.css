@@ -34,7 +34,7 @@ paper-drawer-panel #drawer {
   position: fixed!important;
   background-color: #212121!important;
   z-index: 3;
-  border-right: 1px solid #1a1a1a;
+  /*border-right: 1px solid #1a1a1a;*/
 }
 
 paper-drawer-panel::shadow #drawer {
@@ -119,6 +119,23 @@ iron-icon:not(:last-child) {
 .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-active, home .tabs-header.md-default-theme.md-primary md-tab-item:not([disabled]).md-focus {
   color: #ecf0f1;
   font-size: 22px;
+}
+
+md-tabs[md-border-bottom] md-tabs-wrapper {
+  background-color: var(--brandDarkPrimary);
+}
+
+md-content {
+  padding: 4px!important;
+}
+
+md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
+  color: #ecf0f1;
+  font-size: 22px;
+}
+
+md-card {
+  margin: 0;
 }
 
 /* Test Styles */
@@ -384,6 +401,10 @@ videogular vg-poster, [videogular] vg-poster {
 }
 
 .tab-card.md-default-theme .tab-content {
+  padding: 4px;
+}
+
+.channel-content {
   padding: 4px;
 }
 
