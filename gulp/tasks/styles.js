@@ -24,7 +24,7 @@ gulp.task('styles', function () {
     lost()
   ];
   return gulp.src(config.src)
-  .pipe($.changed('build/styles', {extension: '.ccss'}))
+  .pipe($.changed('build/styles', {extension: '.css'}))
   .pipe($.sourcemaps.init())
   .pipe($.postcss(processors))
   .on('error', handleErrors)
