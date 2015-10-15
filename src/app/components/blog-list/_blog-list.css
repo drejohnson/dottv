@@ -1,0 +1,30 @@
+@import '../../styles/styles.css';
+@import '../../common/styles/item-grid.css';
+
+blog-list {
+	#section-header {
+    h3 {
+      font-size: calc(32/16)rem;
+      font-weight: 400;
+    }
+    h1 {
+			color: var(--brandRed);
+      font-weight: 300;
+      text-transform: uppercase;
+		}
+	}
+	.item {
+    padding: var(--sm-pad);
+    margin: 0;
+    box-shadow: none;
+    h1 {
+      font-size: calc(24/16)rem;
+    }
+    .poster {
+
+    }
+    .card-info {
+
+    }
+  }
+}

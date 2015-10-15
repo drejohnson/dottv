@@ -1,0 +1,7 @@
+node_modules/*
+jspm_packages/*
+gulpfile.js
+gulpfile.babel.js
+jspm.config.js
+client/app/generator/component/*
+server/*

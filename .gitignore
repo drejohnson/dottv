@@ -1,11 +1,8 @@
-# Ignore everything
-*
-src/
-# But not these files...
-!.gitignore
-!index.js
-!package.json
-!server/
-!server/**
-!public
-!public/*
+.DS_Store
+.git
+.idea
+node_modules
+jspm_packages
+.settings
+*.log
+dist/
