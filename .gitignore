@@ -1,6 +1,8 @@
-node_modules
-bower_components
-jspm_packages
-src/bower_components
-.tmp
-*.zip
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!index.js
+!server/*
+!public/*
