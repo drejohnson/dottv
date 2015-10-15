@@ -3,6 +3,7 @@
 .idea
 node_modules
 jspm_packages
+generator
 .settings
 *.log
 dist/
