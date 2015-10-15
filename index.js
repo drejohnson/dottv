@@ -4,4 +4,4 @@
 require('babel/register');
 
 // Start the Web API module
-require('./server/bin/www');
+require('./bin/www');
