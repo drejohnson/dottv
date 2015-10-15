@@ -5,6 +5,6 @@
 !.gitignore
 !index.js
 !server/
-!server/*
+!server/**
 !public
 !public/*
