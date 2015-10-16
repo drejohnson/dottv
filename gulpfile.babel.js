@@ -17,7 +17,7 @@ import calc from 'postcss-calc'
 import yargs from 'yargs';
 
 const $ = gulpLoadPlugins();
-const reload = ()=> serve.reload();
+const reload = () => serve.reload();
 const root = 'src';
 
 // helper method for resolving paths
@@ -42,7 +42,7 @@ const paths = {
   static: path.join(root, 'static/**/*'),
   entry: path.join(root, 'app/bootstrap.js'),
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
-  dist: path.join(__dirname, 'public/')
+  dist: path.join(__dirname, 'static/')
 };
 
 // Clean

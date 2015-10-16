@@ -10,18 +10,18 @@ head
   meta(property="og:image", content="{{$metaImg}}")
   meta(property="og:url", content="{{$url}}")
   meta(property="og:type", content="website")
-  meta(property="og:site_name", content="App Title")
+  meta(property="og:site_name", content="Tomorrow Pictures TV")
   meta(name="twitter:card", content="summary")
   meta(name="twitter:site", content="@yourName")
   meta(name="twitter:creator", content="@yourName")
-  link(rel="canonical", href="https://example.com")
+  link(rel="canonical", href="https://tomorrowpictures.tv")
   
   link(href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Lato:300,400,700", rel="stylesheet", type="text/css")
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
     
   base(href="/")
 
-  // Required for Previews and Experiments
+  //- Required for Previews and Experiments
   script(src="//code.jquery.com/jquery-1.11.3.min.js")
   script
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
