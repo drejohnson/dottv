@@ -14,7 +14,7 @@ const LOG = new WeakMap();
   resolve: {
     // Constant Meta
     $title: () => 'Home',
-    $description: () => 'My App description'
+    $description: () => 'Channel Oriented Articles. Videos. Infotainment.'
   }
 })
 @Component({
