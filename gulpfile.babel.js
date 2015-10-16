@@ -53,7 +53,8 @@ gulp.task('serve:dist', gulp.series(
 
 gulp.task('dist', gulp.series(
   clean,
-  gulp.parallel('styles', build, staticFiles)
+  gulp.parallel('styles', staticFiles),
+  build
 ));
 
 // gulp.task(build, gulp.series(
@@ -116,7 +117,7 @@ function lint() {
   });
 }
 
-function build() {
+function build(done) {
   const dist = path.join(paths.dist + 'build.js');
 
   function scripts() {
@@ -131,7 +132,8 @@ function build() {
         .then(() => {
           // Also create a fully annotated minified copy
           return gulp.src(dist)
-          .pipe(gulp.dest(paths.dist));
+          .pipe(gulp.dest(paths.dist)),
+          done;
         });
       });
   }
