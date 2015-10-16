@@ -249,13 +249,15 @@ featured-video .featured-video #section-header h1 {
 featured-video .featured-video .videogular-container {}
 
 @media (min-width: 1200px) {
-			featured-video .featured-video:before {
+
+	featured-video .featured-video:before {
 		padding-top: 0;
 	}
 			}
 
 @media (min-width: 1200px) {
-			featured-video .featured-video .videogular-container {
+
+	featured-video .featured-video .videogular-container {
 		position: relative;
 		height: calc(100vh - 160px);
 		padding: 0;

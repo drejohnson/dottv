@@ -242,7 +242,7 @@ img, video, object {
 
 @media (min-width: 960px) {
 
-    .toolbar .brand-name {
+  .toolbar .brand-name {
     font-size: 26px;
   }
     }

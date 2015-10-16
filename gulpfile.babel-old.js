@@ -1,15 +1,19 @@
-import fs from 'fs';
-import path from 'path';
+import _ from 'lodash';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import path from 'path';
+import jspm from 'jspm';
 import systemjsBuilder from 'systemjs-builder';
 import sync from 'run-sequence';
 import serve from 'browser-sync';
 import modRewrite from 'connect-modrewrite';
+import fs from 'fs';
 import del from 'del';
+import nested from 'postcss-nested';
+import mixins from 'postcss-mixins';
 import precss from 'precss';
 import lost from 'lost';
-import calc from 'postcss-calc';
+import calc from 'postcss-calc'
 import yargs from 'yargs';
 
 const $ = gulpLoadPlugins();
@@ -41,105 +45,75 @@ const paths = {
   dist: path.join(__dirname, 'static/')
 };
 
-gulp.task('styles', () => styleTask('.', ['**/_*.css']));
-
-gulp.task('serve', gulp.series('styles', serveDev));
-
-gulp.task('serve:dist', gulp.series(
-  clean,
-  gulp.parallel('styles', build, staticFiles),
-  serveDist
-));
-
-gulp.task('dist', gulp.series(
-  clean,
-  gulp.parallel('styles', build, staticFiles)
-));
-
-// gulp.task(build, gulp.series(
-//   clean,
-//   staticFiles
-// ));
-
-gulp.task(clean);
-gulp.task(lint);
-gulp.task(staticFiles);
-gulp.task(build);
-gulp.task(watch);
-gulp.task(component);
-
-
-// The default task (called when you run `gulp` from cli)
-gulp.task('default', gulp.series('dist'));
-
 // Clean
-function clean() {
-  return del([paths.dist]);
-}
+gulp.task('clean', done => del([paths.dist], {dot: true}, done));
 
 // Style tasks
-// Compile and Automatically Prefix Stylesheets
-function styleTask(stylesPath, srcs) {
+const styleTask = (stylesPath, srcs) => {
   const processors = [
-    precss(),
-    lost(),
+		precss(),
+		lost(),
     calc()
   ];
   return gulp.src(srcs.map((src) => {
-    return path.join(root + '/app', stylesPath, src);
-  }))
-  .pipe($.newer(stylesPath, {extension: '.css'}))
-	.pipe($.sourcemaps.init())
-  .pipe($.postcss(processors).on('error', console.error.bind(console)))
-  .pipe($.rename((filepath) => {
-    filepath.basename = path.basename(filepath.dirname);
-  }))
-	.pipe($.sourcemaps.write('.'))
-  .pipe(gulp.dest(path.join(root, 'app')));
-}
+      return path.join(root + '/app', stylesPath, src);
+    }))
+    .pipe($.newer(stylesPath, {extension: '.css'}))
+		.pipe($.sourcemaps.init())
+    .pipe($.postcss(processors).on('error', console.error.bind(console)))
+    .pipe($.rename((filepath) => {
+      filepath.basename = path.basename(filepath.dirname);
+    }))
+		.pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest(path.join(root, 'app')));
+};
 
-function staticFiles() {
+// Compile and Automatically Prefix Stylesheets
+gulp.task('styles', () => {
+  return styleTask('.', ['**/_*.css']);
+});
+
+gulp.task('static', () => {
+	// Optimize Images
   return gulp.src(paths.static)
 		.pipe(gulp.dest(paths.dist));
-}
+});
 
 // Lint JavaScript
-function lint() {
+gulp.task('lint', () => {
   return gulp.src([paths.js,
     '!**/*.spec.js'
   ])
+  // .pipe(reload({stream: true, once: true}))
   .pipe($.eslint())
   .pipe($.eslint.format())
-  .on('error', (ev) => {
+  .on('error', (e) => {
     const basePath = path.join(__dirname, root);
-    const filename = ev.fileName.substr(basePath.length + 1);
+    const filename = e.fileName.substr(basePath.length + 1);
   });
-}
+});
 
-function build() {
+gulp.task('build', () => {
   const dist = path.join(paths.dist + 'build.js');
 
-  function scripts() {
-    const Builder = systemjsBuilder;
-    const builder = new Builder({
-      baseURL: './',
-    });
-    builder.reset();
-    builder.loadConfig('./jspm.config.js')
+  const Builder = systemjsBuilder;
+	const builder = new Builder({
+    baseURL: './',
+  });
+	builder.reset();
+  builder.loadConfig("./jspm.config.js")
+    .then(() => {
+      return builder.buildStatic(resolveToApp('app.bootstrap'), dist, {minify: true, mangle: false, sourceMaps: true})
       .then(() => {
-        return builder.buildStatic(resolveToApp('app.bootstrap'), dist, {minify: true, mangle: false, sourceMaps: true})
-        .then(() => {
-          // Also create a fully annotated minified copy
-          return gulp.src(dist)
-          .pipe(gulp.dest(paths.dist));
-        });
+        // Also create a fully annotated minified copy
+        return gulp.src(dist)
+        .pipe(gulp.dest(paths.dist))
       });
-  }
-  return scripts();
-}
+    })
+});
 
 // Browser-sync
-function serveDev() {
+gulp.task('serve', gulp.series('styles', () => {
   serve({
     port: process.env.PORT || 3000,
     open: false,
@@ -162,46 +136,52 @@ function serveDev() {
       ])
     ]
   });
-}
 
-// Browser-sync Dist
-function serveDist() {
-  serve({
-    port: process.env.PORT || 3000,
-    open: false,
-    notify: false,
-    logPrefix: 'FEDS',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    // will present a certificate warning in the browser.
-    // https: true,
-    server: 'dist',
-    baseDir: 'dist',
-    middleware: [
-      modRewrite([
-        '^([^.]+)$ /index.html [L]'
-      ])
-    ]
-  });
-}
-
-// Rerun the task when a file changes
-function watch() {
   gulp.watch( paths.html).on('change', reload);
   gulp.watch( paths.css).on('change', gulp.series('styles', reload));
-  gulp.watch( paths.js).on('change', gulp.series(lint, reload));
-}
+  gulp.watch( paths.js).on('change', gulp.series('lint', reload));
+}));
 
-function component() {
+gulp.task('dist',
+  gulp.series(
+    'clean',
+    gulp.parallel('static', 'build')
+  )
+);
+
+// Browser-sync Dist
+gulp.task('serve:dist',
+  gulp.parallel('clean', 'styles', 'lint', 'build', 'static', () => {
+    serve({
+      port: process.env.PORT || 3000,
+      open: false,
+      notify: false,
+      logPrefix: 'FEDS',
+      // Run as an https by uncommenting 'https: true'
+      // Note: this uses an unsigned certificate which on first access
+      // will present a certificate warning in the browser.
+      // https: true,
+      server: 'dist',
+      baseDir: 'dist',
+      middleware: [
+        modRewrite([
+          '^([^.]+)$ /index.html [L]'
+        ])
+      ]
+    });
+  })
+);
+
+gulp.task('component', () => {
   const cap = (val) => {
     return val.charAt(0).toUpperCase() + val.slice(1);
   };
   const camel = (val) => {
     return val.replace( /-([a-z])/ig, ( all, letter ) => letter.toUpperCase());
-  };
+  }
   const name = yargs.argv.name;
   const upCaseName = cap(name);
-  const camelCaseName = camel(upCaseName);
+  const camelCaseName = camel(upCaseName)
   const parentPath = yargs.argv.parent || '';
   const destPath = path.join(resolveToComponents(), parentPath, name);
 
@@ -215,4 +195,7 @@ function component() {
     path.basename = path.basename.replace('temp', name);
   }))
   .pipe(gulp.dest(destPath));
-}
+});
+
+gulp.task('default',
+  gulp.parallel('lint', 'serve'));

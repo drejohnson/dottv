@@ -62,7 +62,7 @@ const staticOptions = {
   }
 };
 
-app.use('/', express.static('public', staticOptions ));
+app.use('/', express.static('static', staticOptions ));
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
