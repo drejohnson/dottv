@@ -25,12 +25,12 @@ import Configuration from './config/prismic-configuration';
  */
 import * as apiController from './controllers/api';
 
-// const client = redis.createClient();
-// prerender.set('beforeRender', (req, done) => {
-//   client.get(req.url, done);
-// }).set('afterRender', (err, req, prerender_res) => {
-//   client.set(req.url, prerender_res.body);
-// });
+const client = redis.createClient();
+prerender.set('beforeRender', (req, done) => {
+  client.get(req.url, done);
+}).set('afterRender', (err, req, prerender_res) => {
+  client.set(req.url, prerender_res.body);
+});
 
 /**
  * Create Express server.
