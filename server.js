@@ -15,6 +15,7 @@ import session from 'express-session';
 import errorHandler from 'errorhandler';
 import redis from 'redis';
 import prismicio from 'express-prismic';
+import prerender from 'prerender-node';
 
 import config from './config';
 import Configuration from './config/prismic-configuration';
@@ -24,7 +25,12 @@ import Configuration from './config/prismic-configuration';
  */
 import * as apiController from './controllers/api';
 
-const client = redis.createClient();
+// const client = redis.createClient();
+// prerender.set('beforeRender', (req, done) => {
+//   client.get(req.url, done);
+// }).set('afterRender', (err, req, prerender_res) => {
+//   client.set(req.url, prerender_res.body);
+// });
 
 /**
  * Create Express server.
@@ -47,6 +53,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({secret: 'illmatic1994VSready2die1994', saveUninitialized: true, resave: true}));
+app.use(prerender.set('prerenderToken', 'EgrEFN6gzEfePRxtW4zh'));
+app.use(prerender.whitelisted([
+  '/',
+  '/docu-series/.*',
+  '/radio-tv-film/.*',
+  '/music/.*',
+  '/comedy/.*',
+  '/lifestyle/.*',
+  '/blog/.*'
+]));
 
 const staticOptions = {
   dotfiles: 'ignore',
