@@ -1,0 +1,12 @@
+@import '../../styles/styles.css';
+
+search-input {
+	#search {
+		margin: 0;
+
+		.md-icon-float {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}

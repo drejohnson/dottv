@@ -13,7 +13,7 @@ const LOG = new WeakMap();
   resolve: {
     // Constant Meta
     $title: () => 'Blog Page',
-    $description: () => 'Blog-list description'
+    $description: () => 'Tomorow Pictures TV Blog'
   }
 })
 @Component({

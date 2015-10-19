@@ -117,10 +117,6 @@ app.get('/api/search/:q', apiController.getSearch);
 
 app.route('/preview').get(prismic.preview);
 
-app.route('/').get((req, res) => {
-  res.render('index');
-});
-
 app.route('/*').get((req, res) => {
   // AJAX requests are aren't expected to be redirected to the AngularJS app
   if (req.xhr) {

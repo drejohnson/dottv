@@ -117,27 +117,23 @@ function lint() {
   });
 }
 
-function build(done) {
+function build() {
   const dist = path.join(paths.dist + 'build.js');
 
-  function scripts() {
-    const Builder = systemjsBuilder;
-    const builder = new Builder({
-      baseURL: './',
-    });
-    builder.reset();
-    builder.loadConfig('./jspm.config.js')
+  const Builder = systemjsBuilder;
+  const builder = new Builder({
+    baseURL: './',
+  });
+  builder.reset();
+  builder.loadConfig('./jspm.config.js')
+    .then(() => {
+      return builder.buildStatic(resolveToApp('app.bootstrap'), dist, {minify: true, mangle: false, sourceMaps: true})
       .then(() => {
-        return builder.buildStatic(resolveToApp('app.bootstrap'), dist, {minify: true, mangle: false, sourceMaps: true})
-        .then(() => {
-          // Also create a fully annotated minified copy
-          return gulp.src(dist)
-          .pipe(gulp.dest(paths.dist)),
-          done;
-        });
+        // Also create a fully annotated minified copy
+        return gulp.src(dist)
+        .pipe(gulp.dest(paths.dist))
       });
-  }
-  return scripts();
+    });
 }
 
 // Browser-sync

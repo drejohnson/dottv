@@ -1,3 +1,5 @@
+import '../../components/search/search';
+import '../../components/search-input/search-input';
 import '../../components/menu-link/menu-link';
 import '../../components/menu-toggle/menu-toggle';
 import '../../components/item-widgets/item-widgets';

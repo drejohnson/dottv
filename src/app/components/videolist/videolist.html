@@ -1,8 +1,11 @@
 <section>
-	<header id="section-header">
-		<h3>browse</h3>
-		<h1 class="section-title">Latest Videos</h1>
-	</header>
+	<div layout="row">
+		<header id="section-header" flex="initial">
+			<h3>browse</h3>
+			<h1 class="section-title">Latest Videos</h1>
+		</header>
+		<search-input flex="grow"></search-input>
+	</div>
 	<div class="items" layout="row" layout-align="space-between center" layout-wrap>
 
 		<md-card class="item" flex="100" flex-gt-md="50" flex-gt-lg="33" ng-repeat="video in ::vm.results track by video.id">

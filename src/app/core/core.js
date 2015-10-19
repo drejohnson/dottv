@@ -7,6 +7,9 @@ import './config/run';
 import './filters/truncate';
 import './filters/html';
 
+import './services/search';
 import './services/menu';
 import './services/posts';
 import './services/videos';
+
+// import './directives/search-input';

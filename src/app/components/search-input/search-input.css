@@ -299,128 +299,16 @@ img, video, object {
     max-width: 100%;
 }
 
-blog-view main {
-
-    max-width: 1400px;
-}
-
-blog-view header {
-
-    background-color: #212121;
-
-    padding: 20px;
-
-    margin-top: 8px;
-}
-
-blog-view header .title {
-
-    font-weight: 300;
-
-    text-transform: uppercase;
-}
-
-blog-view header .intro {
-
-    color: #c0392b;
-
-    font-size: 1.25rem;
-
-    font-weight: 400;
-}
-
-blog-view .content-label {
-
-    font-weight: 300;
-
-    text-transform: uppercase;
-}
-
-blog-view .content {
-
-    background-color: #1a1a1a;
-
-    margin: 8px 0 0;
-
-    padding: 50px;
-}
-
-blog-view .content p {
-
-    font-size: 1.25rem;
+search-input #search {
 
     margin: 0;
 }
 
-blog-view .content p .block-img {
-
-    text-align: center;
-}
-
-blog-view .featured-image {
-
-    position: relative;
-}
-
-blog-view .featured-image:before {
-
-    display: block;
-
-    content: "";
+search-input #search .md-icon-float {
 
     width: 100%;
 
-    padding-top: 56.25%;
+    margin: 0;
 }
 
-blog-view .featured-image > div {
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-}
-
-blog-view .featured-image:before {}
-
-blog-view .featured-image .image-container .image {
-
-    background-size: cover;
-
-    background-repeat: no-repeat;
-
-    background-position: center center;
-
-    width: 100%;
-
-    height: 100%;
-}
-
-@media (min-width: 1200px) {
-
-    blog-view .featured-image:before {
-
-        padding-top: 0;
-    }
-			}
-
-@media (min-width: 1200px) {
-
-    blog-view .featured-image .image-container {
-
-        position: relative;
-
-        height: calc(100vh - 300px);
-
-        min-height: 472px;
-
-        padding: 0;
-    }
-			}
-
-/*# sourceMappingURL=blog-view.css.map */
+/*# sourceMappingURL=search-input.css.map */
