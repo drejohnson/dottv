@@ -28,8 +28,8 @@ const LOG = new WeakMap();
     $url(viewID) {
       const base = 'http:/tomorrowpictures.tv/';
       const channel = viewID[0].fragments['video.channel'].value;
-      const id = viewID.id;
-      const slug = viewID.slug;
+      const id = viewID[0].id;
+      const slug = viewID[0].slug;
       const getUrl = base + channel + '/' + id + '/' + slug;
       return getUrl;
     }

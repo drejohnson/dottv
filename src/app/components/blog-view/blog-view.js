@@ -9,30 +9,29 @@ const LOG = new WeakMap();
 // start-non-standard
 @RouteConfig('blog-view', {
   url: '/blog/:id/:slug',
-  template: '<blog-view></blog-view>'
-  // resolve: {
-  //   // Constant Meta
-  //   // viewID: ($stateParams, PostsService) => {
-  //   //   return PostsService.getPost($stateParams.id);
-  //   // },
-  //   // $title(viewID) {
-  //   //   return viewID[0].fragments['video.title'].blocks[0].text;
-  //   // },
-  //   // $description(viewID) {
-  //   //   return viewID[0].fragments['video.shortlede'].blocks[0].text;
-  //   // },
-  //   // $metaImg(viewID) {
-  //   //   return viewID[0].fragments['video.poster'].main.url;
-  //   // },
-  //   // $url(viewID) {
-  //   //   const base = 'http:/tomorrowpictures.tv/';
-  //   //   const channel = viewID[0].fragments['video.channel'].value;
-  //   //   const id = viewID.id;
-  //   //   const slug = viewID.slug;
-  //   //   const getUrl = base + channel + '/' + id + '/' + slug;
-  //   //   return getUrl;
-  //   // }
-  // }
+  template: '<blog-view></blog-view>',
+  resolve: {
+    // Constant Meta
+    viewID: ($stateParams, PostsService) => {
+      return PostsService.getPost($stateParams.id);
+    },
+    $title(viewID) {
+      return viewID[0].fragments['blog.title'].blocks[0].text;
+    },
+    $description(viewID) {
+      return viewID[0].fragments['blog.shortlede'].blocks[0].text;
+    },
+    $metaImg(viewID) {
+      return viewID[0].fragments['blog.image'].url;
+    },
+    $url(viewID) {
+      const base = 'http:/tomorrowpictures.tv/blog/';
+      const id = viewID[0].id;
+      const slug = viewID[0].slug;
+      const getUrl = base + id + '/' + slug;
+      return getUrl;
+    }
+  }
 })
 @Component({
   selector: 'blog-view'
