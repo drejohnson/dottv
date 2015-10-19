@@ -21,10 +21,6 @@ const LOG = new WeakMap();
         }
       }
     });
-
-    scope.submitQuery = () => {
-      LOG.get(this).log('Canceled Search');
-    };
   }
 })
 @Inject('$location', '$stateParams', '$log')
