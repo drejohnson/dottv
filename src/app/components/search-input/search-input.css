@@ -313,4 +313,11 @@ search-input #search .md-icon-float {
     margin: 0;
 }
 
+search-input #search .md-icon-float label {
+
+    color: rgba(255,255,255,0.4);
+
+    font-weight: 400;
+}
+
 /*# sourceMappingURL=search-input.css.map */
