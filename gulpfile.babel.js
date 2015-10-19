@@ -7,6 +7,7 @@ import sync from 'run-sequence';
 import serve from 'browser-sync';
 import modRewrite from 'connect-modrewrite';
 import del from 'del';
+import autoprefixer from 'autoprefixer';
 import precss from 'precss';
 import lost from 'lost';
 import calc from 'postcss-calc';
@@ -84,7 +85,8 @@ function styleTask(stylesPath, srcs) {
   const processors = [
     precss(),
     lost(),
-    calc()
+    calc(),
+    autoprefixer({browsers: ['last 2 version']})
   ];
   return gulp.src(srcs.map((src) => {
     return path.join(root + '/app', stylesPath, src);

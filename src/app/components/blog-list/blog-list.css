@@ -256,7 +256,6 @@ img, video, object {
 }
 .item .poster:before {
     content: '';
-    background-image: -webkit-linear-gradient(top left, #000, #444);
     background-image: linear-gradient(to bottom right,#000,#444);
     position: absolute;
     top: 0;
