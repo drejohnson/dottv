@@ -1,4 +1,4 @@
-let Configuration = {
+const Configuration = {
 
   apiEndpoint: 'https://dottv.prismic.io/api',
 
