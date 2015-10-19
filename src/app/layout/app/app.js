@@ -3,6 +3,7 @@ import '../../components/search-input/search-input';
 import '../../components/menu-link/menu-link';
 import '../../components/menu-toggle/menu-toggle';
 import '../../components/item-widgets/item-widgets';
+import '../../components/social-buttons/social-buttons';
 import '../../components/sidenav/sidenav';
 import '../../components/toolbar/toolbar';
 import '../../components/blog-list/blog-list';

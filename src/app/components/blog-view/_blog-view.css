@@ -11,6 +11,7 @@ blog-view {
 		.title {
 			font-weight: 300;
 			text-transform: uppercase;
+			max-width: 80%;
 		}
 		.intro {
 			color: var(--brandRed);

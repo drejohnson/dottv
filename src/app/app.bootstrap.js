@@ -13,6 +13,7 @@ import 'videogular-overlay-play';
 import 'videogular-poster';
 import 'videogular-analytics';
 import 'videogular-youtube';
+import 'angular-socialshare';
 import 'rx-angular';
 
 //  ----------------App Files---------------  //

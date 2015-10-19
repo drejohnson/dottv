@@ -20,6 +20,7 @@
       "angular-material": "github:angular/bower-material@^0.11.3",
       "angular-mocks": "npm:angular-mocks@^1.5.0-beta.0",
       "angular-sanitize": "github:angular/bower-angular-sanitize@^1.5.0-beta.0",
+      "angular-socialshare": "npm:angular-socialshare@^0.1.14",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "angulartics": "github:angulartics/angulartics@^0.20.1",
       "angulartics-google-analytics": "github:angulartics/angulartics-google-analytics@^0.1.1",

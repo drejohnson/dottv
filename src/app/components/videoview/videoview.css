@@ -306,6 +306,8 @@ video-view main {
 
 video-view header {
 
+    position: relative;
+
     background-color: #212121;
 
     padding: 20px;
@@ -318,6 +320,8 @@ video-view header .title {
     font-weight: 300;
 
     text-transform: uppercase;
+
+    max-width: 80%;
 }
 
 video-view header .intro {

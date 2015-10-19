@@ -57,6 +57,9 @@ class OnConfig {
       .backgroundPalette('brand-grey', { 'default': '900' })
       .dark();
 
+    $mdIconProvider
+      .fontSet('fa', 'fontawesome');
+
     // use the HTML5 History API
     $locationProvider.html5Mode({
       enabled: true,

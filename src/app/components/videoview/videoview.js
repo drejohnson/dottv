@@ -65,6 +65,13 @@ class VideoView {
         this.url = this.video.fragments['video.videourl'].value;
         this.poster = this.video.fragments['video.poster'].main.url;
 
+        this.base = 'http:/tomorrowpictures.tv/';
+        this.id = this.video.id;
+        this.slug = this.video.slug;
+        this.channel = this.video.fragments['video.channel'].value;
+        this.videoUrl = this.base + this.channel + '/' + this.id + '/' + this.slug;
+        // LOG.get(this).log(this.videoUrl);
+
         this.videoHtml = video[1];
         this.content = this.videoHtml.html;
 

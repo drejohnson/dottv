@@ -318,6 +318,8 @@ blog-view header .title {
     font-weight: 300;
 
     text-transform: uppercase;
+
+    max-width: 80%;
 }
 
 blog-view header .intro {

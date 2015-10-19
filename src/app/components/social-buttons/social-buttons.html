@@ -1,0 +1,33 @@
+<div layout="row" layout-align="end center">
+	<md-button
+		class="social-button facebook"
+		aria-label="Facebook Share Button"
+		socialshare
+		socialshare-provider="facebook"
+		socialshare-type="feed"
+		socialshare-via="463349737200274"
+		socialshare-to=""
+		socialshare-from=""
+		socialshare-ref=""
+		socialshare-display="popup"
+		socialshare-media={{$parent.poster}}
+		socialshare-source=""
+		socialshare-description="Yes it's super awesome, seriously!"
+		socialshare-text="720kb"
+		socialshare-caption="720kb is awesome"
+		socialshare-url={{$parent.videoUrl}}
+		socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
+		<md-icon aria-label="Facebook" class="fa fa-facebook social-item"></md-icon>
+		<span>Facebook</span>
+	</md-button>
+	<md-button
+		class="social-button twitter"
+		aria-label="Twitter Share Button"
+		socialshare
+		socialshare-provider="twitter"
+		socialshare-via="TpTV_Network"
+		socialshare-url={{$parent.videoUrl}}>
+		<md-icon aria-label="Twitter" class="fa fa-twitter social-item"></md-icon>
+		<span>Twitter</span>
+	</md-button>
+</div>

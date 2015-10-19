@@ -5,12 +5,14 @@ video-view {
     max-width: 1400px;
 	}
 	header {
+		position: relative;
 		background-color: var(--brandDarkGrey);
     padding: 20px;
 		margin-top: 8px;
 		.title {
 			font-weight: 300;
 			text-transform: uppercase;
+			max-width: 80%;
 		}
 		.intro {
 			color: var(--brandRed);
