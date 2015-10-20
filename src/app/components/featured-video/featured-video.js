@@ -45,10 +45,14 @@ class FeaturedVideo {
         this.API = null;
         this.onPlayerReady = (API) => {
           this.API = API;
+          LOG.get(this).log(this.API);
         };
         this.onCompleteVideo = () => this.isCompleted = true;
 
-        this.onUpdateState = (state) => this.state = state;
+        this.onUpdateState = (state) => {
+          this.state = state;
+          LOG.get(this).log(this.state);
+        };
 
         this.onUpdateTime = (currentTime, totalTime) => {
           this.currentTime = currentTime;

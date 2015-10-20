@@ -4,7 +4,10 @@
 		<h1 class="featured-title">{{::vm.title}}</h1>
 	</header> -->
   <div class="videogular-container">
-    <videogular vg-player-ready="vm.onPlayerReady($API)" vg-auto-play="true">
+    <videogular
+      vg-player-ready="vm.onPlayerReady(vm.$API)"
+      vg-update-state="onUpdateState(vm.$state)"
+      vg-auto-play="true">
       <vg-media vg-src="vm.config.sources" vg-youtube="rel=0;showinfo=0;autoplay=1;mute=1"></vg-media>
 
       <vg-controls vg-autohide="vm.config.autoHide" vg-autohide-time="vm.config.autoHideTime">
@@ -21,8 +24,8 @@
         <vg-fullscreen-button></vg-fullscreen-button>
       </vg-controls>
 
-      <vg-overlay-play></vg-overlay-play>
       <vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
+      <vg-overlay-play></vg-overlay-play>
       <div class="logo-layer" ng-show="vm.API.currentState !== 'play'">
         <img src="/images/logos/logo-red.svg">
       </div>

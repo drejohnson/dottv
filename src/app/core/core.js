@@ -12,4 +12,5 @@ import './services/menu';
 import './services/posts';
 import './services/videos';
 
-// import './directives/search-input';
+import './directives/videojs';
+// import './directives/videojs-resize';
