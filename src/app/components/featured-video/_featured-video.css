@@ -22,11 +22,17 @@ featured-video {
 	      text-transform: uppercase;
 	    }
 	  }
-		.videogular-container {
+		.videogular-container, .embed {
 			@media (--large) {
 				position: relative;
 				height: calc(100vh - 160px);
 				padding: 0;
+			}
+		}
+		.embed {
+			iframe {
+				width: 100%;
+				height: 100%;
 			}
 		}
 		.embed-responsive {

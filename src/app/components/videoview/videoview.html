@@ -1,7 +1,10 @@
 <main ng-if="vm.activated">
 	<section class="main-video">
-		<div class="videogular-container">
-			<!-- <videogular vg-player-ready="vm.onPlayerReady($API)">
+		<div class="embed">
+	    <youtube-video video-id="vm.youtubeID" player-vars="vm.playerVars"></youtube-video>
+	  </div>
+		<!-- <div class="videogular-container">
+			<videogular vg-player-ready="vm.onPlayerReady($API)">
 				<vg-media vg-src="vm.config.sources" vg-youtube="rel=0;showinfo=0"></vg-media>
 
 				<vg-controls vg-autohide="vm.config.autoHide" vg-autohide-time="vm.config.autoHideTime">
@@ -23,11 +26,8 @@
 				<div class="logo-layer" ng-show="vm.API.currentState != 'play'">
 					<img src="/images/logos/logo-red.svg">
 				</div>
-			</videogular> -->
-			<div class="embed-responsive embed-responsive-16by9">
-	      <youtube-video class="embed-responsive-item" video-id="vm.youtubeID" player-vars="vm.playerVars"></youtube-video>
-	    </div>
-		</div>
+			</videogular>
+		</div> -->
 	</section>
 	<article>
 		<header>

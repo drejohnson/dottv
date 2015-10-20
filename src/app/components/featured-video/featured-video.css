@@ -246,7 +246,12 @@ featured-video .featured-video #section-header h1 {
 	text-transform: uppercase;
 }
 
-featured-video .featured-video .videogular-container {}
+featured-video .featured-video .videogular-container, featured-video .featured-video .embed {}
+
+featured-video .featured-video .embed iframe {
+	width: 100%;
+	height: 100%;
+}
 
 featured-video .featured-video .embed-responsive {
 	position: relative;
@@ -279,7 +284,7 @@ featured-video .featured-video .embed-responsive-item {
 
 @media (min-width: 1200px) {
 
-	featured-video .featured-video .videogular-container {
+	featured-video .featured-video .videogular-container, featured-video .featured-video .embed {
 		position: relative;
 		height: calc(100vh - 160px);
 		padding: 0;

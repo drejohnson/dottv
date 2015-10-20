@@ -47,7 +47,9 @@ class FeaturedVideo {
         LOG.get(this).log(this.youtubeID );
         this.playerVars = {
           controls: 0,
-          autoplay: 1
+          autoplay: 1,
+          rel: 0,
+          showinfo: 0
         };
 
         // Videogular
