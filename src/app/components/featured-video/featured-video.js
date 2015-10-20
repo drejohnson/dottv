@@ -45,6 +45,10 @@ class FeaturedVideo {
         this.youtubeID = videoid();
         this.embedUrl = 'https://www.youtube.com/embed/' + this.youtubeID;
         LOG.get(this).log(this.youtubeID );
+        this.playerVars = {
+          controls: 0,
+          autoplay: 1
+        };
 
         // Videogular
         this.video = this.url;
