@@ -2,9 +2,11 @@ import template from './featured-video.html!text';
 import '../../common/styles/videoplayer.css!';
 import './featured-video.css!';
 import {Component, View, Inject} from '../../core/decorators/decorators';
+// import youtubeID from '../../core/filters/embed-id.js'
 
 const INIT = new WeakMap();
 const SERVICE = new WeakMap();
+const FILTER = new WeakMap();
 const LOG = new WeakMap();
 
 // start-non-standard
@@ -14,18 +16,19 @@ const LOG = new WeakMap();
 @View({
   template: template
 })
-@Inject('VideosService', '$log')
+@Inject('VideosService', '$filter', '$log')
 // end-non-standard
 
 // Featured-video Controller
 class FeaturedVideo {
-  constructor(VideosService, $log) {
+  constructor(VideosService, $filter, $log) {
     Object.assign(this, {
       label: 'featured',
       title: 'Tomorrow Pictures TV Intro',
       activated: false
     });
     SERVICE.set(this, VideosService);
+    FILTER.set(this, $filter);
     LOG.set(this, $log);
     INIT.set(this, () => {
       SERVICE.get(this).getFeatured().then(featured => {
@@ -34,6 +37,14 @@ class FeaturedVideo {
         this.title = this.results[0].fragments['featured.title'].blocks[0].text;
         this.url = this.results[0].fragments['featured.videourl'].value;
         this.poster = this.results[0].fragments['featured.poster'].main.url;
+
+        const videoid = () => {
+          const embedId = FILTER.get(this)('youtubeID')(this.url);
+          return embedId;
+        };
+        this.youtubeID = videoid();
+        this.embedUrl = 'https://www.youtube.com/embed/' + this.youtubeID;
+        LOG.get(this).log(this.youtubeID );
 
         // Videogular
         this.video = this.url;

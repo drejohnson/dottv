@@ -16,7 +16,8 @@ const appModule = angular.module('app', [
   'com.2fdevs.videogular.plugins.analytics',
   'info.vietnamcode.nampnq.videogular.plugins.youtube',
   '720kb.socialshare',
-  'rx'
+  'rx',
+  'youtube-embed'
 ]);
 
 export default appModule;

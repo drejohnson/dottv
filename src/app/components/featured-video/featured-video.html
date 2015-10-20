@@ -4,7 +4,7 @@
 		<h1 class="featured-title">{{::vm.title}}</h1>
 	</header> -->
   <div class="videogular-container">
-    <videogular
+    <!-- <videogular
       vg-player-ready="vm.onPlayerReady(vm.$API)"
       vg-update-state="onUpdateState(vm.$state)"
       vg-auto-play="true">
@@ -29,6 +29,9 @@
       <div class="logo-layer" ng-show="vm.API.currentState !== 'play'">
         <img src="/images/logos/logo-red.svg">
       </div>
-    </videogular>
+    </videogular> -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <youtube-video class="embed-responsive-item" video-id="vm.youtubeID" player-vars="vm.playerVars"></youtube-video>
+    </div>
   </div>
 </section>

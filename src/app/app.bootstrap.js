@@ -14,6 +14,7 @@ import 'videogular-poster';
 import 'videogular-analytics';
 import 'videogular-youtube';
 import 'angular-socialshare';
+import 'angular-youtube-embed';
 import 'rx-angular';
 
 //  ----------------App Files---------------  //
