@@ -394,6 +394,41 @@ video-view .main-video:before {}
 
 video-view .main-video .videogular-container {}
 
+video-view .main-video .embed-responsive {
+
+    position: relative;
+
+    display: block;
+
+    height: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+}
+
+video-view .main-video .embed-responsive.embed-responsive-16by9 {
+
+    padding-bottom: 49%;
+}
+
+video-view .main-video .embed-responsive-item {
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
 @media (min-width: 1200px) {
 
     video-view .main-video:before {

@@ -5,6 +5,7 @@ import {RouteConfig, Component, View, Inject} from '../../core/decorators/decora
 
 const INIT = new WeakMap();
 const SERVICE = new WeakMap();
+const FILTER = new WeakMap();
 const LOG = new WeakMap();
 
 // start-non-standard
@@ -41,12 +42,12 @@ const LOG = new WeakMap();
 @View({
   template: template
 })
-@Inject('$stateParams', 'VideosService', '$log')
+@Inject('$stateParams', '$filter', 'VideosService', '$log')
 // end-non-standard
 
 // Videoview Controller
 class VideoView {
-  constructor($stateParams, VideosService, $log) {
+  constructor($stateParams, $filter, VideosService, $log) {
     Object.assign(this, {
       name: 'Video View',
       activated: false,
@@ -54,7 +55,7 @@ class VideoView {
     });
     SERVICE.set(this, VideosService);
     LOG.set(this, $log);
-    // LOG.get(this).log(this.id);
+    FILTER.set(this, $filter);
     INIT.set(this, () => {
       const id = this.id;
       SERVICE.get(this).getVideo(id).then(video => {
@@ -64,6 +65,18 @@ class VideoView {
         this.intro = this.video.fragments['video.shortlede'].blocks[0].text;
         this.url = this.video.fragments['video.videourl'].value;
         this.poster = this.video.fragments['video.poster'].main.url;
+
+        const videoid = () => {
+          const embedId = FILTER.get(this)('youtubeID')(this.url);
+          return embedId;
+        };
+        this.youtubeID = videoid();
+        this.embedUrl = 'https://www.youtube.com/embed/' + this.youtubeID;
+        LOG.get(this).log(this.youtubeID );
+        this.playerVars = {
+          controls: 0,
+          autoplay: 1
+        };
 
         this.base = 'http:/tomorrowpictures.tv/';
         this.id = this.video.id;
