@@ -171,7 +171,7 @@ img, video, object {
 }
 .item {
     position: relative;
-    padding: 0;
+    padding: .8rem;
     margin: 0;
     box-shadow: none;
     min-height: 231px;
@@ -202,7 +202,7 @@ img, video, object {
     opacity: 1.0 ;
 }
 .item .item-wrapper {
-    margin: 8px 4px 0;
+    margin: 4px;
 }
 .item .item-channel {
     font-size: 1.125rem;
@@ -284,12 +284,6 @@ img, video, object {
 }
 .item .card-info a:hover {
     text-decoration: underline;
-}
-@media (min-width: 1200px) {
-    .item .item-wrapper {
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 blog-list #section-header h3 {

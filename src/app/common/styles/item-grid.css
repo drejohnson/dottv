@@ -1,6 +1,6 @@
 .item {
   position: relative;
-  padding: 0;
+  padding: var(--sm-pad);
   margin: 0;
   box-shadow: none;
   min-height: 231px;
@@ -19,12 +19,7 @@
   }
 
   .item-wrapper {
-    margin: 8px 4px 0;
-
-    @media (--large) {
-      margin-left: 0;
-      margin-right: 0;
-    }
+    margin: 4px;
   }
   .item-channel {
     font-size: calc(18/16)rem;

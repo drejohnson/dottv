@@ -32,18 +32,4 @@ channellist {
       }
     }
   }
-  .item {
-    padding: var(--sm-pad);
-    margin: 0;
-    box-shadow: none;
-    h1 {
-      font-size: calc(24/16)rem;
-    }
-    .poster {
-
-    }
-    .card-info {
-
-    }
-  }
 }

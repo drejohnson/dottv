@@ -6,7 +6,7 @@
 		</header>
 		<search-input flex="grow"></search-input>
 	</div>
-	<div class="items" layout="row" layout-align="space-between center" layout-wrap>
+	<div class="items" layout="row" layout-align="center center" layout-wrap>
 		<md-card class="item" flex="100" flex-gt-md="50" flex-gt-lg="33" ng-repeat="video in ::vm.results track by video.id">
 			<div class="item-wrapper">
 				<div class="poster" ng-style="{ 'background-image': 'url(' + video.fragments['video.poster'].views.column.url +')' }"></div>
