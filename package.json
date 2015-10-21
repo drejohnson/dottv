@@ -15,6 +15,7 @@
   "jspm": {
     "configFile": "jspm.config.js",
     "dependencies": {
+      "adaptive-detection": "github:angular-adaptive/adaptive-detection@^0.4.1",
       "angular": "github:angular/bower-angular@^1.5.0-beta.0",
       "angular-animate": "github:angular/bower-angular-animate@^1.5.0-beta.0",
       "angular-material": "github:angular/bower-material@^0.11.3",
@@ -29,9 +30,11 @@
       "css": "github:systemjs/plugin-css@^0.1.17",
       "lodash": "npm:lodash@^3.10.1",
       "moment": "github:moment/moment@^2.10.6",
+      "ng-device-detector": "npm:ng-device-detector@^1.1.7",
       "normalize.css": "github:necolas/normalize.css@^3.0.3",
       "rx": "npm:rx@^4.0.0",
       "rx-angular": "npm:rx-angular@^0.0.14",
+      "srfrnk/ng-device-detector": "github:srfrnk/ng-device-detector@^2.0.2",
       "text": "github:systemjs/plugin-text@^0.0.2",
       "video.js": "npm:video.js@^5.0.0",
       "videogular": "github:2fdevs/bower-videogular@^1.2.8",

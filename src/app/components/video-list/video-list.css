@@ -286,20 +286,33 @@ img, video, object {
     text-decoration: underline;
 }
 
-videolist #latest {
+video-list #latest {
     background-color: #212121;
     padding: 8px;
 }
 
-videolist #section-header h3 {
-    font-size: 2rem;
-    font-weight: 400;
+video-list #section-header h3 {
+    font-size: 1.25rem;
+    font-weight: 400
 }
 
-videolist #section-header h1 {
+video-list #section-header h2 {
     color: #c0392b;
+    font-size: 1.375rem;
     font-weight: 300;
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
-/*# sourceMappingURL=videolist.css.map */
+@media (min-width: 960px) {
+    video-list #section-header h3 {
+        font-size: 2rem;
+    }
+      }
+
+@media (min-width: 960px) {
+    video-list #section-header h2 {
+        font-size: 2.25rem;
+    }
+      }
+
+/*# sourceMappingURL=video-list.css.map */

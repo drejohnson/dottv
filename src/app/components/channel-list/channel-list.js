@@ -1,5 +1,5 @@
-import template from './channellist.html!text';
-import './channellist.css!';
+import template from './channel-list.html!text';
+import './channel-list.css!';
 import {RouteConfig, Component, View, Inject} from '../../core/decorators/decorators';
 
 const CHANNEL_TITLE = new WeakMap();
@@ -11,7 +11,7 @@ const LOG = new WeakMap();
 
 // start-non-standard
 @Component({
-  selector: 'channellist'
+  selector: 'channel-list'
 })
 @View({
   template: template
@@ -20,7 +20,7 @@ const LOG = new WeakMap();
 // end-non-standard
 
 // Channellist Controller
-class Channellist {
+class ChannelList {
   constructor(VideosService, $location, $state, $log) {
     SERVICE.set(this, VideosService);
     LOG.set(this, $log);
@@ -58,4 +58,4 @@ class Channellist {
   }
 }
 
-export default Channellist;
+export default ChannelList;

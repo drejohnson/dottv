@@ -12,6 +12,3 @@ import './services/search';
 import './services/menu';
 import './services/posts';
 import './services/videos';
-
-import './directives/videojs';
-// import './directives/videojs-resize';

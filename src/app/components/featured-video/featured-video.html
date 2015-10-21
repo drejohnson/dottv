@@ -1,19 +1,21 @@
 <section class="featured-video">
-	<!-- <header id="section-header">
-		<h3>{{::vm.label}}</h3>
-		<h1 class="featured-title">{{::vm.title}}</h1>
-	</header> -->
   <div class="embed">
     <youtube-video video-id="vm.youtubeID" player-vars="vm.playerVars"></youtube-video>
   </div>
-  <!-- <div class="videogular-container">
+  <!-- <div class="videogular-container" ng-show="!$root.client_ios">
     <videogular
-      vg-player-ready="vm.onPlayerReady(vm.$API)"
-      vg-update-state="onUpdateState(vm.$state)"
-      vg-auto-play="true">
-      <vg-media vg-src="vm.config.sources" vg-youtube="rel=0;showinfo=0;autoplay=1;mute=1"></vg-media>
+      vg-player-ready="vm.onPlayerReady($API)"
+      vg-update-state="vm.onUpdateState($state)"
+      vg-auto-play="vm.config.autoPlay">
+      <vg-media
+        vg-src="vm.config.sources"
+        vg-preload="vm.config.preload"
+        vg-youtube="rel=0;showinfo=0;autoplay=1;mute=1">
+      </vg-media>
 
-      <vg-controls vg-autohide="vm.config.autoHide" vg-autohide-time="vm.config.autoHideTime">
+      <vg-controls
+        vg-autohide="vm.config.autoHide"
+        vg-autohide-time="vm.config.autoHideTime">
         <vg-play-pause-button></vg-play-pause-button>
         <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
         <vg-scrub-bar>
@@ -27,11 +29,10 @@
         <vg-fullscreen-button></vg-fullscreen-button>
       </vg-controls>
 
+      <vg-analytics vg-track-info="vm.config.plugins.analytics"></vg-analytics>
       <vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
+      <vg-buffering></vg-buffering>
       <vg-overlay-play></vg-overlay-play>
-      <div class="logo-layer" ng-show="vm.API.currentState !== 'play'">
-        <img src="/images/logos/logo-red.svg">
-      </div>
     </videogular>
   </div> -->
 </section>

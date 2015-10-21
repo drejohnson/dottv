@@ -44,9 +44,9 @@ class FeaturedVideo {
         };
         this.youtubeID = videoid();
         this.embedUrl = 'https://www.youtube.com/embed/' + this.youtubeID;
-        LOG.get(this).log(this.youtubeID );
+
         this.playerVars = {
-          controls: 0,
+          controls: 1,
           autoplay: 1,
           rel: 0,
           showinfo: 0
@@ -79,15 +79,29 @@ class FeaturedVideo {
         this.onUpdateVolume = (newVol) => this.volume = newVol;
 
         this.config = {
+          nativeFullscreen: true,
           autoHide: true,
           autoHideTime: 3000,
           autoPlay: true,
-          preload: 'auto',
+          preload: 'false',
           sources: [
             {src: this.video },
           ],
+          loop: false,
           plugins: {
             poster: this.poster
+          },
+          analytics: {
+            category: 'Featured',
+            label: this.title,
+            events: {
+              ready: true,
+              play: true,
+              pause: true,
+              stop: true,
+              complete: true,
+              progress: 10
+            }
           }
         };
       });

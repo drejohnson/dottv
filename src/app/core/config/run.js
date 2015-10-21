@@ -4,8 +4,8 @@ import {Run, Inject} from '../decorators/decorators';
 
 class OnRun {
   @Run()
-  @Inject('$rootScope', '$state', '$stateParams', '$location', '$log')
-  static runFactory($rootScope, $state, $stateParams, $location, $log) {
+  @Inject('$rootScope', '$state', '$stateParams', '$location', '$detection', '$log')
+  static runFactory($rootScope, $state, $stateParams, $location, $detection, $log) {
     $rootScope.$state = $state;
 
     const stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', (event, toState) => {
@@ -24,6 +24,9 @@ class OnRun {
       $rootScope.$description = description || $rootScope.pageDescription;
       $rootScope.$metaImg = metaImg;
       $rootScope.$url = url;
+
+      $rootScope.client_ios = $detection.isiOS();
+      $log.log($rootScope.client_ios);
 
       $log.log('Current Location: ' + $rootScope.$title);
 

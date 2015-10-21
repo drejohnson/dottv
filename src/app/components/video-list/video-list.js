@@ -1,5 +1,5 @@
-import template from './videolist.html!text';
-import './videolist.css!';
+import template from './video-list.html!text';
+import './video-list.css!';
 import {RouteConfig, Component, View, Inject} from '../../core/decorators/decorators';
 
 const INIT = new WeakMap();
@@ -8,7 +8,7 @@ const LOG = new WeakMap();
 
 // start-non-standard
 @Component({
-  selector: 'videolist'
+  selector: 'video-list'
 })
 @View({
   template: template
@@ -17,7 +17,7 @@ const LOG = new WeakMap();
 // end-non-standard
 
 // Videolist Controller
-class Videolist {
+class VideoList {
   constructor(VideosService, $log) {
     SERVICE.set(this, VideosService);
     LOG.set(this, $log);
@@ -49,4 +49,4 @@ class Videolist {
   }
 }
 
-export default Videolist;
+export default VideoList;

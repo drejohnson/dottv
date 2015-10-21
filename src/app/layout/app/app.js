@@ -1,4 +1,3 @@
-// import '../../components/video-js/video-js';
 import '../../components/search/search';
 import '../../components/search-input/search-input';
 import '../../components/menu-link/menu-link';
@@ -10,9 +9,9 @@ import '../../components/toolbar/toolbar';
 import '../../components/blog-list/blog-list';
 import '../../components/blog-view/blog-view';
 import '../../components/featured-video/featured-video';
-import '../../components/videolist/videolist';
-import '../../components/channellist/channellist';
-import '../../components/videoview/videoview';
+import '../../components/video-list/video-list';
+import '../../components/channel-list/channel-list';
+import '../../components/video-view/video-view';
 import '../../components/episodes/episodes';
 import '../../components/home/home';
 import '../../components/docu-series/docu-series';

@@ -1,19 +1,28 @@
 @import '../../styles/styles.css';
 @import '../../common/styles/item-grid.css';
 
-channellist {
+channel-list {
   #latest {
     background-color: #212121;
     padding: 8px;
   }
   #section-header {
     h3 {
-      font-size: calc(32/16)rem;
+      font-size: calc(20/16)rem;
       font-weight: 400;
+
+      @media (--medium) {
+        font-size: calc(32/16)rem;
+      }
     }
-    h1 {
+    h2 {
+      font-size: calc(22/16)rem;
       font-weight: 300;
       text-transform: uppercase;
+
+      @media (--medium) {
+        font-size: calc(36/16)rem;
+      }
 
       &.docu-series {
         color: var(--channel-docu-series);

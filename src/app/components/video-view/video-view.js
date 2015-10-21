@@ -1,6 +1,6 @@
-import template from './videoview.html!text';
+import template from './video-view.html!text';
 import '../../common/styles/videoplayer.css!';
-import './videoview.css!';
+import './video-view.css!';
 import {RouteConfig, Component, View, Inject} from '../../core/decorators/decorators';
 
 const INIT = new WeakMap();
@@ -74,7 +74,7 @@ class VideoView {
         this.embedUrl = 'https://www.youtube.com/embed/' + this.youtubeID;
         LOG.get(this).log(this.youtubeID );
         this.playerVars = {
-          controls: 0,
+          controls: 1,
           autoplay: 1,
           rel: 0,
           showinfo: 0

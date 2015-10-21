@@ -16,6 +16,7 @@ import 'videogular-youtube';
 import 'angular-socialshare';
 import 'angular-youtube-embed';
 import 'rx-angular';
+import 'adaptive-detection';
 
 //  ----------------App Files---------------  //
 import './core/core';
