@@ -19,6 +19,7 @@ import '../../components/radio-tv-film/radio-tv-film';
 import '../../components/music/music';
 import '../../components/comedy/comedy';
 import '../../components/lifestyle/lifestyle';
+import '../../components/related/related';
 
 import template from './app.html!text';
 import './app.css!';

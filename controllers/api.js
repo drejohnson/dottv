@@ -104,7 +104,7 @@ export const getRelated = (req, res) => {
     item.query(
       prismic.Predicates.similar(id, 10), {
         page: 1,
-        pageSize: 3
+        pageSize: 6
       }, (err, data) => {
         res.status(200).json(data);
       });

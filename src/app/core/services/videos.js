@@ -42,6 +42,12 @@ class VideosService {
       .then(results => results.data )
       .catch(err => LOG.get(this).log(err));
   }
+
+  getRelated(id) {
+    return HTTP.get(this).get(`${this.apiHost}/related/${id}`)
+      .then(results => results.data )
+      .catch(err => LOG.get(this).log(err));
+  }
 }
 
 export default VideosService;
