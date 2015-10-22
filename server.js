@@ -113,6 +113,9 @@ app.get('/api/related/:id', apiController.getRelated);
 app.get('/api/posts', apiController.getPosts);
 app.get('/api/posts/:id', apiController.getPost);
 
+app.get('/api/audio', apiController.getAudioList);
+app.get('/api/audio/:id', apiController.getAudioDetail);
+
 app.get('/api/search/:q', apiController.getSearch);
 
 app.route('/preview').get(prismic.preview);

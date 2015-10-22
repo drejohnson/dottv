@@ -150,7 +150,7 @@ export const getPosts = (req, res) => {
   });
 };
 
-// Get single Video
+// Get single Post
 export const getPost = (req, res) => {
   const item = prismic.withContext(req, res);
   const id = req.params['id'];
@@ -160,6 +160,29 @@ export const getPost = (req, res) => {
     res.status(200).json([
       data,
       {html: html}
+    ]);
+  });
+};
+
+// Get list of Audio Posts
+export const getAudioList = (req, res) => {
+  const item = prismic.withContext(req, res);
+  item.query(prismic.Predicates.at('document.type', 'audio'), {
+    page: 1,
+    pageSize: 21
+  }, (err, data) => {
+    res.status(200).json(data);
+  });
+};
+
+// Get single Audio Post
+export const getAudioDetail = (req, res) => {
+  const item = prismic.withContext(req, res);
+  const id = req.params['id'];
+  item.getByID(id, (err, data) => {
+    // res.status(200).json(data);
+    res.status(200).json([
+      data
     ]);
   });
 };
