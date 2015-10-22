@@ -220,11 +220,24 @@ social-buttons .social-button {
 	padding: 0 10px;
 }
 
+social-buttons .social-button:not([disabled]):hover
+		social-buttons .social-button:not([disabled]):focus {
+	background-color: inherit;
+}
+
 social-buttons .social-button.facebook {
 	background-color: #3b5999;
 }
 
+social-buttons .social-button.facebook:not([disabled]):hover, social-buttons .social-button.facebook:not([disabled]):focus {
+	background-color: #3b5999;
+}
+
 social-buttons .social-button.twitter {
+	background-color: #55acee;
+}
+
+social-buttons .social-button.twitter:not([disabled]):hover, social-buttons .social-button.twitter:not([disabled]):focus {
 	background-color: #55acee;
 }
 

@@ -37,8 +37,7 @@ class Mixtapes {
         this.trustedHtml = (value) => SCE.get(this).trustAsHtml(value);
         this.mixtapes = mixtapes;
         this.results = mixtapes.results;
-        this.embed = this.results[0].fragments['audio.audioembed'].value.oembed.html;
-        LOG.get(this).log(this.results);
+        // LOG.get(this).log(this.results);
       });
     });
     Object.assign(this, {

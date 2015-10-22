@@ -4,19 +4,10 @@
 		aria-label="Facebook Share Button"
 		socialshare
 		socialshare-provider="facebook"
-		socialshare-type="feed"
-		socialshare-via="463349737200274"
-		socialshare-to=""
-		socialshare-from=""
-		socialshare-ref=""
-		socialshare-display="popup"
 		socialshare-media={{$parent.poster}}
-		socialshare-source=""
-		socialshare-description="Yes it's super awesome, seriously!"
-		socialshare-text="720kb"
-		socialshare-caption="720kb is awesome"
-		socialshare-url={{$parent.videoUrl}}
-		socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
+		socialshare-text="{{$parent.title}}"
+		socialshare-description="720kb is awesome"
+		socialshare-url="{{$parent.intro}}">
 		<md-icon aria-label="Facebook" class="fa fa-facebook social-item"></md-icon>
 		<span>Facebook</span>
 	</md-button>
