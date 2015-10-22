@@ -26,10 +26,7 @@ class Related {
     INIT.set(this, () => {
       SERVICE.get(this).getRelated(STATEPARAMS.get(this).id).then(videos => {
         this.videos = videos;
-        // this.results = videos.results;
-        // this.type = this.results.map('results.type');
         this.results = videos.results.filter((x) => x.type === 'video');
-        // this.type = this.results.map((x) => x.type)
         // LOG.get(this).log(this.result);
       });
     });

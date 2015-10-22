@@ -6,7 +6,7 @@ video-list {
     background-color: #212121;
     padding: 8px;
   }
-  #section-header {
+  .section-header {
     h3 {
       font-size: calc(20/16)rem;
       font-weight: 400;

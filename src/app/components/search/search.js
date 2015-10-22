@@ -40,8 +40,8 @@ class Search {
       const query = this.query;
       SERVICE.get(this).getSearches(query).then(search => {
         this.search = search;
-        this.results = search.results;
-        LOG.get(this).log(this.results.type);
+        this.results = search.results.filter((x) => x.type === 'video');
+        // LOG.get(this).log(this.results.type);
       });
     });
     // On load

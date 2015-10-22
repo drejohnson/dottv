@@ -3,7 +3,7 @@
 		<h3>browse:</h3>
 		<h1>Latest Blog Posts</h1>
 	</header>
-	<div class="items" layout="row" layout-align="space-between center" layout-wrap>
+	<div class="items" layout="row" layout-align="start center" layout-wrap>
 		<md-card class="item" flex="100" flex-gt-lg="50" ng-repeat="post in ::vm.results track by post.id">
 			<div class="item-wrapper">
 				<div class="poster" ng-style="{ 'background-image': 'url(' + post.fragments['blog.image'].views.column.url +')' }"></div>
