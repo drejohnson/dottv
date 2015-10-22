@@ -20,6 +20,7 @@ import '../../components/music/music';
 import '../../components/comedy/comedy';
 import '../../components/lifestyle/lifestyle';
 import '../../components/related/related';
+import '../../components/mixtapes/mixtapes';
 
 import template from './app.html!text';
 import './app.css!';

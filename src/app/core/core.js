@@ -12,3 +12,4 @@ import './services/search';
 import './services/menu';
 import './services/posts';
 import './services/videos';
+import './services/mixtapes';

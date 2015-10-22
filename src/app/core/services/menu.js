@@ -51,6 +51,11 @@ class MenuService {
       ]
     });
     this.sections.push({
+      name: 'Mixtapes',
+      state: 'mixtapes',
+      type: 'link'
+    });
+    this.sections.push({
       name: 'Blog',
       state: 'blog',
       type: 'link'

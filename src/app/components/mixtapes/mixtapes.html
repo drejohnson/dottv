@@ -1,0 +1,31 @@
+<section ng-if="vm.activated">
+	<header class="mixtape-header">
+		<h3>listen to:</h3>
+		<h2>Latest Mixtapes</h2>
+	</header>
+	<div class="mixtapes" layout="row" layout-wrap>
+		<md-card class="mixtape" ng-repeat="mixtape in ::vm.results track by mixtape.id">
+			<div class="mixtape-wrapper">
+				<!-- <img class="cover" ng-src="{{mixtape.fragments['audio.cover'].views.icon.url}}" alt="" /> -->
+				<!-- {{::mixtape.fragments['audio.audioembed'].value.oembed.html}} -->
+				<md-card-content class="card-info">
+					<h1 class="mixtape-title">
+						{{::mixtape.fragments['audio.title'].blocks[0].text}}
+					</h1>
+					<div class="embed" ng-bind-html="vm.trustedHtml(mixtape.fragments['audio.audioembed'].value.oembed.html)"></div>
+				</md-card-content>
+			</div>
+		</md-card>
+	</div>
+</section>
+<div ng-if="!vm.activated">
+	<div class="loader">
+		<div class="spinner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+</div>
