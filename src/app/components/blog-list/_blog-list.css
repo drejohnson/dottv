@@ -2,29 +2,33 @@
 @import '../../common/styles/item-grid.css';
 
 blog-list {
-	#section-header {
+	.section-header {
+		background-color: transparent;
+		margin-bottom: 5px;
     h3 {
-      font-size: calc(32/16)rem;
+      font-size: calc(20/16)rem;
       font-weight: 400;
+
+      @media (--medium) {
+        font-size: calc(32/16)rem;
+      }
     }
-    h1 {
-			color: var(--brandRed);
+    h2 {
+      color: var(--brandRed);
+      font-size: calc(22/16)rem;
       font-weight: 300;
       text-transform: uppercase;
-		}
-	}
-	.item {
-    padding: var(--sm-pad);
-    margin: 0;
-    box-shadow: none;
-    h1 {
-      font-size: calc(24/16)rem;
-    }
-    .poster {
 
-    }
-    .card-info {
-
+      @media (--medium) {
+        font-size: calc(36/16)rem;
+      }
     }
   }
+	.item {
+	  lost-column: 1/1 0 0;
+
+	  @media (--medium) {
+	    lost-column: 1/2 0 0;
+	  }
+	}
 }

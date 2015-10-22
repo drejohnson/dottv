@@ -1,14 +1,12 @@
 <section>
-	<div layout="row">
-		<header id="related-header" flex="initial">
-			<h3>browse</h3>
-			<h2>Related Videos</h1>
-		</header>
-		<search-input flex="grow"></search-input>
-	</div>
-	<div class="items" layout="row" layout-align="start center" layout-wrap>
+	<header class="section-header">
+		<h3>browse</h3>
+		<h2>Related Videos</h1>
+	</header>
+	<search-input></search-input>
+	<div class="items" layout="row" layout-wrap>
 
-		<md-card class="item" flex="100" flex-gt-lg="50" ng-repeat="video in ::vm.results track by video.id">
+		<md-card class="item" ng-repeat="video in ::vm.results track by video.id">
 
 			<div class="item-wrapper">
 				<div class="poster" ng-style="{ 'background-image': 'url(' + video.fragments['video.poster'].views.column.url +')' }"></div>

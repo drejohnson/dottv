@@ -1,13 +1,11 @@
 <section ng-if="vm.activated">
-	<div layout="row">
-		<header id="section-header" flex="initial">
-			<h3>{{::results.length}} Matches Found</h3>
-			<h1>Search Results: {{::vm.query}}</h1>
-		</header>
-		<search-input flex="grow"></search-input>
-	</div>
-	<div class="items" layout="row" layout-align="start center" layout-wrap>
-		<md-card class="item" flex="100" flex-gt-md="50" flex-gt-lg="33" ng-repeat="video in ::vm.results track by video.id">
+	<header class="section-header" flex="initial">
+		<h3>{{::results.length}} Matches Found</h3>
+		<h2>Search Results: {{::vm.query}}</h2>
+	</header>
+	<search-input flex="grow"></search-input>
+	<div class="items" layout="row" layout-wrap>
+		<md-card class="item" ng-repeat="video in ::vm.results track by video.id">
 			<div class="item-wrapper">
 				<div class="poster" ng-style="{ 'background-image': 'url(' + video.fragments['video.poster'].views.column.url +')' }"></div>
 				<md-card-content class="card-info">

@@ -2,7 +2,7 @@
 @import '../../common/styles/item-grid.css';
 
 related {
-	#related-header {
+	.section-header {
 		background-color: transparent;
 		margin-bottom: 5px;
     h3 {
@@ -24,4 +24,11 @@ related {
       }
     }
   }
+	.item {
+	  lost-column: 1/1 0 0;
+
+	  @media (--medium) {
+	    lost-column: 1/2 0 0;
+	  }
+	}
 }

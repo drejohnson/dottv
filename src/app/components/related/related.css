@@ -424,33 +424,75 @@ img, video, object {
     }
 }
 
-related #related-header {
+related .section-header {
     background-color: transparent;
     margin-bottom: 5px;
 }
 
-related #related-header h3 {
+related .section-header h3 {
     font-size: 1.25rem;
     font-weight: 400
 }
 
-related #related-header h2 {
+related .section-header h2 {
     color: #c0392b;
     font-size: 1.375rem;
     font-weight: 300;
     text-transform: uppercase
 }
 
+related .item {
+    width: 100%
+}
+
+related .item:nth-child(n) {
+    float: left;
+    margin-right: 0;
+    clear: none;
+}
+
+related .item:last-child {
+    margin-right: 0;
+}
+
+related .item:nth-child(0n) {
+    margin-right: 0;
+}
+
+related .item:nth-child(0n + 1) {
+    clear: left;
+}
+
 @media (min-width: 960px) {
-    related #related-header h3 {
+    related .section-header h3 {
         font-size: 2rem;
     }
       }
 
 @media (min-width: 960px) {
-    related #related-header h2 {
+    related .section-header h2 {
         font-size: 2.25rem;
     }
       }
+
+@media (min-width: 960px) {
+    related .item {
+        width: 50%;
+    }
+    related .item:nth-child(n) {
+        float: left;
+        margin-right: 0;
+        clear: none;
+    }
+    related .item:last-child {
+        margin-right: 0;
+    }
+    related .item:nth-child(0n) {
+        margin-right: 0;
+    }
+    related .item:nth-child(0n + 1) {
+        clear: left;
+    }
+	  }
 
 /*# sourceMappingURL=related.css.map */

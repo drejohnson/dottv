@@ -2,14 +2,23 @@
 @import '../../common/styles/item-grid.css';
 
 search {
-	#section-header {
+	.section-header {
     h3 {
-      font-size: calc(32/16)rem;
+      font-size: calc(20/16)rem;
       font-weight: 400;
+
+      @media (--medium) {
+        font-size: calc(32/16)rem;
+      }
     }
-    h1 {
+    h2 {
+      font-size: calc(22/16)rem;
       font-weight: 300;
       text-transform: uppercase;
+
+      @media (--medium) {
+        font-size: calc(36/16)rem;
+      }
 
       &.docu-series {
         color: var(--channel-docu-series);
@@ -26,20 +35,6 @@ search {
       &.lifestyle {
         color: var(--channel-lifestyle);
       }
-    }
-  }
-  .item {
-    padding: var(--sm-pad);
-    margin: 0;
-    box-shadow: none;
-    h1 {
-      font-size: calc(24/16)rem;
-    }
-    .poster {
-
-    }
-    .card-info {
-
     }
   }
 }

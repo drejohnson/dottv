@@ -424,48 +424,47 @@ img, video, object {
     }
 }
 
-search #section-header h3 {
-    font-size: 2rem;
-    font-weight: 400;
+search .section-header h3 {
+    font-size: 1.25rem;
+    font-weight: 400
 }
 
-search #section-header h1 {
+search .section-header h2 {
+    font-size: 1.375rem;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-search #section-header h1.docu-series {
+search .section-header h2.docu-series {
     color: #0090d9;
 }
 
-search #section-header h1.radio-tv-film {
+search .section-header h2.radio-tv-film {
     color: #AC89D0;
 }
 
-search #section-header h1.music {
+search .section-header h2.music {
     color: #f35958;
 }
 
-search #section-header h1.comedy {
+search .section-header h2.comedy {
     color: #FDE74C;
 }
 
-search #section-header h1.lifestyle {
+search .section-header h2.lifestyle {
     color: #42b078;
 }
 
-search .item {
-    padding: .8rem;
-    margin: 0;
-    box-shadow: none;
-}
+@media (min-width: 960px) {
+    search .section-header h3 {
+        font-size: 2rem;
+    }
+      }
 
-search .item h1 {
-    font-size: 1.5rem;
-}
-
-search .item .poster {}
-
-search .item .card-info {}
+@media (min-width: 960px) {
+    search .section-header h2 {
+        font-size: 2.25rem;
+    }
+      }
 
 /*# sourceMappingURL=search.css.map */
