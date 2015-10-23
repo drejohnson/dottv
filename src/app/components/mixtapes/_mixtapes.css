@@ -35,19 +35,20 @@ mixtapes {
 	  lost-column: 1/1 0 0;
 
 	  @media (--medium) {
-	    lost-column: 1/2 0 0;
+	    lost-column: 1/3 0 0;
 	  }
 
 		.mixtape-wrapper {
+			background-color: var(--brandDarkGrey);
 	    margin: 4px;
-
 	  }
 
 		.card-info {
 			clear: both;
 
 			.embed {
-				margin-top: 20px;
+				max-width: 450px;
+				margin: 20px auto 15px;
 			}
 		}
 

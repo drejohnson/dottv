@@ -370,6 +370,8 @@ mixtapes .mixtape:nth-child(0n + 1) {
 
 mixtapes .mixtape .mixtape-wrapper {
 
+    background-color: #212121;
+
     margin: 4px;
 }
 
@@ -380,7 +382,9 @@ mixtapes .mixtape .card-info {
 
 mixtapes .mixtape .card-info .embed {
 
-    margin-top: 20px;
+    max-width: 450px;
+
+    margin: 20px auto 15px;
 }
 
 mixtapes .mixtape .mixtape-title {
@@ -410,7 +414,7 @@ mixtapes .mixtape .mixtape-title {
 
     mixtapes .mixtape {
 
-        width: 50%;
+        width: 33.33333%;
     }
 
     mixtapes .mixtape:nth-child(n) {

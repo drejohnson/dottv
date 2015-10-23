@@ -61,7 +61,7 @@
     "debug": "^2.2.0",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
-    "express-prismic": "^0.3.0",
+    "express-prismic": "^0.3.1",
     "express-session": "^1.11.3",
     "http-proxy": "^1.11.2",
     "jade": "^1.11.0",
