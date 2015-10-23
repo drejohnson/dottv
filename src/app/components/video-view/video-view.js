@@ -6,6 +6,7 @@ import {RouteConfig, Component, View, Inject} from '../../core/decorators/decora
 const INIT = new WeakMap();
 const SERVICE = new WeakMap();
 const FILTER = new WeakMap();
+const WINDOW = new WeakMap();
 const LOG = new WeakMap();
 
 // start-non-standard
@@ -42,12 +43,12 @@ const LOG = new WeakMap();
 @View({
   template: template
 })
-@Inject('$stateParams', '$filter', 'VideosService', '$log')
+@Inject('$stateParams', '$filter', 'VideosService', '$window', '$log')
 // end-non-standard
 
 // Videoview Controller
 class VideoView {
-  constructor($stateParams, $filter, VideosService, $log) {
+  constructor($stateParams, $filter, VideosService, $window, $log) {
     Object.assign(this, {
       name: 'Video View',
       activated: false,
@@ -55,6 +56,7 @@ class VideoView {
     });
     SERVICE.set(this, VideosService);
     LOG.set(this, $log);
+    WINDOW.set(this, $window);
     FILTER.set(this, $filter);
     INIT.set(this, () => {
       const id = this.id;
@@ -89,6 +91,21 @@ class VideoView {
 
         this.videoHtml = video[1];
         this.content = this.videoHtml.html;
+
+        this.openService = (service) => {
+          switch (service) {
+            case 'twitter':
+              WINDOW.get(this).open('https://twitter.com/intent/tweet?original_referer=' + this.videoUrl + '&ref_src=twsrc%5Etfw&text=' + this.title + '&tw_p=tweetbutton&url=' + this.videoUrl + '&via=TpTV_Network', 'twitter-share', 'width=550,height=235');
+              break;
+            case 'facebook':
+              WINDOW.get(this).open('https://www.facebook.com/sharer/sharer.php', 'facebook-share', 'width=580,height=296');
+              break;
+            case 'google':
+              WINDOW.get(this).open('https://plus.google.com/share', 'google-plus-share', 'width=490,height=530');
+              break;
+            // no default
+          }
+        };
 
         // Videogular
         this.video = this.url;

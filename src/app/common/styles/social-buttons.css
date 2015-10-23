@@ -1,0 +1,39 @@
+.social-widgets {
+	position: absolute;
+	padding: var(--md-pad);
+	top: 0;
+	right: 0;
+
+	.social-button {
+		padding: 0 10px;
+		&:not([disabled]):hover
+		&:not([disabled]):focus {
+			background-color: inherit;
+		}
+		&.facebook {
+			background-color: #3b5999;
+			&:not([disabled]):hover,
+			&:not([disabled]):focus {
+				background-color: #3b5999;
+			}
+		}
+		&.twitter {
+			background-color: #55acee;
+			&:not([disabled]):hover,
+			&:not([disabled]):focus {
+				background-color: #55acee;
+			}
+		}
+		.social-item {
+			color: #fff;
+			font-size: calc(24/16)rem;
+			width: 24px;
+			height: 24px;
+			margin: 0;
+			a {
+				color: var(--brandWhite);
+				text-decoration: none;
+			}
+		}
+	}
+}
