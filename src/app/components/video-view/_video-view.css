@@ -11,14 +11,28 @@ video-view {
     padding: 20px;
 		margin-top: 8px;
 		.title {
+			font-size: calc(22/16)rem;
 			font-weight: 300;
 			text-transform: uppercase;
-			max-width: 75%;
+			max-width: 60%;
+
+			@media (--medium) {
+				font-size: calc(32/16)rem;
+			}
+
+			@media (--large) {
+				font-size: calc(36/16)rem;
+			}
+
 		}
 		.intro {
 			color: var(--brandRed);
-			font-size: calc(20/16)rem;
+			font-size: 1rem;
 			font-weight: 400;
+
+			@media (--medium) {
+				font-size: calc(20/16)rem;
+			}
 		}
 	}
 	/*.title, .intro, .content {

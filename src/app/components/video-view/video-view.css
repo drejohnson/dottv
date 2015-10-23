@@ -227,15 +227,16 @@ video-view header {
 }
 
 video-view header .title {
+    font-size: 1.375rem;
     font-weight: 300;
     text-transform: uppercase;
-    max-width: 75%;
+    max-width: 60%
 }
 
 video-view header .intro {
     color: #c0392b;
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 400
 }
 
 /*.title, .intro, .content {
@@ -308,6 +309,24 @@ video-view .main-video .embed-responsive-item {
     height: 100%;
     border: 0;
 }
+
+@media (min-width: 960px) {
+    video-view header .title {
+        font-size: 2rem;
+    }
+			}
+
+@media (min-width: 1200px) {
+    video-view header .title {
+        font-size: 2.25rem;
+    }
+			}
+
+@media (min-width: 960px) {
+    video-view header .intro {
+        font-size: 1.25rem;
+    }
+			}
 
 @media (min-width: 1200px) {
     video-view .main-video:before {
