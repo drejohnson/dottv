@@ -21,6 +21,7 @@ import 'adaptive-detection';
 //  ----------------App Files---------------  //
 import './core/core';
 import './common/common';
+import './components/components';
 import './layout/app/app';
 
 import appModule from './app.module';

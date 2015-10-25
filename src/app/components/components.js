@@ -21,5 +21,5 @@ import './comedy/comedy';
 import './lifestyle/lifestyle';
 import './related/related';
 import './mixtapes/mixtapes';
-import './about/about';
+// import './about/about';
 // import './video-js/video-js';

@@ -1,5 +1,3 @@
-import '../../components/components';
-
 import template from './app.html!text';
 import './app.css!';
 import {View, Component, Inject} from '../../core/decorators/decorators';
