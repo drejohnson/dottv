@@ -43,7 +43,7 @@ System.config({
     "rx-angular": "npm:rx-angular@0.0.14",
     "srfrnk/ng-device-detector": "github:srfrnk/ng-device-detector@2.0.2",
     "text": "github:systemjs/plugin-text@0.0.2",
-    "video.js": "npm:video.js@5.0.0",
+    "video.js": "npm:video.js@5.0.2",
     "videogular": "github:2fdevs/bower-videogular@1.3.2",
     "videogular-analytics": "github:2fdevs/bower-videogular-analytics@1.3.2",
     "videogular-buffering": "github:2fdevs/bower-videogular-buffering@1.3.2",
@@ -52,6 +52,7 @@ System.config({
     "videogular-poster": "github:2fdevs/bower-videogular-poster@1.3.2",
     "videogular-themes-default": "github:2fdevs/bower-videogular-themes-default@1.3.2",
     "videogular-youtube": "github:NamPNQ/bower-videogular-youtube@2.0.4",
+    "videojs-youtube": "npm:videojs-youtube@2.0.0",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.5.0-beta.0"
     },
@@ -231,8 +232,9 @@ System.config({
     "npm:ng-device-detector@1.1.7": {
       "re-tree": "npm:re-tree@0.0.2"
     },
-    "npm:object.assign@2.0.3": {
+    "npm:object.assign@4.0.3": {
       "define-properties": "npm:define-properties@1.1.2",
+      "function-bind": "npm:function-bind@1.0.2",
       "object-keys": "npm:object-keys@1.0.9"
     },
     "npm:os-browserify@0.1.2": {
@@ -313,11 +315,11 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:video.js@5.0.0": {
+    "npm:video.js@5.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "global": "npm:global@4.3.0",
       "lodash-compat": "npm:lodash-compat@3.10.1",
-      "object.assign": "npm:object.assign@2.0.3",
+      "object.assign": "npm:object.assign@4.0.3",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "safe-json-parse": "npm:safe-json-parse@4.0.0",
       "tsml": "npm:tsml@1.0.1",
@@ -334,6 +336,9 @@ System.config({
     },
     "npm:videojs-ie8@1.1.0": {
       "es5-shim": "npm:es5-shim@4.1.15"
+    },
+    "npm:videojs-youtube@2.0.0": {
+      "video.js": "npm:video.js@5.0.2"
     },
     "npm:xhr@2.1.0": {
       "global": "npm:global@4.3.0",

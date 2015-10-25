@@ -1,1 +1,1 @@
-import './directives/animate-on-load';
+// import './directives/video-js/video-js';

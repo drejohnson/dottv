@@ -36,7 +36,7 @@
       "rx-angular": "npm:rx-angular@^0.0.14",
       "srfrnk/ng-device-detector": "github:srfrnk/ng-device-detector@^2.0.2",
       "text": "github:systemjs/plugin-text@^0.0.2",
-      "video.js": "npm:video.js@^5.0.0",
+      "video.js": "npm:video.js@^5.0.2",
       "videogular": "github:2fdevs/bower-videogular@^1.2.8",
       "videogular-analytics": "github:2fdevs/bower-videogular-analytics@^1.2.8",
       "videogular-buffering": "github:2fdevs/bower-videogular-buffering@^1.2.8",
@@ -44,7 +44,8 @@
       "videogular-overlay-play": "github:2fdevs/bower-videogular-overlay-play@^1.2.8",
       "videogular-poster": "github:2fdevs/bower-videogular-poster@^1.2.8",
       "videogular-themes-default": "github:2fdevs/bower-videogular-themes-default@^1.2.8",
-      "videogular-youtube": "github:NamPNQ/bower-videogular-youtube@^2.0.4"
+      "videogular-youtube": "github:NamPNQ/bower-videogular-youtube@^2.0.4",
+      "videojs-youtube": "npm:videojs-youtube@^2.0.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@5.8.24",

@@ -1,14 +1,18 @@
 import template from './about.html!text';
 import {RouteConfig, Component, View, Inject} from '../../core/decorators/decorators';
 
+const INIT = new WeakMap();
+const SERVICE = new WeakMap();
+const LOG = new WeakMap();
+
 // start-non-standard
 @RouteConfig('about', {
-  url: '/about',
+  url: '/about-area51',
   template: '<about></about>',
   resolve: {
     // Constant Meta
-    $title: () => 'About',
-    $description: () => 'About description'
+    $title: () => 'About Area51',
+    $description: () => 'Mainly for testing features'
   }
 })
 @Component({
@@ -17,19 +21,19 @@ import {RouteConfig, Component, View, Inject} from '../../core/decorators/decora
 @View({
   template: template
 })
-@Inject('$scope', '$http', '$log')
+@Inject('$log')
 // end-non-standard
 
 // About Controller
 class About {
-  constructor($scope, $http, $log) {
+  constructor($log) {
+    LOG.set(this, $log);
     Object.assign(this, {
-      $scope,
-      $http,
-      $log,
-      apiHost: '/api',
-      name: 'about',
+      name: 'about area 51',
       activated: false
+    });
+    INIT.set(this, () => {
+
     });
     // On load
     this.activate();
@@ -39,6 +43,7 @@ class About {
    * Handles on load processing, and loading initial data
  */
   activate() {
+    INIT.get(this)();
     this.activated = true;
   }
 }
