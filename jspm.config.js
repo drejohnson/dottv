@@ -41,7 +41,6 @@ System.config({
     "rx": "npm:rx@4.0.0",
     "rx-angular": "npm:rx-angular@0.0.14",
     "text": "github:systemjs/plugin-text@0.0.2",
-    "video.js": "npm:video.js@5.0.2",
     "videogular": "github:2fdevs/bower-videogular@1.3.2",
     "videogular-analytics": "github:2fdevs/bower-videogular-analytics@1.3.2",
     "videogular-buffering": "github:2fdevs/bower-videogular-buffering@1.3.2",
@@ -50,7 +49,6 @@ System.config({
     "videogular-poster": "github:2fdevs/bower-videogular-poster@1.3.2",
     "videogular-themes-default": "github:2fdevs/bower-videogular-themes-default@1.3.2",
     "videogular-youtube": "github:NamPNQ/bower-videogular-youtube@2.0.4",
-    "videojs-youtube": "npm:videojs-youtube@2.0.0",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.5.0-beta.0"
     },
@@ -166,15 +164,8 @@ System.config({
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
-    "npm:define-properties@1.1.2": {
-      "foreach": "npm:foreach@2.0.5",
-      "object-keys": "npm:object-keys@1.0.9"
-    },
     "npm:domain-browser@1.1.4": {
       "events": "github:jspm/nodelibs-events@0.1.1"
-    },
-    "npm:es5-shim@4.1.15": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:express-prismic@0.3.0": {
       "http": "github:jspm/nodelibs-http@1.7.1",
@@ -202,12 +193,6 @@ System.config({
       "rx": "npm:rx@4.0.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:for-each@0.3.2": {
-      "is-function": "npm:is-function@1.0.1"
-    },
-    "npm:global@4.3.0": {
-      "process": "npm:process@0.5.2"
-    },
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
@@ -217,27 +202,11 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:is-function@1.0.1": {
-      "events": "github:jspm/nodelibs-events@0.1.1",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:lodash-compat@3.10.1": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:object.assign@4.0.3": {
-      "define-properties": "npm:define-properties@1.1.2",
-      "function-bind": "npm:function-bind@1.0.2",
-      "object-keys": "npm:object-keys@1.0.9"
-    },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"
-    },
-    "npm:parse-headers@2.0.0": {
-      "for-each": "npm:for-each@0.3.2",
-      "trim": "npm:trim@0.0.1"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -272,18 +241,11 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
     },
-    "npm:rust-result@1.0.0": {
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "individual": "npm:individual@2.0.0"
-    },
     "npm:rx-angular@0.0.14": {
       "rx": "npm:rx@4.0.0"
     },
     "npm:rx@4.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:safe-json-parse@4.0.0": {
-      "rust-result": "npm:rust-result@1.0.0"
     },
     "npm:source-map@0.4.4": {
       "amdefine": "npm:amdefine@1.0.0",
@@ -297,9 +259,6 @@ System.config({
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
-    "npm:tsml@1.0.1": {
-      "assert": "github:jspm/nodelibs-assert@0.1.0"
-    },
     "npm:url@0.10.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "punycode": "npm:punycode@1.3.2",
@@ -308,37 +267,6 @@ System.config({
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:video.js@5.0.2": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "global": "npm:global@4.3.0",
-      "lodash-compat": "npm:lodash-compat@3.10.1",
-      "object.assign": "npm:object.assign@4.0.3",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "safe-json-parse": "npm:safe-json-parse@4.0.0",
-      "tsml": "npm:tsml@1.0.1",
-      "videojs-font": "npm:videojs-font@1.3.0",
-      "videojs-ie8": "npm:videojs-ie8@1.1.0",
-      "videojs-swf": "npm:videojs-swf@5.0.0-rc1",
-      "vtt.js": "github:gkatsev/vtt.js@vjs-v0.12.1",
-      "xhr": "npm:xhr@2.1.0"
-    },
-    "npm:videojs-font@1.3.0": {
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
-    },
-    "npm:videojs-ie8@1.1.0": {
-      "es5-shim": "npm:es5-shim@4.1.15"
-    },
-    "npm:videojs-youtube@2.0.0": {
-      "video.js": "npm:video.js@5.0.2"
-    },
-    "npm:xhr@2.1.0": {
-      "global": "npm:global@4.3.0",
-      "once": "npm:once@1.1.1",
-      "parse-headers": "npm:parse-headers@2.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:xmlhttprequest@1.7.0": {
