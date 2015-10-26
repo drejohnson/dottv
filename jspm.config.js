@@ -32,7 +32,6 @@ System.config({
     "clean-css": "npm:clean-css@3.4.3",
     "core-js": "npm:core-js@1.1.4",
     "css": "github:systemjs/plugin-css@0.1.19",
-    "express-prismic": "npm:express-prismic@0.3.0",
     "falcor": "npm:falcor@0.1.13",
     "falcor-http-datasource": "npm:falcor-http-datasource@0.1.2",
     "lodash": "npm:lodash@3.10.1",
@@ -99,9 +98,6 @@ System.config({
     "github:jspm/nodelibs-process@0.1.2": {
       "process": "npm:process@0.11.2"
     },
-    "github:jspm/nodelibs-querystring@0.1.0": {
-      "querystring": "npm:querystring@0.2.0"
-    },
     "github:jspm/nodelibs-stream@0.1.0": {
       "stream-browserify": "npm:stream-browserify@1.0.0"
     },
@@ -167,14 +163,6 @@ System.config({
     "npm:domain-browser@1.1.4": {
       "events": "github:jspm/nodelibs-events@0.1.1"
     },
-    "npm:express-prismic@0.3.0": {
-      "http": "github:jspm/nodelibs-http@1.7.1",
-      "https": "github:jspm/nodelibs-https@0.1.0",
-      "prismic.io": "npm:prismic.io@1.3.3",
-      "promise": "npm:promise@7.0.4",
-      "querystring": "github:jspm/nodelibs-querystring@0.1.0",
-      "url": "github:jspm/nodelibs-url@0.1.0"
-    },
     "npm:falcor-http-datasource@0.1.2": {
       "xmlhttprequest": "npm:xmlhttprequest@1.7.0"
     },
@@ -210,16 +198,6 @@ System.config({
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:prismic.io@1.3.3": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "http": "github:jspm/nodelibs-http@1.7.1",
-      "https": "github:jspm/nodelibs-https@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "querystring": "github:jspm/nodelibs-querystring@0.1.0",
-      "stream": "github:jspm/nodelibs-stream@0.1.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0",
-      "url": "github:jspm/nodelibs-url@0.1.0"
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
