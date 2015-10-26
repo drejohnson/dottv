@@ -37,11 +37,9 @@ System.config({
     "falcor-http-datasource": "npm:falcor-http-datasource@0.1.2",
     "lodash": "npm:lodash@3.10.1",
     "moment": "github:moment/moment@2.10.6",
-    "ng-device-detector": "npm:ng-device-detector@1.1.7",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
     "rx": "npm:rx@4.0.0",
     "rx-angular": "npm:rx-angular@0.0.14",
-    "srfrnk/ng-device-detector": "github:srfrnk/ng-device-detector@2.0.2",
     "text": "github:systemjs/plugin-text@0.0.2",
     "video.js": "npm:video.js@5.0.2",
     "videogular": "github:2fdevs/bower-videogular@1.3.2",
@@ -228,9 +226,6 @@ System.config({
     },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:ng-device-detector@1.1.7": {
-      "re-tree": "npm:re-tree@0.0.2"
     },
     "npm:object.assign@4.0.3": {
       "define-properties": "npm:define-properties@1.1.2",
