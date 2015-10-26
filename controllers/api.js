@@ -100,7 +100,7 @@ export const getFeatured = (req, res) => {
 export const getRelated = (req, res) => {
   const item = prismic.withContext(req, res);
   const id = req.params['id'];
-  item.getByID(id, (err, data) => {
+  item.getByID(id, function (err, data) {
     item.query(
       prismic.Predicates.similar(id, 10), {
         page: 1,
