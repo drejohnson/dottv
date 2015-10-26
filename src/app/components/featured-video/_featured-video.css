@@ -1,0 +1,60 @@
+@import '../../styles/styles.css';
+
+featured-video {
+	display: block;
+	color: inherit;
+	.featured-video {
+		@mixin aspect-ratio 16, 9;
+
+		&:before {
+			@media (--large) {
+		    padding-top: 0;
+			}
+		}
+		#section-header {
+	    h3 {
+	      font-size: calc(32/16)rem;
+	      font-weight: 400;
+	    }
+	    h1 {
+				color: var(--brandRed);
+	      font-weight: 300;
+	      text-transform: uppercase;
+	    }
+	  }
+		.videogular-container, .embed {
+			@media (--large) {
+				position: relative;
+				height: calc(100vh - 160px);
+				padding: 0;
+			}
+		}
+		.embed {
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.embed-responsive {
+		  position: relative;
+		  display: block;
+		  height: 0;
+		  padding: 0;
+		  overflow: hidden;
+		}
+
+		.embed-responsive.embed-responsive-16by9 {
+		  padding-bottom: 49%;
+		}
+
+		.embed-responsive-item {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  border: 0;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+@import '../../styles/styles.css';
+
+.layout-fill {
+  height: 100%;
+}
+#app {
+  display: block;
+  color: var(--brandRed);
+  height: 100%;
+}

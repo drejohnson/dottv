@@ -1,0 +1,16 @@
+<span
+	class="nav-item"
+	ng-class="{'': !toggled, 'opened active': toggled}"
+	ng-click="toggled=!toggled"
+	flex layout="row">
+	{{section.name}}
+	<md-icon ng-if="!toggled" aria-label="Menu" class="material-icons">expand_more</md-icon>
+	<md-icon ng-if="toggled" aria-label="Close" class="material-icons">expand_less</md-icon>
+</span>
+<section class="subnav" ng-if="toggled">
+	<div class="animate-if">
+		<div ng-repeat="page in section.pages">
+	    <menu-link section="page"></menu-link>
+		</div>
+	</div>
+</section>

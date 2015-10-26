@@ -1,0 +1,23 @@
+<md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left">
+  <header>
+    <a class="logo" ui-sref="home">
+      <img src="/images/logos/logo-red.svg" alt="Logo">
+    </a>
+  </header>
+  <md-content flex class="md-hue-1">
+    <nav class="nav" role="navigation">
+      <!-- <a class="nav-item" ng-repeat="item in vm.navigation" ui-sref="{{::item.state}}" ui-sref-active="active">
+        {{ item.label }}
+      </a> -->
+      <section ng-repeat="section in vm.menu.sections" ui-sref-active="active">
+        <menu-toggle class="menu-toggle" section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+        <menu-link class="menu-link" section="section" ng-if="section.type === 'link'"></menu-link>
+      </section>
+      <section class="nav-footer">
+        <a href="http://tomorrowpictures.com">
+          <img src="/images/logos/tpi-logo.svg" alt="Tomorrow Pictures Inc.">
+        </a>
+      </section>
+    </nav>
+  </md-content>
+</md-sidenav>

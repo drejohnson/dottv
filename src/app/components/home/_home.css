@@ -1,0 +1,8 @@
+@import '../../styles/styles.css';
+
+home {
+  #latest {
+    background-color: #212121;
+    padding: 8px;
+  }
+}

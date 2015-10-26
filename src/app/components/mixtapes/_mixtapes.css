@@ -1,0 +1,60 @@
+@import '../../styles/styles.css';
+
+mixtapes {
+	.mixtape-header {
+		background-color: transparent;
+		margin-bottom: 5px;
+    h3 {
+      font-size: calc(20/16)rem;
+      font-weight: 400;
+
+      @media (--medium) {
+        font-size: calc(32/16)rem;
+      }
+    }
+    h2 {
+      color: var(--brandRed);
+      font-size: calc(22/16)rem;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      @media (--medium) {
+        font-size: calc(36/16)rem;
+      }
+    }
+  }
+	.mixtape {
+	  clear: both;
+	}
+	.mixtape {
+		position: relative;
+	  padding: 0;
+	  margin: 0;
+	  box-shadow: none;
+	  min-height: 300px;
+	  lost-column: 1/1 0 0;
+
+	  @media (--medium) {
+	    lost-column: 1/3 0 0;
+	  }
+
+		.mixtape-wrapper {
+			background-color: var(--brandDarkGrey);
+	    margin: 4px;
+	  }
+
+		.card-info {
+			clear: both;
+
+			.embed {
+				max-width: 450px;
+				margin: 20px auto 15px;
+			}
+		}
+
+		.mixtape-title {
+	    font-size: calc(20/16)rem;
+	    text-transform: uppercase;
+	  }
+	}
+}

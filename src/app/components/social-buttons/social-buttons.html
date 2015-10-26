@@ -1,0 +1,23 @@
+<div layout="column" layout-gt-sm="row" layout-align="end center">
+	<md-button
+		class="social-button facebook"
+		aria-label="Facebook Share Button"
+		socialshare
+		socialshare-provider="facebook"
+		socialshare-media={{$parent.poster}}
+		socialshare-text="{{$parent.title}}"
+		socialshare-url="{{$parent.intro}}">
+		<md-icon aria-label="Facebook" class="fa fa-facebook social-item"></md-icon>
+		<span>Facebook</span>
+	</md-button>
+	<md-button
+		class="social-button twitter"
+		aria-label="Twitter Share Button"
+		socialshare
+		socialshare-provider="twitter"
+		socialshare-via="TpTV_Network"
+		socialshare-url={{$parent.videoUrl}}>
+		<md-icon aria-label="Twitter" class="fa fa-twitter social-item"></md-icon>
+		<span>Twitter</span>
+	</md-button>
+</div>

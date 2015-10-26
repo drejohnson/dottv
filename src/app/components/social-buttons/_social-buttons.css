@@ -1,0 +1,57 @@
+@import '../../styles/styles.css';
+
+social-buttons {
+	position: absolute;
+	padding: var(--md-pad);
+	top: 0;
+	right: 0;
+
+	.social-button {
+		padding: 0 10px;
+		line-height: 24px;
+		min-height: 24px;
+
+		@media (--medium) {
+			line-height: 36px;
+			min-height: 36px;
+		}
+
+		&:not([disabled]):hover
+		&:not([disabled]):focus {
+			background-color: inherit;
+		}
+		&.facebook {
+			background-color: #3b5999;
+			&:not([disabled]):hover,
+			&:not([disabled]):focus {
+				background-color: #3b5999;
+			}
+		}
+		&.twitter {
+			background-color: #55acee;
+			&:not([disabled]):hover,
+			&:not([disabled]):focus {
+				background-color: #55acee;
+			}
+		}
+		.social-item {
+			color: #fff;
+			font-size: 1rem;
+			width: 16px;
+			height: 16px;
+			margin: 0;
+
+			@media (--medium) {
+				font-size: calc(24/16)rem;
+				width: 24px;
+				height: 24px;
+			}
+		}
+		span {
+			font-size: calc(10/16)rem;
+			@media (--medium) {
+				font-size: calc(14/16)rem;
+			}
+		}
+	}
+}
