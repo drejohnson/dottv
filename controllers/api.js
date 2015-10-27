@@ -1,5 +1,4 @@
 import prismicio from 'express-prismic';
-import Configuration from '../config/prismic-configuration';
 const prismic = prismicio.Prismic;
 /**
  * Split into declaration and initialization for better performance.
@@ -100,11 +99,11 @@ export const getFeatured = (req, res) => {
 export const getRelated = (req, res) => {
   const item = prismic.withContext(req, res);
   const id = req.params['id'];
-  item.getByID(id, function (err, data) {
+  item.getByID(id, () => {
     item.query(
       prismic.Predicates.similar(id, 10), {
         page: 1,
-        pageSize: 6
+        pageSize: 6,
       }, (err, data) => {
         res.status(200).json(data);
       });

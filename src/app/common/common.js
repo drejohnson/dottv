@@ -1,1 +1,1 @@
-// import './directives/video-js/video-js';
+// import './directives/';
