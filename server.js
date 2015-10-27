@@ -16,6 +16,7 @@ import errorHandler from 'errorhandler';
 import redis from 'redis';
 import prismicio from 'express-prismic';
 import prerender from 'prerender-node';
+import cors from 'cors';
 import mongoose from 'mongoose';
 
 import User from './models/user';
@@ -55,6 +56,7 @@ prismic.init(Configuration);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compression());
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

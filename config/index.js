@@ -1,6 +1,6 @@
 export default {
-  TOKEN_SECRET: process.env.TOKEN_SECRET || 'JWT Token Secret',
-  MONGO_URI: process.env.MONGO_URI || 'localhost',
+  TOKEN_SECRET: process.env.TOKEN_SECRET || 'illmatic1994VSready2die1994',
+  MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost/dottv',
 
   development: {
     isProduction: false,
