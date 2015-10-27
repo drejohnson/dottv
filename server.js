@@ -16,7 +16,9 @@ import errorHandler from 'errorhandler';
 import redis from 'redis';
 import prismicio from 'express-prismic';
 import prerender from 'prerender-node';
+import mongoose from 'mongoose';
 
+import User from './models/user';
 import config from './config';
 import Configuration from './config/prismic-configuration';
 
@@ -36,6 +38,12 @@ prerender.set('beforeRender', (req, done) => {
  * Create Express server.
  */
 const app = express();
+
+// mongoose.connect(config.MONGO_URI);
+// mongoose.connection.on('error', () => {
+//   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+//   process.exit(1);
+// });
 
 /**
  * Prismic.io configuration.
@@ -82,7 +90,7 @@ const staticOptions = {
 
 app.use('/', express.static('static', staticOptions ));
 // uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
 
 app.use(errorHandler());
 
