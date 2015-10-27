@@ -10,34 +10,30 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "bower:*": "jspm_packages/bower/*"
+    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
     "adaptive-detection": "github:angular-adaptive/adaptive-detection@0.4.1",
-    "angular": "github:angular/bower-angular@1.5.0-beta.0",
-    "angular-animate": "github:angular/bower-angular-animate@1.5.0-beta.0",
-    "angular-material": "github:angular/bower-material@1.0.0-rc1",
+    "angular": "github:angular/bower-angular@1.4.7",
+    "angular-animate": "github:angular/bower-angular-animate@1.4.7",
+    "angular-material": "github:angular/bower-material@0.11.4",
     "angular-mocks": "npm:angular-mocks@1.5.0-beta.0",
-    "angular-sanitize": "github:angular/bower-angular-sanitize@1.5.0-beta.0",
+    "angular-sanitize": "github:angular/bower-angular-sanitize@1.4.7",
     "angular-socialshare": "npm:angular-socialshare@0.1.14",
-    "angular-touch": "github:angular/bower-angular-touch@1.5.0-beta.0",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "angular-youtube-embed": "github:brandly/angular-youtube-embed@1.1.1",
     "angulartics": "github:angulartics/angulartics@0.20.1",
     "angulartics-google-analytics": "github:angulartics/angulartics-google-analytics@0.1.1",
     "babel": "npm:babel-core@5.8.24",
     "babel-runtime": "npm:babel-runtime@5.8.24",
-    "clean-css": "npm:clean-css@3.4.3",
-    "core-js": "npm:core-js@1.1.4",
+    "clean-css": "npm:clean-css@3.4.6",
+    "core-js": "npm:core-js@1.2.3",
     "css": "github:systemjs/plugin-css@0.1.19",
-    "falcor": "npm:falcor@0.1.13",
-    "falcor-http-datasource": "npm:falcor-http-datasource@0.1.2",
     "lodash": "npm:lodash@3.10.1",
     "moment": "github:moment/moment@2.10.6",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
-    "rx": "npm:rx@4.0.0",
+    "rx": "npm:rx@4.0.6",
     "rx-angular": "npm:rx-angular@0.0.14",
     "text": "github:systemjs/plugin-text@0.0.2",
     "videogular": "github:2fdevs/bower-videogular@1.3.2",
@@ -49,31 +45,31 @@ System.config({
     "videogular-themes-default": "github:2fdevs/bower-videogular-themes-default@1.3.2",
     "videogular-youtube": "github:NamPNQ/bower-videogular-youtube@2.0.4",
     "github:angular-ui/ui-router@0.2.15": {
-      "angular": "github:angular/bower-angular@1.5.0-beta.0"
+      "angular": "github:angular/bower-angular@1.4.7"
     },
-    "github:angular/bower-angular-animate@1.5.0-beta.0": {
-      "angular": "github:angular/bower-angular@1.5.0-beta.0"
+    "github:angular/bower-angular-animate@1.4.7": {
+      "angular": "github:angular/bower-angular@1.4.7"
     },
-    "github:angular/bower-angular-aria@1.5.0-beta.0": {
-      "angular": "github:angular/bower-angular@1.5.0-beta.0"
+    "github:angular/bower-angular-aria@1.4.7": {
+      "angular": "github:angular/bower-angular@1.4.7"
     },
-    "github:angular/bower-material@1.0.0-rc1": {
-      "angular": "github:angular/bower-angular@1.5.0-beta.0",
-      "angular-animate": "github:angular/bower-angular-animate@1.5.0-beta.0",
-      "angular-aria": "github:angular/bower-angular-aria@1.5.0-beta.0",
+    "github:angular/bower-angular-sanitize@1.4.7": {
+      "angular": "github:angular/bower-angular@1.4.7"
+    },
+    "github:angular/bower-material@0.11.4": {
+      "angular": "github:angular/bower-angular@1.4.7",
+      "angular-animate": "github:angular/bower-angular-animate@1.4.7",
+      "angular-aria": "github:angular/bower-angular-aria@1.4.7",
       "css": "github:systemjs/plugin-css@0.1.19"
     },
     "github:brandly/angular-youtube-embed@1.1.1": {
-      "angular": "github:angular/bower-angular@1.5.0-beta.0"
+      "angular": "github:angular/bower-angular@1.4.7"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.5.1"
-    },
-    "github:jspm/nodelibs-domain@0.1.0": {
-      "domain-browser": "npm:domain-browser@1.1.4"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
@@ -116,10 +112,6 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:asap@2.0.3": {
-      "domain": "github:jspm/nodelibs-domain@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
@@ -131,7 +123,7 @@ System.config({
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
     },
-    "npm:clean-css@3.4.3": {
+    "npm:clean-css@3.4.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "commander": "npm:commander@2.8.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -152,34 +144,14 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:core-js@1.1.4": {
+    "npm:core-js@1.2.3": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
-    },
-    "npm:domain-browser@1.1.4": {
-      "events": "github:jspm/nodelibs-events@0.1.1"
-    },
-    "npm:falcor-http-datasource@0.1.2": {
-      "xmlhttprequest": "npm:xmlhttprequest@1.7.0"
-    },
-    "npm:falcor-json-graph@1.1.5": {
-      "falcor-path-syntax": "npm:falcor-path-syntax@0.2.1"
-    },
-    "npm:falcor@0.1.13": {
-      "asap": "npm:asap@2.0.3",
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "falcor-json-graph": "npm:falcor-json-graph@1.1.5",
-      "falcor-path-syntax": "npm:falcor-path-syntax@0.2.1",
-      "falcor-path-utils": "npm:falcor-path-utils@0.3.4",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "promise": "npm:promise@7.0.4",
-      "rx": "npm:rx@4.0.0",
-      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
@@ -202,10 +174,6 @@ System.config({
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
-    "npm:promise@7.0.4": {
-      "asap": "npm:asap@2.0.3",
-      "fs": "github:jspm/nodelibs-fs@0.1.2"
-    },
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -220,10 +188,11 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:rx-angular@0.0.14": {
-      "rx": "npm:rx@4.0.0"
+      "rx": "npm:rx@4.0.6"
     },
-    "npm:rx@4.0.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
+    "npm:rx@4.0.6": {
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:source-map@0.4.4": {
       "amdefine": "npm:amdefine@1.0.0",
@@ -246,15 +215,6 @@ System.config({
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:xmlhttprequest@1.7.0": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "http": "github:jspm/nodelibs-http@1.7.1",
-      "https": "github:jspm/nodelibs-https@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "url": "github:jspm/nodelibs-url@0.1.0"
     }
   }
 });

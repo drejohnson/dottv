@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "jspm install"
   },
   "keywords": [
     "angular",
@@ -18,7 +19,7 @@
       "adaptive-detection": "github:angular-adaptive/adaptive-detection@^0.4.1",
       "angular": "github:angular/bower-angular@^1.5.0-beta.0",
       "angular-animate": "github:angular/bower-angular-animate@^1.5.0-beta.0",
-      "angular-material": "github:angular/bower-material@^0.11.3",
+      "angular-material": "github:angular/bower-material@^0.11.4",
       "angular-mocks": "npm:angular-mocks@^1.5.0-beta.0",
       "angular-sanitize": "github:angular/bower-angular-sanitize@^1.5.0-beta.0",
       "angular-socialshare": "npm:angular-socialshare@^0.1.14",
@@ -134,7 +135,7 @@
     "protractor": "^2.3.0",
     "replace": "^0.3.0",
     "run-sequence": "^1.1.4",
-    "systemjs-builder": "^0.14.6",
+    "systemjs-builder": "^0.14.9",
     "yargs": "^3.24.0"
   }
 }
