@@ -20,6 +20,6 @@ import './music/music';
 import './comedy/comedy';
 import './lifestyle/lifestyle';
 import './related/related';
-import './mixtapes/mixtapes';
+import './audio-talk/audio-talk';
 // import './about/about';
 // import './video-js/video-js';

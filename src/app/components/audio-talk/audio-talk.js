@@ -1,5 +1,5 @@
-import template from './mixtapes.html!text';
-import './mixtapes.css!';
+import template from './audio-talk.html!text';
+import './audio-talk.css!';
 import {RouteConfig, Component, View, Inject} from '../../core/decorators/decorators';
 
 const INIT = new WeakMap();
@@ -8,40 +8,40 @@ const SCE = new WeakMap();
 const LOG = new WeakMap();
 
 // start-non-standard
-@RouteConfig('mixtapes', {
-  url: '/mixtapes',
-  template: '<mixtapes></mixtapes>',
+@RouteConfig('audio-talk', {
+  url: '/audio-talk',
+  template: '<audio-talk></audio-talk>',
   resolve: {
     // Constant Meta
-    $title: () => 'Mixtapes',
-    $description: () => 'Latest Tomorrow Pictures TV Mixtapes'
+    $title: () => 'Audio + Talk',
+    $description: () => 'Audio + Talk is a series of Music and Interviews'
   }
 })
 @Component({
-  selector: 'mixtapes'
+  selector: 'audio-talk'
 })
 @View({
   template: template
 })
-@Inject('MixtapesService', '$sce', '$log')
+@Inject('AudioTalkService', '$sce', '$log')
 // end-non-standard
 
 // Mixtapes Controller
-class Mixtapes {
-  constructor(MixtapesService, $sce, $log) {
-    SERVICE.set(this, MixtapesService);
+class AudioTalk {
+  constructor(AudioTalkService, $sce, $log) {
+    SERVICE.set(this, AudioTalkService);
     SCE.set(this, $sce);
     LOG.set(this, $log);
     INIT.set(this, () => {
-      SERVICE.get(this).getAllMixtapes().then(mixtapes => {
+      SERVICE.get(this).getAllAudioTalk().then(audiotalks => {
         this.trustedHtml = (value) => SCE.get(this).trustAsHtml(value);
-        this.mixtapes = mixtapes;
-        this.results = mixtapes.results;
+        this.audiotalks = audiotalks;
+        this.results = audiotalks.results;
         // LOG.get(this).log(this.results);
       });
     });
     Object.assign(this, {
-      name: 'mixtapes',
+      name: 'audiotalks',
       activated: false
     });
     // On load
@@ -57,4 +57,4 @@ class Mixtapes {
   }
 }
 
-export default Mixtapes;
+export default AudioTalk;

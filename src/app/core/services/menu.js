@@ -51,7 +51,7 @@ class MenuService {
       ]
     });
     this.sections.push({
-      name: 'Mixtapes',
+      name: 'Audio + Talk',
       state: 'mixtapes',
       type: 'link'
     });

@@ -5,31 +5,31 @@ const LOG = new WeakMap();
 
 // start-non-standard
 @Service({
-  serviceName: 'MixtapesService'
+  serviceName: 'AudioTalkService'
 })
 @Inject('$http', '$log')
 // end-non-standard
-class MixtapesService {
+class AudioTalkService {
   constructor($http, $log) {
     HTTP.set(this, $http);
     LOG.set(this, $log);
     Object.assign(this, {
       apiHost: '/api',
-      name: 'Mixtapes Service'
+      name: 'AudioTalk Service'
     });
   }
 
-  getAllMixtapes() {
+  getAllAudioTalk() {
     return HTTP.get(this).get(`${this.apiHost}/audio`)
       .then(results => results.data )
       .catch(err => LOG.get(this).log(err));
   }
 
-  getMixtape(id) {
+  getAudioTalk(id) {
     return HTTP.get(this).get(`${this.apiHost}/audio/${id}`)
       .then(results => results.data )
       .catch(err => LOG.get(this).log(err));
   }
 }
 
-export default MixtapesService;
+export default AudioTalkService;
