@@ -1,10 +1,14 @@
 @import '../../styles/styles.css';
 
 social-buttons {
-	position: absolute;
-	padding: var(--md-pad);
-	top: 0;
-	right: 0;
+	display: block;
+
+	@media (--medium) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: var(--md-pad);
+	}
 
 	.social-button {
 		padding: 0 10px;
