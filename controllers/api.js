@@ -29,7 +29,7 @@ export const getDocuSeries = (req, res) => {
   item.query(
     prismic.Predicates.any('my.video.channel', ['docu-series']), {
       page: 1,
-      pageSize: 21
+      pageSize: 100
     }, (err, data) => {
       res.status(200).json(data);
     });
@@ -41,7 +41,7 @@ export const getRadioTvFilm = (req, res) => {
   item.query(
     prismic.Predicates.any('my.video.channel', ['radio-tv-film']), {
       page: 1,
-      pageSize: 21
+      pageSize: 100
     }, (err, data) => {
       res.status(200).json(data);
     });
@@ -53,7 +53,7 @@ export const getMusic = (req, res) => {
   item.query(
     prismic.Predicates.any('my.video.channel', ['music']), {
       page: 1,
-      pageSize: 21
+      pageSize: 100
     }, (err, data) => {
       res.status(200).json(data);
     });
@@ -65,7 +65,7 @@ export const getComedy = (req, res) => {
   item.query(
     prismic.Predicates.any('my.video.channel', ['comedy']), {
       page: 1,
-      pageSize: 21
+      pageSize: 100
     }, (err, data) => {
       res.status(200).json(data);
     });
@@ -77,7 +77,7 @@ export const getLifestyle = (req, res) => {
   item.query(
     prismic.Predicates.any('my.video.channel', ['lifestyle']), {
       page: 1,
-      pageSize: 21
+      pageSize: 100
     }, (err, data) => {
       res.status(200).json(data);
     });
@@ -87,9 +87,11 @@ export const getLifestyle = (req, res) => {
 export const getFeatured = (req, res) => {
   const item = prismic.withContext(req, res);
   item.query(
+    // Uncomment when ready to remove Featured Custom Type
+    // prismic.Predicates.any('my.video.is_featured', ['Yes']), {
     prismic.Predicates.at('document.type', 'featured'), {
       page: 1,
-      pageSize: 21
+      pageSize: 1
     }, (err, data) => {
       res.status(200).json(data);
     });
