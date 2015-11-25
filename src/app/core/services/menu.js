@@ -52,7 +52,7 @@ class MenuService {
     });
     this.sections.push({
       name: 'Audio + Talk',
-      state: 'mixtapes',
+      state: 'audio-talk',
       type: 'link'
     });
     this.sections.push({
