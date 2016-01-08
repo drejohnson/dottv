@@ -403,15 +403,22 @@ sidenav .nav-footer {
 
     width: auto;
 
-    background-color: #1a1a1a;
-
     position: relative;
 
     bottom: 0;
 
+    margin: 5px;
+}
+
+sidenav .nav-footer a {
+
+    display: block;
+
+    background-color: #1a1a1a;
+
     padding: 5px;
 
-    margin: 5px;
+    margin-bottom: 5px;
 }
 
 @media (min-width: 960px) {

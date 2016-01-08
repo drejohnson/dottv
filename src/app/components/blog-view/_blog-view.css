@@ -35,6 +35,9 @@ blog-view {
 				text-align: center;
 			}
 		}
+    .block-img {
+      text-align: center;
+    }
 	}
 	.featured-image {
 		@mixin aspect-ratio 16, 9;

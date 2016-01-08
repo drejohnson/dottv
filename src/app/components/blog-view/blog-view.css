@@ -359,6 +359,11 @@ blog-view .content p .block-img {
     text-align: center;
 }
 
+blog-view .content .block-img {
+
+    text-align: center;
+}
+
 blog-view .featured-image {
 
     position: relative;

@@ -27,7 +27,7 @@
       "angular-youtube-embed": "github:brandly/angular-youtube-embed@^1.1.1",
       "angulartics": "github:angulartics/angulartics@^0.20.1",
       "angulartics-google-analytics": "github:angulartics/angulartics-google-analytics@^0.1.1",
-      "clean-css": "npm:clean-css@^3.4.3",
+      "clean-css": "npm:clean-css@^3.4.9",
       "css": "github:systemjs/plugin-css@^0.1.17",
       "lodash": "npm:lodash@^3.10.1",
       "moment": "github:moment/moment@^2.10.6",
