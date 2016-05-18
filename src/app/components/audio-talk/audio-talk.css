@@ -344,7 +344,7 @@ mixtapes .mixtape {
     width: 100%;
 }
 
-mixtapes .mixtape:nth-child(n) {
+mixtapes .mixtape:nth-child(1n) {
 
     float: left;
 
@@ -361,6 +361,8 @@ mixtapes .mixtape:last-child {
 mixtapes .mixtape:nth-child(0n) {
 
     margin-right: 0;
+
+    float: right;
 }
 
 mixtapes .mixtape:nth-child(0n + 1) {
@@ -417,7 +419,7 @@ mixtapes .mixtape .mixtape-title {
         width: 33.33333%;
     }
 
-    mixtapes .mixtape:nth-child(n) {
+    mixtapes .mixtape:nth-child(1n) {
 
         float: left;
 
@@ -434,6 +436,8 @@ mixtapes .mixtape .mixtape-title {
     mixtapes .mixtape:nth-child(0n) {
 
         margin-right: 0;
+
+        float: right;
     }
 
     mixtapes .mixtape:nth-child(0n + 1) {

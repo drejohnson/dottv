@@ -187,8 +187,19 @@ img, video, object {
 .social-widgets .social-button {
     padding: 0 10px;
 }
+.social-widgets .social-button .social-item {
+    color: #fff;
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+}
+.social-widgets .social-button .social-item a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
 .social-widgets .social-button:not([disabled]):hover
-		.social-widgets .social-button:not([disabled]):focus {
+		.social-button:not([disabled]):focus {
     background-color: inherit;
 }
 .social-widgets .social-button.facebook {
@@ -202,17 +213,6 @@ img, video, object {
 }
 .social-widgets .social-button.twitter:not([disabled]):hover, .social-widgets .social-button.twitter:not([disabled]):focus {
     background-color: #55acee;
-}
-.social-widgets .social-button .social-item {
-    color: #fff;
-    font-size: 1.5rem;
-    width: 24px;
-    height: 24px;
-    margin: 0;
-}
-.social-widgets .social-button .social-item a {
-    color: #ecf0f1;
-    text-decoration: none;
 }
 
 video-view main {
@@ -264,13 +264,6 @@ video-view .main-video {
     position: relative;
 }
 
-video-view .main-video:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: 56.25%;
-}
-
 video-view .main-video > div {
     position: absolute;
     top: 0;
@@ -278,8 +271,6 @@ video-view .main-video > div {
     right: 0;
     bottom: 0;
 }
-
-video-view .main-video:before {}
 
 video-view .main-video .videogular-container, video-view .main-video .embed {}
 
@@ -310,6 +301,15 @@ video-view .main-video .embed-responsive-item {
     border: 0;
 }
 
+video-view .main-video:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+video-view .main-video:before {}
+
 @media (min-width: 960px) {
     video-view header .title {
         font-size: 2rem;
@@ -332,7 +332,7 @@ video-view .main-video .embed-responsive-item {
     video-view .main-video:before {
         padding-top: 0;
     }
-			}
+}
 
 @media (min-width: 1200px) {
     video-view .main-video .videogular-container, video-view .main-video .embed {

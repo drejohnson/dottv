@@ -172,7 +172,7 @@ img, video, object {
 .section-header {
     width: 50%;
 }
-.section-header:nth-child(n) {
+.section-header:nth-child(1n) {
     float: left;
     margin-right: 0;
     clear: none;
@@ -182,6 +182,7 @@ img, video, object {
 }
 .section-header:nth-child(0n) {
     margin-right: 0;
+    float: right;
 }
 .section-header:nth-child(0n + 1) {
     clear: left;
@@ -190,7 +191,7 @@ img, video, object {
     .section-header {
         width: 33.33333%;
     }
-    .section-header:nth-child(n) {
+    .section-header:nth-child(1n) {
         float: left;
         margin-right: 0;
         clear: none;
@@ -200,6 +201,7 @@ img, video, object {
     }
     .section-header:nth-child(0n) {
         margin-right: 0;
+        float: right;
     }
     .section-header:nth-child(0n + 1) {
         clear: left;
@@ -208,7 +210,7 @@ img, video, object {
 .search-form {
     width: 50%;
 }
-.search-form:nth-child(n) {
+.search-form:nth-child(1n) {
     float: left;
     margin-right: 0;
     clear: none;
@@ -218,6 +220,7 @@ img, video, object {
 }
 .search-form:nth-child(0n) {
     margin-right: 0;
+    float: right;
 }
 .search-form:nth-child(0n + 1) {
     clear: left;
@@ -226,7 +229,7 @@ img, video, object {
     .search-form {
         width: 66.66667%;
     }
-    .search-form:nth-child(n) {
+    .search-form:nth-child(1n) {
         float: left;
         margin-right: 0;
         clear: none;
@@ -236,6 +239,7 @@ img, video, object {
     }
     .search-form:nth-child(0n) {
         margin-right: 0;
+        float: right;
     }
     .search-form:nth-child(0n + 1) {
         clear: left;
@@ -263,7 +267,7 @@ img, video, object {
     position: relative;
     width: 100%;
 }
-.item:nth-child(n) {
+.item:nth-child(1n) {
     float: left;
     margin-right: 0;
     clear: none;
@@ -273,15 +277,10 @@ img, video, object {
 }
 .item:nth-child(0n) {
     margin-right: 0;
+    float: right;
 }
 .item:nth-child(0n + 1) {
     clear: left;
-}
-.item:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: 56.25%;
 }
 .item > div {
     position: absolute;
@@ -289,17 +288,6 @@ img, video, object {
     left: 0;
     right: 0;
     bottom: 0;
-}
-.item.ng-enter {
-    opacity: 0;
-    transition: all linear 500ms;
-}
-.item.ng-enter-stagger {
-    transition-delay: 0.1s;
-    transition-duration: 0s ;
-}
-.item.ng-enter.ng-enter-active {
-    opacity: 1.0 ;
 }
 .item .item-wrapper {
     margin: 4px;
@@ -385,11 +373,17 @@ img, video, object {
 .item .card-info a:hover {
     text-decoration: underline;
 }
+.item:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%;
+}
 @media (min-width: 960px) {
     .item {
         width: 50%;
     }
-    .item:nth-child(n) {
+    .item:nth-child(1n) {
         float: left;
         margin-right: 0;
         clear: none;
@@ -399,6 +393,7 @@ img, video, object {
     }
     .item:nth-child(0n) {
         margin-right: 0;
+        float: right;
     }
     .item:nth-child(0n + 1) {
         clear: left;
@@ -408,7 +403,7 @@ img, video, object {
     .item {
         width: 33.33333%;
     }
-    .item:nth-child(n) {
+    .item:nth-child(1n) {
         float: left;
         margin-right: 0;
         clear: none;
@@ -418,10 +413,22 @@ img, video, object {
     }
     .item:nth-child(0n) {
         margin-right: 0;
+        float: right;
     }
     .item:nth-child(0n + 1) {
         clear: left;
     }
+}
+.item.ng-enter {
+    opacity: 0;
+    transition: all linear 500ms;
+}
+.item.ng-enter-stagger {
+    transition-delay: 0.1s;
+    transition-duration: 0s ;
+}
+.item.ng-enter.ng-enter-active {
+    opacity: 1.0 ;
 }
 
 related .section-header {
@@ -445,7 +452,7 @@ related .item {
     width: 100%
 }
 
-related .item:nth-child(n) {
+related .item:nth-child(1n) {
     float: left;
     margin-right: 0;
     clear: none;
@@ -457,6 +464,7 @@ related .item:last-child {
 
 related .item:nth-child(0n) {
     margin-right: 0;
+    float: right;
 }
 
 related .item:nth-child(0n + 1) {
@@ -479,7 +487,7 @@ related .item:nth-child(0n + 1) {
     related .item {
         width: 50%;
     }
-    related .item:nth-child(n) {
+    related .item:nth-child(1n) {
         float: left;
         margin-right: 0;
         clear: none;
@@ -489,6 +497,7 @@ related .item:nth-child(0n + 1) {
     }
     related .item:nth-child(0n) {
         margin-right: 0;
+        float: right;
     }
     related .item:nth-child(0n + 1) {
         clear: left;

@@ -218,13 +218,6 @@ featured-video .featured-video {
 	position: relative;
 }
 
-featured-video .featured-video:before {
-	display: block;
-	content: "";
-	width: 100%;
-	padding-top: 56.25%;
-}
-
 featured-video .featured-video > div {
 	position: absolute;
 	top: 0;
@@ -232,8 +225,6 @@ featured-video .featured-video > div {
 	right: 0;
 	bottom: 0;
 }
-
-featured-video .featured-video:before {}
 
 featured-video .featured-video #section-header h3 {
 	font-size: 2rem;
@@ -275,12 +266,21 @@ featured-video .featured-video .embed-responsive-item {
 	border: 0;
 }
 
+featured-video .featured-video:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: 56.25%;
+}
+
+featured-video .featured-video:before {}
+
 @media (min-width: 1200px) {
 
 	featured-video .featured-video:before {
 		padding-top: 0;
 	}
-			}
+}
 
 @media (min-width: 1200px) {
 

@@ -369,17 +369,6 @@ blog-view .featured-image {
     position: relative;
 }
 
-blog-view .featured-image:before {
-
-    display: block;
-
-    content: "";
-
-    width: 100%;
-
-    padding-top: 56.25%;
-}
-
 blog-view .featured-image > div {
 
     position: absolute;
@@ -392,8 +381,6 @@ blog-view .featured-image > div {
 
     bottom: 0;
 }
-
-blog-view .featured-image:before {}
 
 blog-view .featured-image .image-container .image {
 
@@ -408,13 +395,26 @@ blog-view .featured-image .image-container .image {
     height: 100%;
 }
 
+blog-view .featured-image:before {
+
+    display: block;
+
+    content: "";
+
+    width: 100%;
+
+    padding-top: 56.25%;
+}
+
+blog-view .featured-image:before {}
+
 @media (min-width: 1200px) {
 
     blog-view .featured-image:before {
 
         padding-top: 0;
     }
-			}
+}
 
 @media (min-width: 1200px) {
 

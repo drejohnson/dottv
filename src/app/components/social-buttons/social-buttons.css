@@ -219,8 +219,20 @@ social-buttons .social-button {
 	min-height: 24px;
 }
 
+social-buttons .social-button .social-item {
+	color: #fff;
+	font-size: 1rem;
+	width: 16px;
+	height: 16px;
+	margin: 0
+}
+
+social-buttons .social-button span {
+	font-size: 0.625rem
+}
+
 social-buttons .social-button:not([disabled]):hover
-		social-buttons .social-button:not([disabled]):focus {
+		.social-button:not([disabled]):focus {
 	background-color: inherit;
 }
 
@@ -238,18 +250,6 @@ social-buttons .social-button.twitter {
 
 social-buttons .social-button.twitter:not([disabled]):hover, social-buttons .social-button.twitter:not([disabled]):focus {
 	background-color: #55acee;
-}
-
-social-buttons .social-button .social-item {
-	color: #fff;
-	font-size: 1rem;
-	width: 16px;
-	height: 16px;
-	margin: 0
-}
-
-social-buttons .social-button span {
-	font-size: 0.625rem
 }
 
 @media (min-width: 960px) {
