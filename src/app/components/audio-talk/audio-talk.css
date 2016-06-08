@@ -299,21 +299,21 @@ img, video, object {
     max-width: 100%;
 }
 
-mixtapes .mixtape-header {
+.mixtapes .mixtape-header {
 
     background-color: transparent;
 
     margin-bottom: 5px;
 }
 
-mixtapes .mixtape-header h3 {
+.mixtapes .mixtape-header h3 {
 
     font-size: 1.25rem;
 
     font-weight: 400
 }
 
-mixtapes .mixtape-header h2 {
+.mixtapes .mixtape-header h2 {
 
     color: #c0392b;
 
@@ -324,12 +324,12 @@ mixtapes .mixtape-header h2 {
     text-transform: uppercase
 }
 
-mixtapes .mixtape {
+.mixtapes .mixtape {
 
     clear: both;
 }
 
-mixtapes .mixtape {
+.mixtapes .mixtape {
 
     position: relative;
 
@@ -344,7 +344,7 @@ mixtapes .mixtape {
     width: 100%;
 }
 
-mixtapes .mixtape:nth-child(1n) {
+.mixtapes .mixtape:nth-child(1n) {
 
     float: left;
 
@@ -353,52 +353,54 @@ mixtapes .mixtape:nth-child(1n) {
     clear: none;
 }
 
-mixtapes .mixtape:last-child {
+.mixtapes .mixtape:last-child {
 
     margin-right: 0;
 }
 
-mixtapes .mixtape:nth-child(0n) {
+.mixtapes .mixtape:nth-child(0n) {
 
     margin-right: 0;
 
     float: right;
 }
 
-mixtapes .mixtape:nth-child(0n + 1) {
+.mixtapes .mixtape:nth-child(0n + 1) {
 
     clear: left;
 }
 
-mixtapes .mixtape .mixtape-wrapper {
+.mixtapes .mixtape .mixtape-wrapper {
 
     background-color: #212121;
 
     margin: 4px;
 }
 
-mixtapes .mixtape .card-info {
+.mixtapes .mixtape .card-info {
 
     clear: both;
 }
 
-mixtapes .mixtape .card-info .embed {
+.mixtapes .mixtape .card-info .embed {
 
-    max-width: 450px;
+    max-width: 100%;
 
-    margin: 20px auto 15px;
+    margin: 18px 18px 0 18px;
 }
 
-mixtapes .mixtape .mixtape-title {
+.mixtapes .mixtape .mixtape-title {
 
     font-size: 1.25rem;
 
     text-transform: uppercase;
+
+    text-align: center;
 }
 
 @media (min-width: 960px) {
 
-    mixtapes .mixtape-header h3 {
+    .mixtapes .mixtape-header h3 {
 
         font-size: 2rem;
     }
@@ -406,7 +408,7 @@ mixtapes .mixtape .mixtape-title {
 
 @media (min-width: 960px) {
 
-    mixtapes .mixtape-header h2 {
+    .mixtapes .mixtape-header h2 {
 
         font-size: 2.25rem;
     }
@@ -414,12 +416,12 @@ mixtapes .mixtape .mixtape-title {
 
 @media (min-width: 960px) {
 
-    mixtapes .mixtape {
+    .mixtapes .mixtape {
 
         width: 33.33333%;
     }
 
-    mixtapes .mixtape:nth-child(1n) {
+    .mixtapes .mixtape:nth-child(1n) {
 
         float: left;
 
@@ -428,19 +430,19 @@ mixtapes .mixtape .mixtape-title {
         clear: none;
     }
 
-    mixtapes .mixtape:last-child {
+    .mixtapes .mixtape:last-child {
 
         margin-right: 0;
     }
 
-    mixtapes .mixtape:nth-child(0n) {
+    .mixtapes .mixtape:nth-child(0n) {
 
         margin-right: 0;
 
         float: right;
     }
 
-    mixtapes .mixtape:nth-child(0n + 1) {
+    .mixtapes .mixtape:nth-child(0n + 1) {
 
         clear: left;
     }

@@ -117,11 +117,11 @@ export const getVideo = (req, res) => {
   const item = prismic.withContext(req, res);
   const id = req.params['id'];
   item.getByID(id, (err, data) => {
-    const html = data.getStructuredText('video.content').asHtml();
+    const videoHtml = data.getStructuredText('video.content').asHtml();
     // res.status(200).json(data);
     res.status(200).json([
       data,
-      {html: html}
+      {html: videoHtml}
     ]);
   });
 };
@@ -156,11 +156,11 @@ export const getPost = (req, res) => {
   const item = prismic.withContext(req, res);
   const id = req.params['id'];
   item.getByID(id, (err, data) => {
-    const html = data.getStructuredText('blog.body').asHtml();
+    const blogHtml = data.getStructuredText('blog.body').asHtml();
     // res.status(200).json(data);
     res.status(200).json([
       data,
-      {html: html}
+      {html: blogHtml}
     ]);
   });
 };

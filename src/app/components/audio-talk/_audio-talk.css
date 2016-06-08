@@ -1,6 +1,6 @@
 @import '../../styles/styles.css';
 
-mixtapes {
+.mixtapes {
 	.mixtape-header {
 		background-color: transparent;
 		margin-bottom: 5px;
@@ -47,14 +47,15 @@ mixtapes {
 			clear: both;
 
 			.embed {
-				max-width: 450px;
-				margin: 20px auto 15px;
+				max-width: 100%;
+				margin: 18px 18px 0 18px;
 			}
 		}
 
 		.mixtape-title {
 	    font-size: calc(20/16)rem;
 	    text-transform: uppercase;
+      text-align: center;
 	  }
 	}
 }
