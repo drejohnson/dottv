@@ -1,13 +1,11 @@
 <section ng-if="vm.activated">
 	<header class="mixtape-header">
 		<h3>listen to:</h3>
-		<h2>Latest Mixtapes</h2>
+		<h2>Latest Mixtapes & Podcasts</h2>
 	</header>
 	<div class="mixtapes" layout="row" layout-wrap>
 		<md-card class="mixtape" ng-repeat="mixtape in ::vm.results track by mixtape.id">
 			<div class="mixtape-wrapper">
-				<!-- <img class="cover" ng-src="{{mixtape.fragments['audio.cover'].views.icon.url}}" alt="" /> -->
-				<!-- {{::mixtape.fragments['audio.audioembed'].value.oembed.html}} -->
 				<md-card-content class="card-info">
 					<h1 class="mixtape-title">
 						{{::mixtape.fragments['audio.title'].blocks[0].text}}

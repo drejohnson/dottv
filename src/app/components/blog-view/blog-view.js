@@ -56,7 +56,7 @@ class BlogView {
       const id = this.id;
       SERVICE.get(this).getPost(id).then(post => {
         this.post = post[0];
-        // LOG.get(this).log(this.video);
+        LOG.get(this).log(this.post);
         this.title = this.post.fragments['blog.title'].blocks[0].text;
         this.intro = this.post.fragments['blog.shortlede'].blocks[0].text;
         this.poster = this.post.fragments['blog.image'].url;
