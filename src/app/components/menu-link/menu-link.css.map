@@ -1,1 +1,1 @@
-{"version":3,"sources":["components/menu-link/_menu-link.css"],"names":[],"mappings":"AAAA;CACC,eAAe;CACf,YAAY;CACZ","file":"components/menu-link/menu-link.css","sourcesContent":["menu-link {\n\tdisplay: block;\n\twidth: 100%;\n}\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["components/menu-link/_menu-link.css"],"names":[],"mappings":"AAAA;CACC,eAAe;CACf,YAAY;CACZ","file":"menu-link.css","sourcesContent":["menu-link {\n\tdisplay: block;\n\twidth: 100%;\n}\n"]}

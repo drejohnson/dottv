@@ -325,23 +325,17 @@ sidenav .logo {
 
     text-align: center;
 
-    display: -webkit-flex;
-
     display: -ms-flexbox;
 
     display: flex;
 
-    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
 
-        -ms-flex-direction: column;
+        flex-direction: column;
 
-            flex-direction: column;
+    -ms-flex-align: center;
 
-    -webkit-align-items: center;
-
-        -ms-flex-align: center;
-
-            align-items: center;
+        align-items: center;
 
     padding: 0;
 
@@ -365,23 +359,17 @@ sidenav .nav .nav-item {
 
     text-transform: uppercase;
 
-    display: -webkit-flex;
-
     display: -ms-flexbox;
 
     display: flex;
 
-    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
 
-        -ms-flex-direction: row;
+        flex-direction: row;
 
-            flex-direction: row;
+    -ms-flex-align: start;
 
-    -webkit-align-items: flex-start;
-
-        -ms-flex-align: start;
-
-            align-items: flex-start;
+        align-items: flex-start;
 
     padding: 1.25rem .8rem;
 

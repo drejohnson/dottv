@@ -1,1 +1,1 @@
-{"version":3,"sources":["components/video-js/_video-js.css"],"names":[],"mappings":"AAAA;CACC,eAAe;CACf","file":"components/video-js/video-js.css","sourcesContent":["video-js {\n\tcolor: inherit;\n}\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["components/video-js/_video-js.css"],"names":[],"mappings":"AAAA;CACC,eAAe;CACf","file":"video-js.css","sourcesContent":["video-js {\n\tcolor: inherit;\n}\n"]}
