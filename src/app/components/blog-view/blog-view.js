@@ -8,7 +8,7 @@ const LOG = new WeakMap();
 
 // start-non-standard
 @RouteConfig('blog-view', {
-  url: '/blog/:id/:slug',
+  url: '/:id/:slug',
   template: '<blog-view></blog-view>',
   resolve: {
     // Constant Meta
@@ -25,7 +25,7 @@ const LOG = new WeakMap();
       return viewID[0].fragments['blog.image'].url;
     },
     $url(viewID) {
-      const base = 'http:/tomorrowpictures.tv/blog/';
+      const base = 'http:/tomorrowpictures.tv/';
       const id = viewID[0].id;
       const slug = viewID[0].slug;
       const getUrl = base + id + '/' + slug;
