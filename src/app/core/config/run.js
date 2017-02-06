@@ -17,7 +17,7 @@ class OnRun {
 
       const title = getTitleValue($state.$current.locals.globals.$title);
       const description = getDescriptionValue($state.$current.locals.globals.$description);
-      const metaImg = getMetaImgValue($state.$current.locals.globals.$metaImg);
+      const metaImg = getMetaImgValue($state.$current.locals.globals['$metaImg']);
       const url = getUrlValue($state.$current.locals.globals.$url);
 
       $rootScope.$title = title || $rootScope.pageTitle;
@@ -25,8 +25,10 @@ class OnRun {
       $rootScope.$metaImg = metaImg;
       $rootScope.$url = url;
 
-      $rootScope.client_ios = $detection.isiOS();
-      $log.log($rootScope.client_ios);
+      // $log.log($state.$current.locals.globals['$metaImg']);
+
+      // $rootScope.client_ios = $detection.isiOS();
+      // $log.log($rootScope.client_ios);
 
       $log.log('Current Location: ' + $rootScope.$title);
 
