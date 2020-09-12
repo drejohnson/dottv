@@ -63,7 +63,7 @@
     "express-flash": "0.0.2",
     "express-prismic": "~0.3.1",
     "express-session": "^1.11.3",
-    "http-proxy": "^1.11.2",
+    "http-proxy": "^1.18.1",
     "jade": "^1.11.0",
     "jwt-simple": "^0.3.1",
     "method-override": "^2.3.5",
