@@ -120,7 +120,7 @@
     "karma-jspm": "^2.0.1",
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.21",
     "lost": "^6.6.2",
     "mkdirp": "^0.5.1",
     "postcss": "^5.0.8",
